@@ -2,6 +2,7 @@
 title: 'Perplexity AI使い方完全ガイド【2026年】Google検索より賢いAI検索エンジンを徹底解説'
 description: 'Perplexity AIの使い方を初心者向けに解説。Google検索との違い、無料・有料の差、副業リサーチへの活用法まで徹底解説。'
 pubDate: '2026-04-02'
+heroImage: '/affiliate_site/images/blog/2026-04-02-perplexity-guide.jpg'
 genre: 'AIツール'
 ---
 

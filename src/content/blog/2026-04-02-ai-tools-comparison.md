@@ -2,6 +2,7 @@
 title: 'AIツールおすすめ5選比較【2026年最新】用途別に徹底解説'
 description: '2026年最新のAIツールおすすめ5選を用途別に比較。ChatGPT・Claude・Gemini・Perplexity・Copilotの違いを初心者向けに解説。'
 pubDate: '2026-04-02'
+heroImage: '/affiliate_site/images/blog/2026-04-02-ai-tools-comparison.jpg'
 genre: 'AIツール'
 ---
 

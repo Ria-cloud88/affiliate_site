@@ -2,6 +2,7 @@
 title: 'ChatGPT完全ガイド【2026年最新】初心者でも10分で使いこなせる!'
 description: 'ChatGPTの使い方を初心者向けにわかりやすく解説。無料プランと有料プランの違い、活用法、副業への応用まで徹底解説します。'
 pubDate: '2026-04-02'
+heroImage: '/affiliate_site/images/blog/2026-04-02-chatgpt-guide.jpg'
 genre: 'AIツール'
 ---
 

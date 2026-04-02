@@ -2,6 +2,7 @@
 title: '節約アプリおすすめ比較10選【2026年】家計管理を自動化して月3万円節約する方法'
 description: '2026年最新の節約アプリおすすめ10選を比較。家計簿・ポイント・キャッシュレス活用で月3万円節約する具体的な方法を解説。'
 pubDate: '2026-04-02'
+heroImage: '/affiliate_site/images/blog/2026-04-02-setsuyaku-app.jpg'
 genre: '生活改善'
 ---
 

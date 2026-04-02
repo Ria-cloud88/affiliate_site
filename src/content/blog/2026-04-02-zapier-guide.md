@@ -2,6 +2,7 @@
 title: 'Zapier使い方入門【2026年】コードなしで業務を自動化する完全ガイド'
 description: 'Zapierの使い方を初心者向けに解説。無料プランで始めて業務を自動化する設定方法・おすすめZap・副業への活用法まで徹底解説。'
 pubDate: '2026-04-02'
+heroImage: '/affiliate_site/images/blog/2026-04-02-zapier-guide.jpg'
 genre: '自動化ツール'
 ---
 
