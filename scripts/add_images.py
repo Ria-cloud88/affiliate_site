@@ -56,18 +56,27 @@ def download_image(slug: str, prompt: str) -> bool:
         return True
 
     seed = abs(hash(slug)) % 9999
-    url = f"https://loremflickr.com/800/400/{prompt}?lock={seed}"
 
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=40) as resp:
-            data = resp.read()
-        img_path.write_bytes(data)
-        print(f"  生成完了: {img_path.name} ({len(data)//1024}KB)")
-        return True
-    except Exception as e:
-        print(f"  失敗: {e}")
-        return False
+    # Pollinations.ai（AI生成・無料）を優先、失敗したらloremflickrにフォールバック
+    sources = [
+        f"https://image.pollinations.ai/prompt/{urllib.parse.quote(prompt + ', blog thumbnail, professional, 16:9')}?width=800&height=400&nologo=true&seed={seed}",
+        f"https://loremflickr.com/800/400/{prompt}?lock={seed}",
+    ]
+
+    for url in sources:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=40) as resp:
+                data = resp.read()
+            img_path.write_bytes(data)
+            source = "Pollinations" if "pollinations" in url else "loremflickr"
+            print(f"  生成完了 ({source}): {img_path.name} ({len(data)//1024}KB)")
+            return True
+        except Exception as e:
+            print(f"  {url.split('/')[2]} 失敗: {e}, フォールバック...")
+
+    print(f"  全ソース失敗: {slug}")
+    return False
 
 
 def update_frontmatter(slug: str) -> bool:

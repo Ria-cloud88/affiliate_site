@@ -142,29 +142,32 @@ def slugify(text: str) -> str:
 
 
 def generate_hero_image(title: str, genre: str, slug: str) -> str | None:
-    """Pollinations.aiで無料AI画像生成、src/assets/blog/に保存してパスを返す"""
-    prompt = f"blog thumbnail, {genre}, {title[:60]}, professional, clean design, Japanese tech blog, 16:9"
-    encoded = urllib.parse.quote(prompt)
-    url = f"https://image.pollinations.ai/prompt/{encoded}?width=800&height=400&nologo=true"
+    """AI画像生成（Pollinations優先 → loremflickrフォールバック）"""
+    import urllib.parse as up
+    seed = abs(hash(slug)) % 9999
+    prompt = f"blog thumbnail, {genre}, {title[:60]}, professional, 16:9"
 
-    try:
-        import urllib.parse
-        encoded = urllib.parse.quote(prompt)
-        url = f"https://image.pollinations.ai/prompt/{encoded}?width=800&height=400&nologo=true"
+    sources = [
+        f"https://image.pollinations.ai/prompt/{up.quote(prompt)}?width=800&height=400&nologo=true&seed={seed}",
+        f"https://loremflickr.com/800/400/{up.quote(genre)},technology?lock={seed}",
+    ]
 
-        img_dir = Path("src/assets/blog")
-        img_dir.mkdir(parents=True, exist_ok=True)
-        img_path = img_dir / f"{slug}.jpg"
+    img_dir = Path("public/images/blog")
+    img_dir.mkdir(parents=True, exist_ok=True)
+    img_path = img_dir / f"{slug}.jpg"
 
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            img_path.write_bytes(resp.read())
+    for url in sources:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                img_path.write_bytes(resp.read())
+            source = "Pollinations" if "pollinations" in url else "loremflickr"
+            print(f"画像生成完了 ({source}): {img_path}")
+            return f"/affiliate_site/images/blog/{slug}.jpg"
+        except Exception as e:
+            print(f"画像生成失敗 ({url.split('/')[2]}): {e}")
 
-        print(f"画像生成完了: {img_path}")
-        return f"../../assets/blog/{slug}.jpg"
-    except Exception as e:
-        print(f"画像生成スキップ: {e}")
-        return None
+    return None
 
 
 def save_article(content: str, genre: str, main_kw: str) -> Path:
