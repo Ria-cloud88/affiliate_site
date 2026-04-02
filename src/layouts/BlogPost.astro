@@ -1,86 +1,99 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, genre } = Astro.props;
+const currentUrl = Astro.url.href;
+const encodedUrl = encodeURIComponent(currentUrl);
+const encodedTitle = encodeURIComponent(title);
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<html lang="ja">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <body>
+    <Header />
+
+    <!-- Social share buttons -->
+    <div class="social-share">
+      <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+         target="_blank" rel="noopener" class="share-x" title="Xでシェア">X</a>
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+         target="_blank" rel="noopener" class="share-fb" title="Facebookでシェア">f</a>
+      <a href={`https://line.me/R/msg/text/?${encodedTitle}%0A${encodedUrl}`}
+         target="_blank" rel="noopener" class="share-line" title="LINEでシェア">LINE</a>
+      <a href={`https://b.hatena.ne.jp/add?mode=confirm&url=${encodedUrl}`}
+         target="_blank" rel="noopener" class="share-hatena" title="はてブに追加">B!</a>
+    </div>
+
+    <div class="site-body">
+      <main class="main-content">
+        <div class="article-card">
+          <!-- Breadcrumb -->
+          <div class="breadcrumb">
+            <a href="/affiliate_site/">ホーム</a>
+            <span>›</span>
+            {genre && <><a href={`/affiliate_site/blog`}>{genre}</a><span>›</span></>}
+            <span style="color:#333;">{title.length > 30 ? title.slice(0, 30) + '…' : title}</span>
+          </div>
+
+          <!-- Meta -->
+          <div class="article-meta">
+            {genre && <a href="/affiliate_site/blog" class="tag">{genre}</a>}
+            <span class="article-date">
+              <FormattedDate date={pubDate} />
+              {updatedDate && <span style="margin-left:8px;">更新: <FormattedDate date={updatedDate} /></span>}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title">{title}</h1>
+
+          <!-- Hero image -->
+          {heroImage && (
+            <img src={heroImage} alt={title} class="hero-img" loading="lazy" />
+          )}
+
+          <!-- Article body -->
+          <div class="prose">
+            <slot />
+          </div>
+
+          <!-- Bottom share -->
+          <div style="margin-top:2em; padding-top:1.5em; border-top:1px solid #e2e8f0;">
+            <p style="font-size:0.85em; color:#666; margin-bottom:10px;">この記事が役立ったらシェアをお願いします！</p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+                 target="_blank" rel="noopener"
+                 style="padding:8px 16px; background:#000; color:white; border-radius:4px; font-size:0.82em; text-decoration:none;">
+                Xでシェア
+              </a>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+                 target="_blank" rel="noopener"
+                 style="padding:8px 16px; background:#1877f2; color:white; border-radius:4px; font-size:0.82em; text-decoration:none;">
+                Facebookでシェア
+              </a>
+              <a href={`https://line.me/R/msg/text/?${encodedTitle}%0A${encodedUrl}`}
+                 target="_blank" rel="noopener"
+                 style="padding:8px 16px; background:#06c755; color:white; border-radius:4px; font-size:0.82em; text-decoration:none;">
+                LINEでシェア
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Sidebar />
+    </div>
+
+    <Footer />
+  </body>
 </html>

@@ -7,6 +7,7 @@ import anthropic
 import random
 import re
 import sys
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -140,6 +141,32 @@ def slugify(text: str) -> str:
     return h
 
 
+def generate_hero_image(title: str, genre: str, slug: str) -> str | None:
+    """Pollinations.aiで無料AI画像生成、src/assets/blog/に保存してパスを返す"""
+    prompt = f"blog thumbnail, {genre}, {title[:60]}, professional, clean design, Japanese tech blog, 16:9"
+    encoded = urllib.parse.quote(prompt)
+    url = f"https://image.pollinations.ai/prompt/{encoded}?width=800&height=400&nologo=true"
+
+    try:
+        import urllib.parse
+        encoded = urllib.parse.quote(prompt)
+        url = f"https://image.pollinations.ai/prompt/{encoded}?width=800&height=400&nologo=true"
+
+        img_dir = Path("src/assets/blog")
+        img_dir.mkdir(parents=True, exist_ok=True)
+        img_path = img_dir / f"{slug}.jpg"
+
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            img_path.write_bytes(resp.read())
+
+        print(f"画像生成完了: {img_path}")
+        return f"../../assets/blog/{slug}.jpg"
+    except Exception as e:
+        print(f"画像生成スキップ: {e}")
+        return None
+
+
 def save_article(content: str, genre: str, main_kw: str) -> Path:
     """記事をMarkdownファイルとして保存"""
     title = extract_title(content)
@@ -153,11 +180,14 @@ def save_article(content: str, genre: str, main_kw: str) -> Path:
     first_para = re.split(r'\n\n', body_without_title)[0]
     description = re.sub(r'[#*`]', '', first_para)[:120].replace('\n', ' ').strip()
 
+    hero_image = generate_hero_image(title, genre, slug)
+    hero_line = f"\nheroImage: '{hero_image}'" if hero_image else ""
+
     frontmatter = f"""---
 title: '{title.replace("'", "''")}'
 description: '{description.replace("'", "''")}'
 pubDate: '{today}'
-genre: '{genre}'
+genre: '{genre}'{hero_line}
 ---
 
 """

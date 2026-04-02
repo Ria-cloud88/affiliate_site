@@ -1,49 +1,75 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 9);
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="ja">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+
+    <!-- Hero -->
+    <div style="background: linear-gradient(135deg, #1a2b5f 0%, #1a56db 100%); color:white; padding:40px 16px; text-align:center;">
+      <div style="max-width:700px; margin:0 auto;">
+        <h1 style="font-size:1.8em; margin-bottom:10px; color:white;">AIツール・副業・ガジェットの<br>最新情報を毎日お届け</h1>
+        <p style="font-size:1em; opacity:0.9; margin:0;">初心者にわかりやすく、稼げる情報を徹底解説</p>
+      </div>
+    </div>
+
+    <div class="site-body">
+      <main class="main-content">
+        <h2 style="font-size:1.1em; border-left:4px solid #1a56db; padding:4px 12px; background:#f0f4ff; margin-bottom:20px;">最新記事</h2>
+
+        {posts.length === 0 ? (
+          <div style="background:white; border-radius:8px; padding:40px; text-align:center; color:#888; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <p style="margin:0;">記事を準備中です。しばらくお待ちください。</p>
+          </div>
+        ) : (
+          <div class="card-grid">
+            {posts.map((post) => (
+              <a href={`/affiliate_site/blog/${post.id}/`} class="card">
+                {post.data.heroImage ? (
+                  <img src={post.data.heroImage} alt={post.data.title} class="card-img" loading="lazy" />
+                ) : (
+                  <div class="card-img-placeholder">
+                    {post.data.genre && <span>{post.data.genre}</span>}
+                  </div>
+                )}
+                <div class="card-body">
+                  <div class="card-meta">
+                    {post.data.genre && <span class="tag" style="font-size:0.7em;">{post.data.genre}</span>}
+                    <FormattedDate date={post.data.pubDate} />
+                  </div>
+                  <p class="card-title">{post.data.title}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+
+        <div style="text-align:center; margin-top:28px;">
+          <a href="/affiliate_site/blog"
+             style="display:inline-block; padding:10px 28px; background:#1a2b5f; color:white; border-radius:6px; font-size:0.9em; text-decoration:none;">
+            記事一覧を見る →
+          </a>
+        </div>
+      </main>
+
+      <Sidebar />
+    </div>
+
+    <Footer />
+  </body>
 </html>
