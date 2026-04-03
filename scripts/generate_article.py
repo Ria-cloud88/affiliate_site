@@ -68,8 +68,8 @@ KEYWORD_POOLS = {
 NEWS_FEEDS = [
     ("Gigazine", "https://gigazine.net/news/rss_2.0/"),
     ("ITmedia AI+", "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml"),
-    ("TechCrunch Japan", "https://jp.techcrunch.com/feed/"),
-    ("Google News AI", "https://news.google.com/rss/search?q=AI+人工知能&hl=ja&gl=JP&ceid=JP:ja"),
+    ("Google News AI", "https://news.google.com/rss/search?q=AI%20%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD&hl=ja&gl=JP&ceid=JP:ja"),
+    ("Google News 副業", "https://news.google.com/rss/search?q=%E5%89%AF%E6%A5%AD%20%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja"),
 ]
 
 SYSTEM_PROMPT = """あなたはSEOとアフィリエイト収益最大化に特化した記事生成AIです。
@@ -124,11 +124,16 @@ def select_keyword():
 
 def fetch_news(max_items: int = 10) -> list[dict]:
     """RSSフィードから最新ニュースを取得"""
+    import ssl
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
     items = []
     for source_name, feed_url in NEWS_FEEDS:
         try:
             req = urllib.request.Request(feed_url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=10) as resp:
+            with urllib.request.urlopen(req, timeout=10, context=ctx) as resp:
                 xml_data = resp.read()
             root = ET.fromstring(xml_data)
             # RSS 2.0形式
