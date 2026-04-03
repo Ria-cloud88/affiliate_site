@@ -190,7 +190,7 @@ def generate_article(main_kw: str, related_kws: list, genre: str) -> str:
 記事の冒頭は # タイトル から始めてください。"""
 
     message = client.messages.create(
-        model="claude-opus-4-6",
+        model="claude-haiku-4-5-20251001",
         max_tokens=8000,
         messages=[{"role": "user", "content": prompt}],
         system=SYSTEM_PROMPT,
@@ -221,7 +221,7 @@ def generate_news_article(topic: str, source_info: str = "") -> str:
 記事の冒頭は # タイトル から始めてください。"""
 
     message = client.messages.create(
-        model="claude-opus-4-6",
+        model="claude-haiku-4-5-20251001",
         max_tokens=8000,
         messages=[{"role": "user", "content": prompt}],
         system=news_system_prompt,
