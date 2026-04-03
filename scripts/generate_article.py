@@ -1,13 +1,19 @@
 """
 アフィリエイト記事自動生成スクリプト
-使い方: python scripts/generate_article.py
+使い方:
+  python scripts/generate_article.py              # ランダム記事
+  python scripts/generate_article.py --topic "Claude Codeソースコード流出"
+  python scripts/generate_article.py --news       # RSSから最新ニュース取得して生成
 """
 
 import anthropic
+import argparse
 import random
 import re
 import sys
+import urllib.error
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
 
@@ -52,6 +58,14 @@ KEYWORD_POOLS = {
         ("時間管理 テクニック 生産性 向上 方法", ["時間管理", "ポモドーロ", "生産性", "効率化"]),
     ],
 }
+
+# ニュース取得先RSSフィード（日本語テック系）
+NEWS_FEEDS = [
+    ("Gigazine", "https://gigazine.net/news/rss_2.0/"),
+    ("ITmedia AI+", "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml"),
+    ("TechCrunch Japan", "https://jp.techcrunch.com/feed/"),
+    ("Google News AI", "https://news.google.com/rss/search?q=AI+人工知能&hl=ja&gl=JP&ceid=JP:ja"),
+]
 
 SYSTEM_PROMPT = """あなたはSEOとアフィリエイト収益最大化に特化した記事生成AIです。
 
@@ -103,8 +117,58 @@ def select_keyword():
     return genre, main_kw, related_kws
 
 
+def fetch_news(max_items: int = 10) -> list[dict]:
+    """RSSフィードから最新ニュースを取得"""
+    items = []
+    for source_name, feed_url in NEWS_FEEDS:
+        try:
+            req = urllib.request.Request(feed_url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                xml_data = resp.read()
+            root = ET.fromstring(xml_data)
+            # RSS 2.0形式
+            for item in root.findall(".//item")[:3]:
+                title = item.findtext("title", "").strip()
+                desc = item.findtext("description", "").strip()
+                link = item.findtext("link", "").strip()
+                pub_date = item.findtext("pubDate", "").strip()
+                if title:
+                    items.append({
+                        "source": source_name,
+                        "title": title,
+                        "description": re.sub(r'<[^>]+>', '', desc)[:200],
+                        "link": link,
+                        "pubDate": pub_date,
+                    })
+            print(f"  {source_name}: {len(items)}件取得")
+        except Exception as e:
+            print(f"  {source_name} 取得失敗: {e}")
+
+    return items[:max_items]
+
+
+def select_news_topic(news_items: list[dict]) -> dict:
+    """ニュース一覧から記事にするトピックを選択（インタラクティブ）"""
+    print("\n--- 取得したニュース ---")
+    for i, item in enumerate(news_items):
+        print(f"[{i+1}] [{item['source']}] {item['title']}")
+    print(f"[0] ランダム選択")
+    print()
+
+    while True:
+        try:
+            choice = input(f"記事にするニュースを選択 (0-{len(news_items)}): ").strip()
+            n = int(choice)
+            if n == 0:
+                return random.choice(news_items)
+            elif 1 <= n <= len(news_items):
+                return news_items[n - 1]
+        except (ValueError, KeyboardInterrupt):
+            pass
+
+
 def generate_article(main_kw: str, related_kws: list, genre: str) -> str:
-    """Claude APIで記事生成"""
+    """Claude APIで通常記事生成"""
     client = anthropic.Anthropic()
 
     prompt = f"""以下のキーワードで高品質なアフィリエイトブログ記事を生成してください。
@@ -120,6 +184,37 @@ def generate_article(main_kw: str, related_kws: list, genre: str) -> str:
         max_tokens=8000,
         messages=[{"role": "user", "content": prompt}],
         system=SYSTEM_PROMPT,
+    )
+
+    return message.content[0].text
+
+
+def generate_news_article(topic: str, source_info: str = "") -> str:
+    """Claude APIでニュース系記事生成"""
+    client = anthropic.Anthropic()
+
+    news_system_prompt = SYSTEM_PROMPT + """
+
+# ■ニュース記事追加ルール
+・「最新情報」「速報」「〜が話題」などの時事性を出す
+・ニュースの背景・影響・読者への意味を必ず解説する
+・事実ベースで書き、憶測は「〜とみられる」と明示する
+・関連するサービス・ツールのアフィリエイトを自然に挿入する
+・公開日が重要なので「2026年最新」などを含める"""
+
+    prompt = f"""以下のトピックについて、最新ニュースを元にした解説記事を生成してください。
+
+トピック: {topic}
+{f'参考情報: {source_info}' if source_info else ''}
+
+読者が「このニュースで自分はどう動くべきか」がわかる実用的な内容にしてください。
+記事の冒頭は # タイトル から始めてください。"""
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=8000,
+        messages=[{"role": "user", "content": prompt}],
+        system=news_system_prompt,
     )
 
     return message.content[0].text
@@ -144,28 +239,51 @@ def slugify(text: str) -> str:
 def generate_hero_image(title: str, genre: str, slug: str) -> str | None:
     """AI画像生成（Pollinations優先 → loremflickrフォールバック）"""
     import urllib.parse as up
+    import time
     seed = abs(hash(slug)) % 9999
     prompt = f"blog thumbnail, {genre}, {title[:60]}, professional, 16:9"
-
-    sources = [
-        f"https://image.pollinations.ai/prompt/{up.quote(prompt)}?width=800&height=400&nologo=true&seed={seed}",
-        f"https://loremflickr.com/800/400/{up.quote(genre)},technology?lock={seed}",
-    ]
 
     img_dir = Path("public/images/blog")
     img_dir.mkdir(parents=True, exist_ok=True)
     img_path = img_dir / f"{slug}.jpg"
 
-    for url in sources:
+    # Pollinations.ai: タイムアウト時のみ1回リトライ、429は即フォールバック（キューを詰まらせない）
+    pollinations_url = f"https://image.pollinations.ai/prompt/{up.quote(prompt)}?width=800&height=400&nologo=true&seed={seed}"
+    for attempt in range(2):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                img_path.write_bytes(resp.read())
-            source = "Pollinations" if "pollinations" in url else "loremflickr"
-            print(f"画像生成完了 ({source}): {img_path}")
+            req = urllib.request.Request(pollinations_url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                data = resp.read()
+            img_path.write_bytes(data)
+            print(f"画像生成完了 (Pollinations): {img_path}")
             return f"/affiliate_site/images/blog/{slug}.jpg"
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                print(f"Pollinations 429: レート制限中、フォールバックへ")
+                break  # リトライせず即フォールバック
+            else:
+                print(f"Pollinations エラー: {e}")
+                break
+        except TimeoutError:
+            if attempt == 0:
+                print(f"Pollinations タイムアウト、再試行...")
+                time.sleep(5)
+            else:
+                print(f"Pollinations タイムアウト、フォールバックへ")
         except Exception as e:
-            print(f"画像生成失敗 ({url.split('/')[2]}): {e}")
+            print(f"Pollinations エラー: {e}")
+            break
+
+    # フォールバック: loremflickr
+    fallback_url = f"https://loremflickr.com/800/400/{up.quote(genre)},technology?lock={seed}"
+    try:
+        req = urllib.request.Request(fallback_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            img_path.write_bytes(resp.read())
+        print(f"画像生成完了 (loremflickr): {img_path}")
+        return f"/affiliate_site/images/blog/{slug}.jpg"
+    except Exception as e:
+        print(f"loremflickr エラー: {e}")
 
     return None
 
@@ -207,18 +325,53 @@ genre: '{genre}'{hero_line}
 
 
 def main():
+    parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成")
+    parser.add_argument("--topic", type=str, help="記事にするトピック（例: 'Claude Codeソースコード流出'）")
+    parser.add_argument("--news", action="store_true", help="RSSから最新ニュースを取得して記事生成")
+    parser.add_argument("--auto", action="store_true", help="対話なしで自動実行（--newsと組み合わせてランダム選択）")
+    args = parser.parse_args()
+
     print("記事生成を開始します...")
 
-    genre, main_kw, related_kws = select_keyword()
-    print(f"ジャンル: {genre}")
-    print(f"メインKW: {main_kw}")
-    print(f"関連KW: {', '.join(related_kws)}")
-    print("Claude APIで記事生成中...")
+    if args.topic:
+        # トピック直接指定モード
+        print(f"トピック: {args.topic}")
+        print("Claude APIで記事生成中...")
+        content = generate_news_article(args.topic)
+        output_path = save_article(content, "ニュース", args.topic)
 
-    content = generate_article(main_kw, related_kws, genre)
-    output_path = save_article(content, genre, main_kw)
+    elif args.news:
+        # RSSニュース取得モード
+        print("RSSフィードからニュースを取得中...")
+        news_items = fetch_news()
+        if not news_items:
+            print("ニュース取得失敗。通常モードで実行します。")
+            genre, main_kw, related_kws = select_keyword()
+            content = generate_article(main_kw, related_kws, genre)
+            output_path = save_article(content, genre, main_kw)
+        else:
+            if args.auto:
+                selected = random.choice(news_items)
+                print(f"自動選択: {selected['title']}")
+            else:
+                selected = select_news_topic(news_items)
+            print(f"\n選択: {selected['title']}")
+            print("Claude APIで記事生成中...")
+            source_info = f"{selected['description']} (出典: {selected['source']})"
+            content = generate_news_article(selected['title'], source_info)
+            output_path = save_article(content, "ニュース", selected['title'])
 
-    print(f"完了: {output_path}")
+    else:
+        # 通常ランダムモード
+        genre, main_kw, related_kws = select_keyword()
+        print(f"ジャンル: {genre}")
+        print(f"メインKW: {main_kw}")
+        print(f"関連KW: {', '.join(related_kws)}")
+        print("Claude APIで記事生成中...")
+        content = generate_article(main_kw, related_kws, genre)
+        output_path = save_article(content, genre, main_kw)
+
+    print(f"\n完了: {output_path}")
     print(f"文字数: {len(content)}文字")
 
 
