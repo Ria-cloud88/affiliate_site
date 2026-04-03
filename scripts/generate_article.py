@@ -8,6 +8,7 @@
 
 import anthropic
 import argparse
+import os
 import random
 import re
 import sys
@@ -16,6 +17,10 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
+
+# APIキーの改行文字を除去（GitHub Secrets貼り付け時の混入対策）
+if "ANTHROPIC_API_KEY" in os.environ:
+    os.environ["ANTHROPIC_API_KEY"] = os.environ["ANTHROPIC_API_KEY"].strip()
 
 # ジャンル別キーワードプール
 KEYWORD_POOLS = {
