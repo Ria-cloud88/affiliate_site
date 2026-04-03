@@ -241,55 +241,68 @@ def slugify(text: str) -> str:
     return h
 
 
+GENRE_KEYWORDS = {
+    "AIツール": "technology,computer,artificial-intelligence",
+    "自動化ツール": "automation,computer,productivity",
+    "副業": "business,work,laptop",
+    "ガジェット": "gadget,technology,electronics",
+    "生活改善": "lifestyle,wellness,health",
+    "ニュース": "technology,news,digital",
+}
+
+
 def generate_hero_image(title: str, genre: str, slug: str) -> str | None:
-    """AI画像生成（Pollinations優先 → loremflickrフォールバック）"""
+    """画像取得（Pollinations優先 → loremflickr → picsum.photos）"""
     import urllib.parse as up
     import time
     seed = abs(hash(slug)) % 9999
     prompt = f"blog thumbnail, {genre}, {title[:60]}, professional, 16:9"
+    kw = GENRE_KEYWORDS.get(genre, "technology,business")
 
     img_dir = Path("public/images/blog")
     img_dir.mkdir(parents=True, exist_ok=True)
     img_path = img_dir / f"{slug}.jpg"
 
-    # Pollinations.ai: タイムアウト時のみ1回リトライ、429は即フォールバック（キューを詰まらせない）
-    pollinations_url = f"https://image.pollinations.ai/prompt/{up.quote(prompt)}?width=800&height=400&nologo=true&seed={seed}"
-    for attempt in range(2):
+    def fetch(url: str) -> bool:
         try:
-            req = urllib.request.Request(pollinations_url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=90) as resp:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
                 data = resp.read()
+            if len(data) < 1000:  # 壊れたレスポンス除外
+                return False
             img_path.write_bytes(data)
-            print(f"画像生成完了 (Pollinations): {img_path}")
-            return f"/affiliate_site/images/blog/{slug}.jpg"
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                print(f"Pollinations 429: レート制限中、フォールバックへ")
-                break  # リトライせず即フォールバック
-            else:
-                print(f"Pollinations エラー: {e}")
-                break
-        except TimeoutError:
-            if attempt == 0:
-                print(f"Pollinations タイムアウト、再試行...")
-                time.sleep(5)
-            else:
-                print(f"Pollinations タイムアウト、フォールバックへ")
-        except Exception as e:
-            print(f"Pollinations エラー: {e}")
-            break
+            return True
+        except Exception:
+            return False
 
-    # フォールバック: loremflickr
-    fallback_url = f"https://loremflickr.com/800/400/{up.quote(genre)},technology?lock={seed}"
+    # 1. Pollinations.ai（AI生成・記事に最も即した画像）
+    pollinations_url = f"https://image.pollinations.ai/prompt/{up.quote(prompt)}?width=800&height=400&nologo=true&seed={seed}"
     try:
-        req = urllib.request.Request(fallback_url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            img_path.write_bytes(resp.read())
-        print(f"画像生成完了 (loremflickr): {img_path}")
-        return f"/affiliate_site/images/blog/{slug}.jpg"
+        req = urllib.request.Request(pollinations_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            data = resp.read()
+        if len(data) >= 1000:
+            img_path.write_bytes(data)
+            print(f"画像取得完了 (Pollinations): {img_path}")
+            return f"/affiliate_site/images/blog/{slug}.jpg"
+    except urllib.error.HTTPError as e:
+        print(f"Pollinations {e.code}: フォールバックへ")
     except Exception as e:
-        print(f"loremflickr エラー: {e}")
+        print(f"Pollinations 失敗: {type(e).__name__}")
 
+    # 2. loremflickr（キーワード検索・ジャンルに即した写真）
+    for kw_try in [kw, kw.split(",")[0]]:
+        url = f"https://loremflickr.com/800/400/{kw_try}?lock={seed}"
+        if fetch(url):
+            print(f"画像取得完了 (loremflickr/{kw_try}): {img_path}")
+            return f"/affiliate_site/images/blog/{slug}.jpg"
+
+    # 3. picsum.photos（完全ランダム・確実に取得できる）
+    url = f"https://picsum.photos/seed/{seed}/800/400"
+    if fetch(url):
+        print(f"画像取得完了 (picsum): {img_path}")
+        return f"/affiliate_site/images/blog/{slug}.jpg"
+    print(f"画像取得失敗: {slug}")
     return None
 
 
