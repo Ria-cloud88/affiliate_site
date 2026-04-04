@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ria-cloud88.github.io/affiliate_site/sitemap-index.xml
