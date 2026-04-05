@@ -8,5 +8,12 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://ria-cloud88.github.io',
 	base: '/affiliate_site',
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			changefreq: 'weekly',
+			priority: 0.7,
+			lastmod: new Date(),
+		}),
+	],
 });
