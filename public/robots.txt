@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ria-cloud88.github.io/affiliate_site/sitemap.xml
+Sitemap: https://rialeb.jp/sitemap.xml
