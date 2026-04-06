@@ -33,7 +33,7 @@ const posts = (await getCollection('blog')).sort(
         ) : (
           <div class="card-grid">
             {posts.map((post) => (
-              <a href={`/affiliate_site/blog/${post.id}/`} class="card">
+              <a href={`/blog/${post.id}/`} class="card">
                 {post.data.heroImage ? (
                   <img src={post.data.heroImage} alt={post.data.title} class="card-img" loading="lazy" />
                 ) : (
