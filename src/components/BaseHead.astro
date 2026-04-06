@@ -22,12 +22,12 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
 <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
-<link rel="sitemap" href="/affiliate_site/sitemap.xml" />
+<link rel="sitemap" href="/sitemap.xml" />
 <link
 	rel="alternate"
 	type="application/rss+xml"
 	title={SITE_TITLE}
-	href={new URL('/affiliate_site/rss.xml', Astro.site)}
+	href={new URL('/rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
 
