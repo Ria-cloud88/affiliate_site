@@ -6,8 +6,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://ria-cloud88.github.io',
-	base: '/affiliate_site',
+	site: 'https://rialeb.jp',
 	integrations: [
 		mdx(),
 		sitemap({
