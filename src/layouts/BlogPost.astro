@@ -39,15 +39,15 @@ const encodedTitle = encodeURIComponent(title);
         <div class="article-card">
           <!-- Breadcrumb -->
           <div class="breadcrumb">
-            <a href="/affiliate_site/">ホーム</a>
+            <a href="/">ホーム</a>
             <span>›</span>
-            {genre && <><a href={`/affiliate_site/blog`}>{genre}</a><span>›</span></>}
+            {genre && <><a href={`/blog`}>{genre}</a><span>›</span></>}
             <span style="color:#333;">{title.length > 30 ? title.slice(0, 30) + '…' : title}</span>
           </div>
 
           <!-- Meta -->
           <div class="article-meta">
-            {genre && <a href="/affiliate_site/blog" class="tag">{genre}</a>}
+            {genre && <a href="/blog" class="tag">{genre}</a>}
             <span class="article-date">
               <FormattedDate date={pubDate} />
               {updatedDate && <span style="margin-left:8px;">更新: <FormattedDate date={updatedDate} /></span>}

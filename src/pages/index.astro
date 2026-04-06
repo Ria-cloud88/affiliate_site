@@ -39,7 +39,7 @@ const posts = (await getCollection('blog')).sort(
         ) : (
           <div class="card-grid">
             {posts.map((post) => (
-              <a href={`/affiliate_site/blog/${post.id}/`} class="card">
+              <a href={`/blog/${post.id}/`} class="card">
                 {post.data.heroImage ? (
                   <img src={post.data.heroImage} alt={post.data.title} class="card-img" loading="lazy" />
                 ) : (
@@ -60,7 +60,7 @@ const posts = (await getCollection('blog')).sort(
         )}
 
         <div style="text-align:center; margin-top:28px;">
-          <a href="/affiliate_site/blog"
+          <a href="/blog"
              style="display:inline-block; padding:10px 28px; background:#1a2b5f; color:white; border-radius:6px; font-size:0.9em; text-decoration:none;">
             記事一覧を見る →
           </a>
