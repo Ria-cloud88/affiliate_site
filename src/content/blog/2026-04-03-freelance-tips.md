@@ -2,7 +2,7 @@
 title: 'フリーランスになる方法【2026年】会社員から独立するための完全ロードマップ'
 description: 'フリーランスになる方法を初心者向けに解説。副業から独立までの手順・必要なスキル・収入の安定化・AIを使った効率化まで徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-freelance-tips.jpg'
+heroImage: '/images/blog/2026-04-03-freelance-tips.jpg'
 genre: '副業'
 ---
 

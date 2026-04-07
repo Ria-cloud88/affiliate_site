@@ -2,7 +2,7 @@
 title: 'Make（旧Integromat）使い方完全ガイド【2026年】Zapierとの違いと選び方'
 description: 'Make（旧Integromat）の使い方を初心者向けに解説。Zapierとの違い・無料プランの範囲・自動化の設定方法まで徹底比較。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-make-guide.jpg'
+heroImage: '/images/blog/2026-04-03-make-guide.jpg'
 genre: '自動化ツール'
 ---
 

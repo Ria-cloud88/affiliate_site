@@ -2,7 +2,7 @@
 title: 'Gemini使い方完全ガイド【2026年】GoogleのAIをフル活用する方法'
 description: 'GoogleのAI「Gemini」の使い方を初心者向けに解説。ChatGPTとの違い・無料で使える範囲・Google連携の活用法まで徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-gemini-guide.jpg'
+heroImage: '/images/blog/2026-04-03-gemini-guide.jpg'
 genre: 'AIツール'
 ---
 

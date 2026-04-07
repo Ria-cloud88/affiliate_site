@@ -2,7 +2,7 @@
 title: 'Kindle Unlimitedおすすめ本【2026年】月980円で読み放題を最大活用する方法'
 description: 'Kindle Unlimitedの使い方・おすすめ本・退会方法を解説。月980円の元を取る読み方と副業・スキルアップに役立つ本を厳選紹介。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-kindle-unlimited.jpg'
+heroImage: '/images/blog/2026-04-03-kindle-unlimited.jpg'
 genre: '生活改善'
 ---
 

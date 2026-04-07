@@ -2,7 +2,7 @@
 title: 'ワイヤレスイヤホンおすすめ比較10選【2026年】コスパ最強から高音質まで'
 description: '2026年最新のワイヤレスイヤホンおすすめ10選を比較。AirPods・Sony・Ankerなど価格帯別に初心者向けに徹底解説。'
 pubDate: '2026-04-02'
-heroImage: '/affiliate_site/images/blog/2026-04-02-wireless-earphone.jpg'
+heroImage: '/images/blog/2026-04-02-wireless-earphone.jpg'
 genre: 'ガジェット'
 ---
 

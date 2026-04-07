@@ -2,7 +2,7 @@
 title: 'タスク管理アプリおすすめ比較【2026年】生産性を上げる最強ツール5選'
 description: '2026年最新のタスク管理アプリおすすめ5選を比較。Todoist・Notion・Things・TickTickなど無料・有料を徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-task-management-app.jpg'
+heroImage: '/images/blog/2026-04-03-task-management-app.jpg'
 genre: '生活改善'
 ---
 

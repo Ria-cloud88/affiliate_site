@@ -2,7 +2,7 @@
 title: 'Webカメラおすすめ比較【2026年】テレワーク・配信用途別に徹底解説'
 description: '2026年最新Webカメラおすすめを比較。Logicool・Ankerなど価格帯別にテレワーク・YouTube配信・ビデオ会議向けを初心者向けに解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-web-camera-comparison.jpg'
+heroImage: '/images/blog/2026-04-03-web-camera-comparison.jpg'
 genre: 'ガジェット'
 ---
 

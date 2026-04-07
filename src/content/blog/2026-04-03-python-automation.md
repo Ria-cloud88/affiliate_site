@@ -2,7 +2,7 @@
 title: 'Python自動化入門【2026年】初心者がAIと一緒にルーティン作業を自動化する方法'
 description: 'PythonとAIを使った業務自動化の始め方を初心者向けに解説。ChatGPTでコードを生成してルーティン作業を自動化する具体的な手順。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-python-automation.jpg'
+heroImage: '/images/blog/2026-04-03-python-automation.jpg'
 genre: '自動化ツール'
 ---
 

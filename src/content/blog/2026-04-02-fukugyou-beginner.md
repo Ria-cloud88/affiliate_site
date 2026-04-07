@@ -2,7 +2,7 @@
 title: '副業初心者がまず最初にやること10選【2026年】失敗しない始め方'
 description: '副業初心者が最初にやるべきことを10ステップで解説。失敗しない副業の選び方・始め方・AIを使った効率化まで完全ガイド。'
 pubDate: '2026-04-02'
-heroImage: '/affiliate_site/images/blog/2026-04-02-fukugyou-beginner.jpg'
+heroImage: '/images/blog/2026-04-02-fukugyou-beginner.jpg'
 genre: '副業'
 ---
 

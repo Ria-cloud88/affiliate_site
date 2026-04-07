@@ -2,7 +2,7 @@
 title: 'X（Twitter）副業・稼ぎ方完全ガイド【2026年】フォロワーゼロから月3万円'
 description: 'X（Twitter）で稼ぐ方法を初心者向けに解説。収益化プログラム・アフィリエイト・情報発信で月3万円稼ぐ具体的な手順。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-twitter-x-fukugyou.jpg'
+heroImage: '/images/blog/2026-04-03-twitter-x-fukugyou.jpg'
 genre: '副業'
 ---
 

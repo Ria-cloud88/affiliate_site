@@ -2,7 +2,7 @@
 title: '英語学習アプリおすすめ比較【2026年】初心者が続けられる無料・有料5選'
 description: '2026年最新英語学習アプリおすすめ5選を比較。Duolingo・スタディサプリ・Anki・Camblyなど目的別に初心者向け徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-english-learning-app.jpg'
+heroImage: '/images/blog/2026-04-03-english-learning-app.jpg'
 genre: '生活改善'
 ---
 

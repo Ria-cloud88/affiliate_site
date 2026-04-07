@@ -2,7 +2,7 @@
 title: 'ポータブルモニターおすすめ比較【2026年】テレワーク・外出先でデュアルモニター環境'
 description: '2026年最新ポータブルモニターおすすめを比較。在宅ワーク・カフェ作業・出張でデュアルモニター環境を作る方法を徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-portable-monitor.jpg'
+heroImage: '/images/blog/2026-04-03-portable-monitor.jpg'
 genre: 'ガジェット'
 ---
 

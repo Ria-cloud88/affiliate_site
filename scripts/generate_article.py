@@ -8,10 +8,12 @@
 
 import anthropic
 import argparse
+import json
 import os
 import random
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -311,7 +313,7 @@ def generate_hero_image(title: str, genre: str, slug: str) -> str | None:
     return None
 
 
-def save_article(content: str, genre: str, main_kw: str) -> Path:
+def save_article(content: str, genre: str, main_kw: str, category: str = None, source: str = None) -> Path:
     """記事をMarkdownファイルとして保存"""
     title = extract_title(content)
     today = datetime.now().strftime("%Y-%m-%d")
@@ -327,11 +329,15 @@ def save_article(content: str, genre: str, main_kw: str) -> Path:
     hero_image = generate_hero_image(title, genre, slug)
     hero_line = f"\nheroImage: '{hero_image}'" if hero_image else ""
 
+    # category と source フィールドを追加
+    category_line = f"\ncategory: '{category}'" if category else ""
+    source_line = f"\nsource: '{source}'" if source else ""
+
     frontmatter = f"""---
 title: '{title.replace("'", "''")}'
 description: '{description.replace("'", "''")}'
 pubDate: '{today}'
-genre: '{genre}'{hero_line}
+genre: '{genre}'{hero_line}{category_line}{source_line}
 ---
 
 """
@@ -347,16 +353,129 @@ genre: '{genre}'{hero_line}
     return output_path
 
 
+def load_keywords_from_pool(count: int = 1) -> list[tuple[str, str, list[str]]]:
+    """
+    keywords_pool.json から優先度付きでキーワードを取得
+    優先順：新ジャンル > 高スコアキーワード
+    戻り値: [(keyword, category, related_kws), ...]
+    """
+    keywords_pool_path = Path("scripts/keywords_pool.json")
+
+    if not keywords_pool_path.exists():
+        print("WARNING: keywords_pool.json が見つかりません")
+        return []
+
+    try:
+        pool = json.loads(keywords_pool_path.read_text(encoding='utf-8'))
+
+        candidates = []
+
+        # すべてのカテゴリから pending キーワードを収集
+        for category, items in pool.items():
+            if not isinstance(items, list):
+                continue
+
+            for item in items:
+                if item.get('status') == 'pending' and item.get('keyword'):
+                    # 優先度スコア計算
+                    priority = item.get('score', 0)
+
+                    # 新ジャンル（genre_name を持つ）なら優先度UP
+                    if item.get('genre_name'):
+                        priority += 50
+
+                    candidates.append({
+                        'keyword': item.get('keyword'),
+                        'category': category,
+                        'related_kws': item.get('keywords', []) if isinstance(item.get('keywords'), list) else [],
+                        'priority': priority,
+                        'item': item  # 元のアイテムを保持
+                    })
+
+        # 優先度でソート（降順）
+        candidates.sort(key=lambda x: x['priority'], reverse=True)
+
+        # 上位 count 個を返す
+        result = []
+        for i, c in enumerate(candidates[:count]):
+            result.append((c['keyword'], c['category'], c['related_kws']))
+
+        return result
+
+    except Exception as e:
+        print(f"ERROR: keywords_pool.json 読み込み失敗: {e}")
+        return []
+
+
+def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -> None:
+    """keywords_pool.json のキーワードの status を更新"""
+    keywords_pool_path = Path("scripts/keywords_pool.json")
+
+    if not keywords_pool_path.exists():
+        return
+
+    try:
+        pool = json.loads(keywords_pool_path.read_text(encoding='utf-8'))
+
+        for category, items in pool.items():
+            if not isinstance(items, list):
+                continue
+
+            for item in items:
+                if item.get('keyword') == keyword:
+                    item['status'] = new_status
+                    break
+
+        keywords_pool_path.write_text(
+            json.dumps(pool, ensure_ascii=False, indent=2),
+            encoding='utf-8'
+        )
+
+    except Exception as e:
+        print(f"WARNING: status 更新失敗: {e}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成")
     parser.add_argument("--topic", type=str, help="記事にするトピック（例: 'Claude Codeソースコード流出'）")
     parser.add_argument("--news", action="store_true", help="RSSから最新ニュースを取得して記事生成")
     parser.add_argument("--auto", action="store_true", help="対話なしで自動実行（--newsと組み合わせてランダム選択）")
+    parser.add_argument("--auto-discover", type=int, metavar="N", help="キーワード自動発掘で N 個の記事を生成（優先度付け）")
     args = parser.parse_args()
 
     print("記事生成を開始します...")
 
-    if args.topic:
+    if args.auto_discover:
+        # 自動発掘モード：N 個の記事を生成
+        print(f"\n自動発掘モード: {args.auto_discover} 記事を生成します")
+
+        keywords = load_keywords_from_pool(count=args.auto_discover)
+
+        if not keywords:
+            print("ERROR: keywords_pool.json にキーワードがありません")
+            print("先に: python scripts/discover_keywords.py --update を実行してください")
+            sys.exit(1)
+
+        for i, (keyword, category, related_kws) in enumerate(keywords, 1):
+            print(f"\n[{i}/{args.auto_discover}] キーワード: {keyword}")
+            print("Claude APIで記事生成中...")
+
+            try:
+                content = generate_article(keyword, related_kws if related_kws else [keyword], category)
+                output_path = save_article(content, category, keyword, category=category, source='auto-discover')
+                print(f"✓ 完了: {output_path}")
+
+                # status を completed に更新
+                update_keyword_status_in_pool(keyword, 'completed')
+
+                # レート制限対策
+                if i < args.auto_discover:
+                    time.sleep(3)
+
+            except Exception as e:
+                print(f"✗ エラー: {e}")
+
+    elif args.topic:
         # トピック直接指定モード
         print(f"トピック: {args.topic}")
         print("Claude APIで記事生成中...")

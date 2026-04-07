@@ -2,7 +2,7 @@
 title: 'Midjourney使い方完全ガイド【2026年】AI画像生成を初心者が始める方法'
 description: 'Midjourneyの使い方を初心者向けに解説。登録方法・プロンプトの書き方・料金・稼ぎ方まで徹底解説します。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-midjourney-guide.jpg'
+heroImage: '/images/blog/2026-04-03-midjourney-guide.jpg'
 genre: 'AIツール'
 ---
 

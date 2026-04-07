@@ -2,7 +2,7 @@
 title: 'AI副業おすすめ5選【2026年】初心者が月5万円稼ぐ具体的な方法'
 description: 'AI副業で月5万円稼ぐ方法を初心者向けに解説。ChatGPT・Claudeを使った副業5選と始め方、収益化のコツを徹底解説。'
 pubDate: '2026-04-02'
-heroImage: '/affiliate_site/images/blog/2026-04-02-ai-fukugyou.jpg'
+heroImage: '/images/blog/2026-04-02-ai-fukugyou.jpg'
 genre: '副業'
 ---
 

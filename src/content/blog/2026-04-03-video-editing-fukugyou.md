@@ -2,7 +2,7 @@
 title: '動画編集副業の始め方【2026年】初心者が月5万円稼ぐまでのロードマップ'
 description: '動画編集副業の始め方を初心者向けに解説。おすすめソフト・学習方法・案件獲得・AI活用まで月5万円稼ぐ手順を徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-video-editing-fukugyou.jpg'
+heroImage: '/images/blog/2026-04-03-video-editing-fukugyou.jpg'
 genre: '副業'
 ---
 

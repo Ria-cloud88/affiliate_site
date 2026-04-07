@@ -2,7 +2,7 @@
 title: 'ブログアフィリエイト始め方【2026年完全ガイド】初心者が月3万円稼ぐまでの手順'
 description: 'ブログアフィリエイトの始め方を初心者向けに解説。無料ブログからAI活用まで、月3万円稼ぐまでのロードマップを公開。'
 pubDate: '2026-04-02'
-heroImage: '/affiliate_site/images/blog/2026-04-02-affiliate-blog.jpg'
+heroImage: '/images/blog/2026-04-02-affiliate-blog.jpg'
 genre: '副業'
 ---
 

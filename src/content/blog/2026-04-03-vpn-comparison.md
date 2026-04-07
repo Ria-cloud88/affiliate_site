@@ -2,7 +2,7 @@
 title: 'VPNおすすめ比較【2026年】セキュリティ・海外コンテンツ・速度を徹底比較'
 description: '2026年最新のVPNおすすめを比較。NordVPN・ExpressVPN・Surfsharkなどの料金・速度・安全性を初心者向けに解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-vpn-comparison.jpg'
+heroImage: '/images/blog/2026-04-03-vpn-comparison.jpg'
 genre: '生活改善'
 ---
 

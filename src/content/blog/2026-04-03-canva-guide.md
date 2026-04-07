@@ -2,7 +2,7 @@
 title: 'Canva使い方完全ガイド【2026年】デザイン初心者がプロ品質の画像を作る方法'
 description: 'Canvaの使い方を初心者向けに解説。無料でSNS画像・バナー・プレゼンを作る方法・AI機能の活用・副業への応用まで徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-canva-guide.jpg'
+heroImage: '/images/blog/2026-04-03-canva-guide.jpg'
 genre: 'AIツール'
 ---
 

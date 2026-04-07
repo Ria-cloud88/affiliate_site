@@ -2,7 +2,7 @@
 title: 'Kindle出版で稼ぐ方法【2026年】AIで電子書籍を書いて副業収入を得る手順'
 description: 'Kindle Direct Publishing（KDP）でAIを使って電子書籍を出版・副業収入を得る方法を初心者向けに解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-kindle-publishing.jpg'
+heroImage: '/images/blog/2026-04-03-kindle-publishing.jpg'
 genre: '副業'
 ---
 

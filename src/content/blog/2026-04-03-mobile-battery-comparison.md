@@ -2,7 +2,7 @@
 title: 'モバイルバッテリーおすすめ比較10選【2026年】大容量・軽量・急速充電'
 description: '2026年最新モバイルバッテリーおすすめ10選を比較。容量・重さ・急速充電・コスパを初心者向けに徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-mobile-battery-comparison.jpg'
+heroImage: '/images/blog/2026-04-03-mobile-battery-comparison.jpg'
 genre: 'ガジェット'
 ---
 

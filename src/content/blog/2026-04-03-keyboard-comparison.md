@@ -2,7 +2,7 @@
 title: 'メカニカルキーボードおすすめ比較10選【2026年】テレワーク・ゲーミング用途別'
 description: '2026年最新メカニカルキーボードおすすめ10選を比較。テレワーク・ゲーミング・コスパ重視など用途別に初心者向けに徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-keyboard-comparison.jpg'
+heroImage: '/images/blog/2026-04-03-keyboard-comparison.jpg'
 genre: 'ガジェット'
 ---
 

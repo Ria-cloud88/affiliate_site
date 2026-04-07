@@ -2,7 +2,7 @@
 title: '在宅ワーク環境構築ガイド【2026年】生産性が3倍になるデスク周りのおすすめ'
 description: '在宅ワーク環境の整え方を初心者向けに解説。デスク・椅子・モニター・周辺機器のおすすめと予算別の揃え方を徹底解説。'
 pubDate: '2026-04-03'
-heroImage: '/affiliate_site/images/blog/2026-04-03-remote-work-setup.jpg'
+heroImage: '/images/blog/2026-04-03-remote-work-setup.jpg'
 genre: 'ガジェット'
 ---
 

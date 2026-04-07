@@ -26,18 +26,17 @@ jobs:
           python-version: '3.11'
 
       - name: 依存パッケージインストール
-        run: pip install anthropic
+        run: pip install anthropic pytrends
 
-      - name: 記事生成（RSSニュースからランダム選択）
+      - name: キーワード自動発掘 + 記事生成（優先度付け）
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          COUNT=${{ github.event.inputs.count || '1' }}
-          for i in $(seq 1 $COUNT); do
-            echo "=== 記事 $i/$COUNT 生成中 ==="
-            python scripts/generate_article.py --news --auto
-            sleep 3
-          done
+          # キーワード発掘＆プール更新
+          python scripts/discover_keywords.py --limit 30 --update
+
+          # 優先度付きで記事生成（デフォルト2記事）
+          python scripts/generate_article.py --auto-discover 2
 
       - name: 生成した記事をコミット＆プッシュ
         run: |
