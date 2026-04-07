@@ -10,7 +10,7 @@ genre: 'ガジェット'
 
 結論：**デスク周りに5〜10万円投資するだけで、生産性が劇的に向上し、長期的なQOLが大幅に改善されます**。
 
-> テレワークに必須のガジェットは[ワイヤレスイヤホンおすすめ比較](/affiliate_site/blog/2026-04-02-wireless-earphone/)と[モバイルバッテリーおすすめ比較](/affiliate_site/blog/2026-04-03-mobile-battery-comparison/)もご覧ください。
+> テレワークに必須のガジェットは[ワイヤレスイヤホンおすすめ比較](/blog/2026-04-02-wireless-earphone/)と[モバイルバッテリーおすすめ比較](/blog/2026-04-03-mobile-battery-comparison/)もご覧ください。
 
 ## 在宅ワーク環境の優先順位
 
@@ -88,7 +88,7 @@ genre: 'ガジェット'
 - **Notion AI**: タスク管理・文書作成を効率化
 - **ChatGPT**: メール・報告書の下書きを自動生成
 
-> AIツールの活用法は[AIツールおすすめ5選比較](/affiliate_site/blog/2026-04-02-ai-tools-comparison/)をご覧ください。
+> AIツールの活用法は[AIツールおすすめ5選比較](/blog/2026-04-02-ai-tools-comparison/)をご覧ください。
 
 ## まとめ
 

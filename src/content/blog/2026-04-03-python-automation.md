@@ -10,7 +10,7 @@ genre: '自動化ツール'
 
 結論：**ChatGPTがコードを書いてくれる時代なので、Pythonの文法を完璧に知らなくても自動化できます**。
 
-> ノーコード自動化を先に試したい方は[Zapier使い方入門](/affiliate_site/blog/2026-04-02-zapier-guide/)や[GAS入門](/affiliate_site/blog/2026-04-03-gas-guide/)をご覧ください。
+> ノーコード自動化を先に試したい方は[Zapier使い方入門](/blog/2026-04-02-zapier-guide/)や[GAS入門](/blog/2026-04-03-gas-guide/)をご覧ください。
 
 ## PythonとZapier・GASの違い
 
@@ -122,4 +122,4 @@ pip install pandas openpyxl requests beautifulsoup4
 
 まずは「ダウンロードフォルダの整理スクリプト」を動かしてみてください。動いた瞬間の感動が、Python学習を続けるモチベーションになります。
 
-> AI×副業の組み合わせは[AI副業おすすめ5選](/affiliate_site/blog/2026-04-02-ai-fukugyou/)をご覧ください。
+> AI×副業の組み合わせは[AI副業おすすめ5選](/blog/2026-04-02-ai-fukugyou/)をご覧ください。

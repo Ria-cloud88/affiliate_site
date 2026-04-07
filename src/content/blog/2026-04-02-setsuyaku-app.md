@@ -98,7 +98,7 @@ genre: '生活改善'
 
 → AIが個人の支出パターンを分析して具体的な節約アドバイスをくれます。
 
-> AIツールの活用方法は[ChatGPT完全ガイド](/affiliate_site/blog/2026-04-02-chatgpt-guide/)をご覧ください。
+> AIツールの活用方法は[ChatGPT完全ガイド](/blog/2026-04-02-chatgpt-guide/)をご覧ください。
 
 ## 月3万円節約するプラン
 

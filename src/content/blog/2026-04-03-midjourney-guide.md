@@ -10,7 +10,7 @@ genre: 'AIツール'
 
 結論：**MidjourneyはプロンプトをDiscordに入力するだけで、商用利用可能な高品質画像が生成できる最強のAI画像ツール**です。
 
-> AI副業での画像生成活用は[AI副業おすすめ5選](/affiliate_site/blog/2026-04-02-ai-fukugyou/)もご覧ください。
+> AI副業での画像生成活用は[AI副業おすすめ5選](/blog/2026-04-02-ai-fukugyou/)もご覧ください。
 
 ## Midjourneyとは？
 

@@ -10,7 +10,7 @@ genre: '副業'
 
 結論：**AIライティング・AIブログ・動画台本作成**の3つから始めるのが最速です。初心者でも1〜2ヶ月で月5万円は十分に狙えます。
 
-> まずAIツールの使い方を学びたい方は[ChatGPT完全ガイド](/affiliate_site/blog/2026-04-02-chatgpt-guide/)と[Claude vs ChatGPT比較](/affiliate_site/blog/2026-04-02-claude-vs-chatgpt/)をご覧ください。
+> まずAIツールの使い方を学びたい方は[ChatGPT完全ガイド](/blog/2026-04-02-chatgpt-guide/)と[Claude vs ChatGPT比較](/blog/2026-04-02-claude-vs-chatgpt/)をご覧ください。
 
 ## AI副業が今最もアツい理由
 
@@ -49,7 +49,7 @@ genre: '副業'
 
 **収入目安**: 月50記事 × 平均100円/記事 = 月5,000円〜（成長次第で青天井）
 
-> ブログアフィリエイトの詳しい始め方は[ブログアフィリエイト完全ガイド](/affiliate_site/blog/2026-04-02-affiliate-blog/)をご覧ください。
+> ブログアフィリエイトの詳しい始め方は[ブログアフィリエイト完全ガイド](/blog/2026-04-02-affiliate-blog/)をご覧ください。
 
 ---
 

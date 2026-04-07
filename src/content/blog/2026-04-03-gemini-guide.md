@@ -10,7 +10,7 @@ genre: 'AIツール'
 
 結論：**GeminiはGoogleサービスとの連携が最強で、Gmail・Docs・スプレッドシートユーザーには必須のAI**です。
 
-> AIツール全体の比較は[AIツールおすすめ5選比較](/affiliate_site/blog/2026-04-02-ai-tools-comparison/)をご覧ください。
+> AIツール全体の比較は[AIツールおすすめ5選比較](/blog/2026-04-02-ai-tools-comparison/)をご覧ください。
 
 ## Geminiとは？
 
@@ -61,7 +61,7 @@ Gmailを開く→メールを選択→「Geminiで返信」→下書きを自動
 | 最新情報検索 | Gemini or Perplexity |
 | 副業全般 | ChatGPT + Claude |
 
-> ChatGPTとの詳細比較は[Claude vs ChatGPT比較](/affiliate_site/blog/2026-04-02-claude-vs-chatgpt/)もご覧ください。
+> ChatGPTとの詳細比較は[Claude vs ChatGPT比較](/blog/2026-04-02-claude-vs-chatgpt/)もご覧ください。
 
 ## まとめ
 

@@ -10,7 +10,7 @@ genre: 'AIツール'
 
 結論：**Canvaはテンプレートを選んで文字を変えるだけでプロ品質のデザインが作れる最強の無料ツール**です。
 
-> AI画像生成との組み合わせは[Midjourney使い方ガイド](/affiliate_site/blog/2026-04-03-midjourney-guide/)もご覧ください。
+> AI画像生成との組み合わせは[Midjourney使い方ガイド](/blog/2026-04-03-midjourney-guide/)もご覧ください。
 
 ## Canvaとは？
 
@@ -80,7 +80,7 @@ Canva公式サイトで無料登録（Googleアカウントで1クリック）
 - Canvaを使ったバナー制作・SNS素材作成の受注
 - 1案件5,000〜50,000円
 
-> Canvaで作ったデザインをブログで活用する方法は[ブログアフィリエイト完全ガイド](/affiliate_site/blog/2026-04-02-affiliate-blog/)をご覧ください。
+> Canvaで作ったデザインをブログで活用する方法は[ブログアフィリエイト完全ガイド](/blog/2026-04-02-affiliate-blog/)をご覧ください。
 
 ## まとめ
 
