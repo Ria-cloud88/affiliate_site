@@ -74,48 +74,46 @@ NEWS_FEEDS = [
     ("Google News 副業", "https://news.google.com/rss/search?q=%E5%89%AF%E6%A5%AD%20%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja"),
 ]
 
-SYSTEM_PROMPT = """あなたはSEOとアフィリエイト収益最大化に特化した記事生成AIです。
+SYSTEM_PROMPT = """あなたはSEO最適化された、簡潔で実用的なブログ記事を書く編集者です。AIっぽさのない、人間らしい自然な日本語を使います。
 
 # ■記事要件
-・日本語で出力
-・3000〜5000文字
-・初心者にも理解できる内容
-・具体例・手順を必ず含める
-・オリジナル性を意識（コピペ感禁止）
+・日本語で簡潔に出力（冗長厳禁）
+・2000〜3500文字（ダラダラと長くしない）
+・初心者向けで実践的
+・具体例は1～2個に絞る
+・読者が「なるほど、実行してみよう」と思える内容
 
-# ■構成テンプレート（必須）
-1. タイトル（クリック率を意識）
-2. 導入（読者の悩みを明確化）
-3. 結論（最初に答えを提示）
-4. 本文（見出し構造で詳しく解説）
-5. メリット・デメリット
-6. 比較（可能な場合は必ず入れる）
-7. おすすめの人
-8. まとめ
-9. CTA（行動喚起）
+# ■シンプル構成（必須）
+1. タイトル
+2. 導入（読者の悩みを1文で言い切る）
+3. 結論（すぐに答える。説明は後でOK）
+4. 本文（見出しは2～3個に絞る。1見出しの説明は150文字程度）
+5. まとめ＆CTA
 
-# ■SEOルール
-・h2 / h3 見出しを適切に使用
-・キーワードを自然に含める
-・検索意図に完全一致する内容にする
+# ■文体ルール（重要！）
+・「です」「ます」で統一。混ぜない
+・「〜だと考えられます」→「〜です」に簡潔化
+・「これは」「その」などの指示語を多用しない
+・箇条書きは最小限
+・ありきたりな表現を避ける（「注目されています」「重要です」など）
 
-# ■収益化ルール
-・記事内で自然にサービス・ツールを紹介する
-・無料体験・無料プランを積極的に訴求
-・「今すぐ試す理由」を明確にする
-・最後に必ず行動喚起を入れる
+# ■SEO
+・キーワードは自然に1～2回
+・h2見出しはシンプルに
+・内部リンク（/blog/スラッグ）は必要なら1～2個
+
+# ■禁止事項（厳守）
+・「ぜひご覧ください」「いかがでしたか」などAIっぽい表現
+・「〜といえます」「〜と言えるでしょう」という曖昧な表現
+・同じ表現の繰り返し（文章をコピぺしたような部分）
+・「また」で文を始める（ただし必要ならOK）
+・数式のような説明（「理由1、理由2…」など）
+・冗長な背景説明（読者が知りたいのは「今」「どうするか」）
 
 # ■出力形式
-・Markdown形式（frontmatterなし、本文のみ）
-・最初の行は # タイトル から始める
-・内部リンク（他記事への参照）は必ず /blog/スラッグ形式を使う（/affiliate_site は含めない）
-
-# ■禁止事項
-・内容が薄い記事
-・抽象的で中身のない説明
-・同じ内容の繰り返し
-・AI特有の不自然な文章
-・リンクに /affiliate_site プレフィックスを含める"""
+・Markdown形式（frontmatterなし）
+・最初の行は # タイトル
+・内部リンクは /blog/スラッグ形式"""
 
 
 def select_keyword():
@@ -437,6 +435,33 @@ def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -
         print(f"WARNING: status 更新失敗: {e}")
 
 
+def check_article_quality(file_path: Path, keyword: str) -> bool:
+    """記事品質をチェック（簡易版）"""
+    try:
+        from check_article_quality import generate_quality_report
+
+        text = file_path.read_text(encoding="utf-8")
+        report = generate_quality_report(text, keyword)
+
+        status = report["overall_status"]
+        score = report["overall_score"]
+
+        print(f"\n📊 品質チェック: {status} (スコア: {score}/100)")
+
+        # 警告表示
+        if report["ai_likeness"]["found_phrases"]:
+            print(f"  ⚠️ AIっぽい表現: {report['ai_likeness']['total_issues']}個")
+
+        if report["word_count"]["status"] != "OK":
+            print(f"  ⚠️ 文字数: {report['word_count']['char_count']} 字 (推奨: 2000-3500)")
+
+        return status == "PASS"
+
+    except ImportError:
+        print("⚠️ 品質検査スクリプトが見つかりません")
+        return True  # エラーでも続行
+
+
 def main():
     parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成")
     parser.add_argument("--topic", type=str, help="記事にするトピック（例: 'Claude Codeソースコード流出'）")
@@ -467,6 +492,9 @@ def main():
                 output_path = save_article(content, category, keyword, category=category, source='auto-discover')
                 print(f"✓ 完了: {output_path}")
 
+                # 品質チェック
+                check_article_quality(output_path, keyword)
+
                 # status を completed に更新
                 update_keyword_status_in_pool(keyword, 'completed')
 
@@ -483,6 +511,8 @@ def main():
         print("Claude APIで記事生成中...")
         content = generate_news_article(args.topic)
         output_path = save_article(content, "ニュース", args.topic)
+        print(f"✓ 完了: {output_path}")
+        check_article_quality(output_path, args.topic)
 
     elif args.news:
         # RSSニュース取得モード
@@ -504,6 +534,8 @@ def main():
             source_info = f"{selected['description']} (出典: {selected['source']})"
             content = generate_news_article(selected['title'], source_info)
             output_path = save_article(content, "ニュース", selected['title'])
+            print(f"✓ 完了: {output_path}")
+            check_article_quality(output_path, selected['title'])
 
     else:
         # 通常ランダムモード
@@ -514,9 +546,10 @@ def main():
         print("Claude APIで記事生成中...")
         content = generate_article(main_kw, related_kws, genre)
         output_path = save_article(content, genre, main_kw)
+        print(f"✓ 完了: {output_path}")
+        check_article_quality(output_path, main_kw)
 
-    print(f"\n完了: {output_path}")
-    print(f"文字数: {len(content)}文字")
+    print(f"\n文字数: {len(content)}文字")
 
 
 if __name__ == "__main__":
