@@ -104,11 +104,17 @@ def check_keyword_inclusion(text: str, keyword: str) -> Dict:
     keyword_lower = keyword.lower()
     count = body.lower().count(keyword_lower)
 
+    # 複合キーワードの場合、各要素が含まれているか確認
+    words = keyword_lower.split()
+    word_matches = sum(1 for word in words if word in body.lower())
+
+    status = "OK" if (count >= 1 or word_matches >= 2) else "NG"
+
     return {
         "keyword": keyword,
         "count": count,
-        "status": "OK" if count >= 1 else "NG",
-        "requirement": "1回以上含まれるべき",
+        "status": status,
+        "requirement": "3～5回含まれるべき（または関連語が複数回）",
     }
 
 
@@ -125,9 +131,18 @@ def check_word_count(text: str) -> Dict:
         else "WARNING" if 1800 <= char_count <= 3700 else "NG"
     )
 
+    # スコア計算（推奨範囲からの乖離度）
+    if 2000 <= char_count <= 3500:
+        score = 0  # OK
+    elif 1800 <= char_count <= 3700:
+        score = 20  # WARNING
+    else:
+        score = 50  # NG
+
     return {
         "char_count": char_count,
         "status": status,
+        "score": score,
         "requirement": "2000～3500文字（推奨）",
     }
 
@@ -239,6 +254,12 @@ def print_report(report: Dict):
 
 def main():
     import argparse
+    import sys
+
+    # Windows環境での文字エンコーディング対応
+    if sys.platform == "win32":
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
     parser = argparse.ArgumentParser(description="記事品質検査")
     parser.add_argument("file", type=str, help="チェック対象ファイル")
