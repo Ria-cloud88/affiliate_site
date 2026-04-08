@@ -32,11 +32,11 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          # キーワード発掘＆プール更新（失敗時はスキップ）
-          python scripts/discover_keywords.py --limit 30 --update || echo "Warning: discover_keywords failed, continuing with existing pool"
+          # キーワードプールを確実に初期化（builtin）
+          python scripts/init_keywords_pool.py
 
-          # キーワードプールが空の場合は初期化
-          python scripts/init_keywords_pool.py || true
+          # キーワード発掘＆プール更新（オプション・失敗許容）
+          python scripts/discover_keywords.py --limit 30 --update || echo "Note: discover_keywords skipped"
 
           # 優先度付きで記事生成（デフォルト2記事）
           python scripts/generate_article.py --auto-discover 2
