@@ -314,6 +314,52 @@ def generate_hero_image(title: str, genre: str, slug: str) -> str | None:
     return None
 
 
+def embed_images_in_article(content: str, genre: str, slug: str) -> str:
+    """記事の各見出しに画像を埋め込む"""
+    import urllib.parse as up
+
+    # ## で始まる見出しを抽出（最大3個）
+    headings = re.findall(r'^## (.+)$', content, re.MULTILINE)[:3]
+
+    img_dir = Path("public/images/blog")
+    img_dir.mkdir(parents=True, exist_ok=True)
+
+    images_to_embed = {}
+
+    for i, heading in enumerate(headings):
+        img_num = i + 1
+        img_filename = f"{slug}-{img_num}.jpg"
+        img_path = img_dir / img_filename
+
+        # 画像キーワード生成（見出しから）
+        seed = abs(hash(f"{slug}-{heading}")) % 9999
+        prompt = f"article section image, {genre}, {heading[:60]}, professional, 16:9"
+        kw = GENRE_KEYWORDS.get(genre, "technology,business")
+
+        # 画像取得を試みる
+        try:
+            pollinations_url = f"https://image.pollinations.ai/prompt/{up.quote(prompt)}?width=800&height=400&nologo=true&seed={seed}"
+            req = urllib.request.Request(pollinations_url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                data = resp.read()
+            if len(data) >= 1000:
+                img_path.write_bytes(data)
+                images_to_embed[heading] = f"/images/blog/{img_filename}"
+                print(f"  見出し画像取得完了 ({i+1}/{len(headings)}): {img_filename}")
+        except Exception as e:
+            print(f"  見出し画像失敗 ({heading}): {type(e).__name__}")
+
+    # 見出し後に画像を埋め込む
+    if images_to_embed:
+        for heading, img_url in images_to_embed.items():
+            # ## <見出し> を見つけて、その直後に画像を挿入
+            pattern = f"(^## {re.escape(heading)}$)"
+            replacement = f"\\1\n\n![{heading}]({img_url})"
+            content = re.sub(pattern, replacement, content, count=1, flags=re.MULTILINE)
+
+    return content
+
+
 def save_article(content: str, genre: str, main_kw: str, category: str = None, source: str = None) -> Path:
     """記事をMarkdownファイルとして保存"""
     title = extract_title(content)
@@ -345,6 +391,13 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
 
     # h1タイトルを除去した本文
     article_body = body_without_title
+
+    # 本文に見出し画像を埋め込む
+    try:
+        print("見出し画像を生成中...")
+        article_body = embed_images_in_article(article_body, genre, slug)
+    except Exception as e:
+        print(f"見出し画像埋め込み失敗: {e}")
 
     full_content = frontmatter + article_body
 
@@ -482,6 +535,7 @@ def main():
         # 自動発掘モード：N 個の記事を生成
         print(f"\n自動発掘モード: {args.auto_discover} 記事を生成します")
 
+        # 事前に必要な数のキーワードを全部ロード
         keywords = load_keywords_from_pool(count=args.auto_discover)
 
         if not keywords:
@@ -489,6 +543,11 @@ def main():
             print("先に: python scripts/discover_keywords.py --update を実行してください")
             sys.exit(1)
 
+        # ロードしたキーワード数を記録（途中で更新されないように）
+        available_count = len(keywords)
+        print(f"利用可能なキーワード: {available_count}個")
+
+        generated_count = 0
         for i, (keyword, category, related_kws) in enumerate(keywords, 1):
             print(f"\n[{i}/{args.auto_discover}] キーワード: {keyword}")
             print("Claude APIで記事生成中...")
@@ -503,13 +562,16 @@ def main():
 
                 # status を completed に更新
                 update_keyword_status_in_pool(keyword, 'completed')
+                generated_count += 1
 
                 # レート制限対策
-                if i < args.auto_discover:
+                if i < len(keywords):
                     time.sleep(3)
 
             except Exception as e:
                 print(f"✗ エラー: {e}")
+
+        print(f"\n生成完了: {generated_count}/{args.auto_discover}記事")
 
     elif args.topic:
         # トピック直接指定モード

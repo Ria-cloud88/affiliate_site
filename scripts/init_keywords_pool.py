@@ -80,4 +80,19 @@ def init_pool():
         print(f"[OK] Initialized {total} keywords")
 
 if __name__ == "__main__":
-    init_pool()
+    import sys
+    if "--force" in sys.argv or not Path("scripts/keywords_pool.json").exists():
+        init_pool()
+    else:
+        # Check if pool is mostly empty or corrupted
+        try:
+            pool = json.loads(Path("scripts/keywords_pool.json").read_text(encoding='utf-8'))
+            total_keywords = sum(len(items) if isinstance(items, list) else 0 for items in pool.values())
+            if total_keywords < 5:  # Less than 5 keywords: reinitialize
+                print("Pool is too small, reinitializing...")
+                init_pool()
+            else:
+                print(f"Pool exists with {total_keywords} keywords, skipping reinitialization")
+        except Exception as e:
+            print(f"Pool corrupted or unreadable, reinitializing...")
+            init_pool()
