@@ -1,16 +1,404 @@
 {
-  "plants": [
+  "AIツール": [
     {
-      "keyword": "観葉植物 冬 育て方 コツ",
-      "category": "plants",
-      "source": "auto-discover",
-      "score": 85.0,
-      "discovered_at": "2026-04-07T00:00:00Z",
-      "status": "pending"
+      "keyword": "ChatGPT 使い方 初心者 完全ガイド",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418796",
+      "status": "pending",
+      "keywords": [
+        "ChatGPT",
+        "AI",
+        "無料",
+        "活用法"
+      ]
+    },
+    {
+      "keyword": "Claude AI 使い方 ChatGPTとの違い 比較",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418809",
+      "status": "pending",
+      "keywords": [
+        "Claude",
+        "Anthropic",
+        "AI比較",
+        "無料"
+      ]
+    },
+    {
+      "keyword": "Perplexity AI 使い方 検索 おすすめ",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418810",
+      "status": "pending",
+      "keywords": [
+        "Perplexity",
+        "AI検索",
+        "無料",
+        "使い方"
+      ]
+    },
+    {
+      "keyword": "Gemini 使い方 Google AI 初心者",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418812",
+      "status": "pending",
+      "keywords": [
+        "Gemini",
+        "Google",
+        "無料",
+        "AI"
+      ]
+    },
+    {
+      "keyword": "AI画像生成 おすすめツール 比較 2024",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418813",
+      "status": "pending",
+      "keywords": [
+        "Midjourney",
+        "Stable Diffusion",
+        "DALL-E",
+        "無料"
+      ]
+    },
+    {
+      "keyword": "NotionAI 使い方 効率化 メモ",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418813",
+      "status": "pending",
+      "keywords": [
+        "Notion",
+        "AI",
+        "メモ",
+        "生産性"
+      ]
+    },
+    {
+      "keyword": "Copilot 使い方 プログラミング 効率化",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418814",
+      "status": "pending",
+      "keywords": [
+        "GitHub Copilot",
+        "AI",
+        "コーディング",
+        "無料"
+      ]
     }
   ],
-  "pets": [],
-  "mindset": [],
-  "automation": [],
-  "monetize": []
+  "自動化ツール": [
+    {
+      "keyword": "Zapier 使い方 自動化 初心者 おすすめ",
+      "category": "自動化ツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418817",
+      "status": "pending",
+      "keywords": [
+        "Zapier",
+        "自動化",
+        "無料",
+        "連携"
+      ]
+    },
+    {
+      "keyword": "Make (Integromat) 使い方 Zapierとの違い",
+      "category": "自動化ツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418817",
+      "status": "pending",
+      "keywords": [
+        "Make",
+        "Zapier",
+        "自動化",
+        "比較"
+      ]
+    },
+    {
+      "keyword": "n8n 使い方 無料 自動化 ツール",
+      "category": "自動化ツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418818",
+      "status": "pending",
+      "keywords": [
+        "n8n",
+        "無料",
+        "自動化",
+        "オープンソース"
+      ]
+    },
+    {
+      "keyword": "Google Apps Script 使い方 入門",
+      "category": "自動化ツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418819",
+      "status": "pending",
+      "keywords": [
+        "GAS",
+        "Google",
+        "自動化",
+        "無料"
+      ]
+    },
+    {
+      "keyword": "Python 自動化 初心者 おすすめ 使い方",
+      "category": "自動化ツール",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418820",
+      "status": "pending",
+      "keywords": [
+        "Python",
+        "自動化",
+        "プログラミング",
+        "無料"
+      ]
+    }
+  ],
+  "副業": [
+    {
+      "keyword": "AI副業 おすすめ 初心者 稼ぎ方 2024",
+      "category": "副業",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418820",
+      "status": "pending",
+      "keywords": [
+        "AI",
+        "副業",
+        "在宅",
+        "稼ぐ"
+      ]
+    },
+    {
+      "keyword": "ブログ アフィリエイト 始め方 初心者 収益化",
+      "category": "副業",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418821",
+      "status": "pending",
+      "keywords": [
+        "ブログ",
+        "アフィリエイト",
+        "副業",
+        "収益"
+      ]
+    },
+    {
+      "keyword": "クラウドソーシング おすすめ 比較 副業",
+      "category": "副業",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418822",
+      "status": "pending",
+      "keywords": [
+        "クラウドワークス",
+        "ランサーズ",
+        "副業",
+        "在宅"
+      ]
+    },
+    {
+      "keyword": "動画編集 副業 始め方 ソフト おすすめ",
+      "category": "副業",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418823",
+      "status": "pending",
+      "keywords": [
+        "動画編集",
+        "副業",
+        "YouTube",
+        "稼ぐ"
+      ]
+    },
+    {
+      "keyword": "プログラミング 副業 初心者 おすすめ言語",
+      "category": "副業",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418823",
+      "status": "pending",
+      "keywords": [
+        "プログラミング",
+        "副業",
+        "フリーランス",
+        "稼ぐ"
+      ]
+    },
+    {
+      "keyword": "せどり 副業 始め方 初心者 稼ぎ方",
+      "category": "副業",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418824",
+      "status": "pending",
+      "keywords": [
+        "せどり",
+        "副業",
+        "Amazon",
+        "転売"
+      ]
+    }
+  ],
+  "ガジェット": [
+    {
+      "keyword": "ワイヤレスイヤホン おすすめ 比較 2024",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418825",
+      "status": "pending",
+      "keywords": [
+        "イヤホン",
+        "AirPods",
+        "コスパ",
+        "ノイキャン"
+      ]
+    },
+    {
+      "keyword": "メカニカルキーボード おすすめ 比較 初心者",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418826",
+      "status": "pending",
+      "keywords": [
+        "キーボード",
+        "メカニカル",
+        "テレワーク",
+        "コスパ"
+      ]
+    },
+    {
+      "keyword": "モバイルバッテリー おすすめ 大容量 比較",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418826",
+      "status": "pending",
+      "keywords": [
+        "モバイルバッテリー",
+        "充電",
+        "コスパ",
+        "軽量"
+      ]
+    },
+    {
+      "keyword": "Webカメラ おすすめ テレワーク 比較",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418827",
+      "status": "pending",
+      "keywords": [
+        "Webカメラ",
+        "テレワーク",
+        "リモート",
+        "HD"
+      ]
+    },
+    {
+      "keyword": "スマートスピーカー おすすめ 比較 Echo Alexa",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418828",
+      "status": "pending",
+      "keywords": [
+        "Echo",
+        "Alexa",
+        "スマートホーム",
+        "音声"
+      ]
+    }
+  ],
+  "生活改善": [
+    {
+      "keyword": "節約 アプリ おすすめ 家計管理 比較",
+      "category": "生活改善",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418829",
+      "status": "pending",
+      "keywords": [
+        "節約",
+        "家計",
+        "アプリ",
+        "無料"
+      ]
+    },
+    {
+      "keyword": "タスク管理 アプリ おすすめ 比較 2024",
+      "category": "生活改善",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418830",
+      "status": "pending",
+      "keywords": [
+        "Todoist",
+        "Notion",
+        "タスク",
+        "生産性"
+      ]
+    },
+    {
+      "keyword": "睡眠 改善 アプリ おすすめ 効果",
+      "category": "生活改善",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418831",
+      "status": "pending",
+      "keywords": [
+        "睡眠",
+        "アプリ",
+        "健康",
+        "改善"
+      ]
+    },
+    {
+      "keyword": "読書 習慣 アプリ Kindle おすすめ",
+      "category": "生活改善",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418831",
+      "status": "pending",
+      "keywords": [
+        "Kindle",
+        "読書",
+        "習慣",
+        "電子書籍"
+      ]
+    },
+    {
+      "keyword": "時間管理 テクニック 生産性 向上 方法",
+      "category": "生活改善",
+      "source": "builtin",
+      "score": 75.0,
+      "discovered_at": "2026-04-08T12:18:25.418832",
+      "status": "pending",
+      "keywords": [
+        "時間管理",
+        "ポモドーロ",
+        "生産性",
+        "効率化"
+      ]
+    }
+  ]
 }
