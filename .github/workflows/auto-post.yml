@@ -53,4 +53,4 @@ jobs:
         if: always()
         run: |
           npm install -g vercel
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
