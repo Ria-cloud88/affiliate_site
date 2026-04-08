@@ -391,6 +391,10 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     # h1タイトルを除去した本文
     article_body = body_without_title
 
+    # 「完成」マーカーなどの不要な末尾テキストを削除
+    article_body = re.sub(r'\n+完成\s*$', '', article_body)
+    article_body = re.sub(r'\n+---\s*$', '', article_body)
+
     # 本文に見出し画像を埋め込む
     try:
         print("見出し画像を生成中...")
