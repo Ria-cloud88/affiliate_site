@@ -591,25 +591,29 @@ def main():
         # 自動発掘モード：N 個の記事を生成
         print(f"\n自動発掘モード: {args.auto_discover} 記事を生成します")
 
-        # 事前に必要な数のキーワードを全部ロード
-        keywords = load_keywords_from_pool(count=args.auto_discover)
+        # 重複対策：指定数の2.5倍のキーワードを取得
+        fetch_count = max(args.auto_discover * 2, 10)
+        keywords = load_keywords_from_pool(count=fetch_count)
 
         if not keywords:
             print("ERROR: keywords_pool.json にキーワードがありません")
             print("先に: python scripts/discover_keywords.py --update を実行してください")
             sys.exit(1)
 
-        # ロードしたキーワード数を記録（途中で更新されないように）
         available_count = len(keywords)
-        print(f"利用可能なキーワード: {available_count}個")
+        print(f"利用可能なキーワード: {available_count}個（重複対策で拡張）")
 
         generated_count = 0
-        for i, (keyword, category, related_kws) in enumerate(keywords, 1):
-            print(f"\n[{i}/{args.auto_discover}] キーワード: {keyword}")
+        for keyword, category, related_kws in keywords:
+            # 指定数の記事が生成されたら終了
+            if generated_count >= args.auto_discover:
+                break
+
+            print(f"\n[{generated_count+1}/{args.auto_discover}] キーワード: {keyword}")
 
             # 重複チェック
             if check_duplicate_article(keyword):
-                print(f"✗ スキップ: 既存記事と重複")
+                print(f"  ⚠️ スキップ: 既存記事と重複 → 次のキーワードを試します")
                 update_keyword_status_in_pool(keyword, 'duplicate')
                 continue
 
@@ -628,13 +632,16 @@ def main():
                 generated_count += 1
 
                 # レート制限対策
-                if i < len(keywords):
-                    time.sleep(3)
+                time.sleep(3)
 
             except Exception as e:
                 print(f"✗ エラー: {e}")
+                # エラー時は次のキーワードへ
 
-        print(f"\n生成完了: {generated_count}/{args.auto_discover}記事")
+        if generated_count < args.auto_discover:
+            print(f"\n⚠️ 注意: {args.auto_discover}個中{generated_count}個のみ生成（重複またはエラー）")
+        else:
+            print(f"\n生成完了: {generated_count}/{args.auto_discover}記事")
 
     elif args.topic:
         # トピック直接指定モード
