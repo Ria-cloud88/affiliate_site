@@ -525,6 +525,27 @@ def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -
         print(f"WARNING: status 更新失敗: {e}")
 
 
+def check_duplicate_article(keyword: str) -> bool:
+    """既存記事との重複をチェック"""
+    blog_dir = Path("src/content/blog")
+
+    for article_file in blog_dir.glob("*.md"):
+        try:
+            content = article_file.read_text(encoding="utf-8")
+            # frontmatter からタイトルを抽出
+            match = re.search(r"^title:\s*['\"](.+?)['\"]", content, re.MULTILINE)
+            if match:
+                title = match.group(1)
+                # キーワードがタイトルに含まれているか確認
+                if keyword.split()[0] in title:
+                    print(f"  ⚠️ 重複検出: {article_file.name} (タイトル: {title[:50]}...)")
+                    return True
+        except Exception:
+            pass
+
+    return False
+
+
 def check_article_quality(file_path: Path, keyword: str) -> bool:
     """記事品質をチェック（簡易版）"""
     try:
@@ -581,6 +602,13 @@ def main():
         generated_count = 0
         for i, (keyword, category, related_kws) in enumerate(keywords, 1):
             print(f"\n[{i}/{args.auto_discover}] キーワード: {keyword}")
+
+            # 重複チェック
+            if check_duplicate_article(keyword):
+                print(f"✗ スキップ: 既存記事と重複")
+                update_keyword_status_in_pool(keyword, 'duplicate')
+                continue
+
             print("Claude APIで記事生成中...")
 
             try:
