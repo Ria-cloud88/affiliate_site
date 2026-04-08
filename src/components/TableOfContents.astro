@@ -1,0 +1,104 @@
+---
+// TableOfContents.astro
+// Markdownの目次セクションを処理して、クリック可能なインタラクティブTOCに変換
+
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+// ## 見出し【...】 のパターンを抽出
+const tocMatch = content.match(/## 目次【[\s\S]*?\n([\s\S]*?)(?=---|\n##|$)/);
+
+let headings: Array<{ text: string; level: number }> = [];
+
+if (tocMatch) {
+  // 本文から ## で始まる見出しをすべて抽出
+  const headingMatches = content.matchAll(/^## (.+?)$/gm);
+
+  for (const match of headingMatches) {
+    const headingText = match[1].replace(/【[\s\S]*?】/g, '').trim();
+    if (headingText && headingText !== '目次' && headingText !== '関連記事' && headingText !== 'サイト内の人気記事' && headingText !== '関連キーワード') {
+      headings.push({
+        text: headingText,
+        level: 2
+      });
+    }
+  }
+}
+---
+
+{headings.length > 0 && (
+  <div class="toc-container">
+    <details class="toc-details">
+      <summary class="toc-summary">📑 目次を表示</summary>
+      <nav class="toc-nav">
+        <ol class="toc-list">
+          {headings.map((heading, index) => (
+            <li class="toc-item">
+              <a href={`#heading-${index}`} class="toc-link">
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </details>
+  </div>
+)}
+
+<style>
+  .toc-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f0f6ff;
+    border: 1px solid #cce5ff;
+    border-radius: 8px;
+  }
+
+  .toc-details {
+    cursor: pointer;
+  }
+
+  .toc-summary {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0066cc;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .toc-summary:hover {
+    background: rgba(0, 102, 204, 0.05);
+  }
+
+  .toc-nav {
+    margin-top: 1rem;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+
+  .toc-link {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .toc-link:hover {
+    color: #0052a3;
+    text-decoration: underline;
+  }
+</style>
