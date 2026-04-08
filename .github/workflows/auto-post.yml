@@ -48,3 +48,9 @@ jobs:
           git add src/content/blog/ public/images/blog/
           git diff --staged --quiet || git commit -m "auto: ニュース記事を自動生成 $(date +'%Y-%m-%d') (${{ github.event.inputs.count || '1' }}本)"
           git push
+
+      - name: Vercel にデプロイ
+        if: always()
+        run: |
+          npm install -g vercel
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
