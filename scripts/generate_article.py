@@ -680,8 +680,6 @@ def main():
         print(f"✓ 完了: {output_path}")
         check_article_quality(output_path, main_kw)
 
-    print(f"\n文字数: {len(content)}文字")
-
 
 if __name__ == "__main__":
     main()
