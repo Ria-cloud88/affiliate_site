@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rialeb.jp/sitemap.xml
+Sitemap: https://rialab.jp/sitemap.xml

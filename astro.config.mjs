@@ -7,6 +7,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rialab.jp',
+	trailingSlash: 'never',
 	integrations: [
 		mdx(),
 		sitemap({
