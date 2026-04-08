@@ -421,10 +421,10 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     article_body = body_without_title
 
     # 不要な末尾テキストを削除（複数パターン）
+    # 区切り線以降のすべてのテキスト（品質チェック情報）を削除
+    article_body = re.sub(r'\n+---[\s\S]*$', '', article_body)
     # 完成マーカー
     article_body = re.sub(r'\n+完成\s*$', '', article_body)
-    # 区切り線
-    article_body = re.sub(r'\n+---\s*$', '', article_body)
     # ✓高品質マーカー（すべてのバリエーション）
     article_body = re.sub(r'\n+\*?\*?✓\*?\*?\s*高品質\*?\*?\s*$', '', article_body)
     article_body = re.sub(r'\n+✓.*?高品質.*?$', '', article_body, flags=re.MULTILINE)
@@ -432,6 +432,8 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     article_body = re.sub(r'\n+\*?\*?[✓✔]\*?\*?.*?$', '', article_body, flags=re.MULTILINE)
     # 括弧で囲まれたマーカー
     article_body = re.sub(r'\n+【.*?】\s*$', '', article_body, flags=re.MULTILINE)
+    # **字数確認：など品質チェック行
+    article_body = re.sub(r'\n+\*\*[字数キーワード表見出高].*?\*\*.*?$', '', article_body, flags=re.MULTILINE)
     # 末尾の余分な改行
     article_body = re.sub(r'\n\n+$', '\n', article_body)
 
