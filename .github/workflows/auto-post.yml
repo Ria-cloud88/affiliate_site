@@ -2,7 +2,7 @@ name: 記事自動生成
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 毎日9:00 JST（UTC 0:00）
+    - cron: '0 */3 * * *'  # 3時間ごと
   workflow_dispatch:      # 手動実行ボタンも使える
     inputs:
       count:
