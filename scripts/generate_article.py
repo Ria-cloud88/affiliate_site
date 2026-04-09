@@ -757,8 +757,13 @@ def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -
 
 
 def check_duplicate_article(keyword: str) -> bool:
-    """既存記事との重複をチェック"""
+    """既存記事との重複をチェック（厳密版）"""
     blog_dir = Path("src/content/blog")
+
+    # キーワードから主要な単語を抽出（3文字以上）
+    main_words = [w for w in keyword.split() if len(w) >= 3]
+    if not main_words:
+        return False
 
     for article_file in blog_dir.glob("*.md"):
         try:
@@ -766,9 +771,12 @@ def check_duplicate_article(keyword: str) -> bool:
             # frontmatter からタイトルを抽出
             match = re.search(r"^title:\s*['\"](.+?)['\"]", content, re.MULTILINE)
             if match:
-                title = match.group(1)
-                # キーワードがタイトルに含まれているか確認
-                if keyword.split()[0] in title:
+                title = match.group(1).lower()
+
+                # 重複判定：2つ以上のメイン単語が含まれている場合のみ重複とする
+                matched_words = sum(1 for word in main_words if word.lower() in title)
+
+                if matched_words >= 2:
                     print(f"  ⚠️ 重複検出: {article_file.name} (タイトル: {title[:50]}...)")
                     return True
         except Exception:

@@ -363,6 +363,48 @@
         "最新",
         "マルチモーダル"
       ]
+    },
+    {
+      "keyword": "ChatGPT Plus $20 レビュー 本当に価値があるか 2026年",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 88.0,
+      "discovered_at": "2026-04-09T12:22:50.500738",
+      "status": "pending",
+      "keywords": [
+        "ChatGPT Plus",
+        "月額20ドル",
+        "値段",
+        "コスパ"
+      ]
+    },
+    {
+      "keyword": "Claude Opus vs Sonnet 性能比較 どっちを選ぶ",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 87.0,
+      "discovered_at": "2026-04-09T12:22:50.500758",
+      "status": "pending",
+      "keywords": [
+        "Claude",
+        "Opus",
+        "Sonnet",
+        "性能"
+      ]
+    },
+    {
+      "keyword": "Gemini Pro 2.0 マルチモーダル対応 使ってみた",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 86.0,
+      "discovered_at": "2026-04-09T12:22:50.500759",
+      "status": "pending",
+      "keywords": [
+        "Gemini Pro",
+        "マルチモーダル",
+        "画像",
+        "動画"
+      ]
     }
   ],
   "自動化ツール": [
@@ -602,6 +644,34 @@
         "自動化",
         "ワークフロー",
         "連携"
+      ]
+    },
+    {
+      "keyword": "Make vs Zapier 2026年の比較 どっちが優れているか",
+      "category": "自動化ツール",
+      "source": "manual",
+      "score": 85.0,
+      "discovered_at": "2026-04-09T12:22:50.500760",
+      "status": "pending",
+      "keywords": [
+        "Make",
+        "Zapier",
+        "比較",
+        "ワークフロー"
+      ]
+    },
+    {
+      "keyword": "n8n 無料 セルフホスト型自動化ツール 完全ガイド",
+      "category": "自動化ツール",
+      "source": "manual",
+      "score": 83.0,
+      "discovered_at": "2026-04-09T12:22:50.500761",
+      "status": "pending",
+      "keywords": [
+        "n8n",
+        "オープンソース",
+        "セルフホスト",
+        "無料"
       ]
     }
   ],
@@ -870,6 +940,34 @@
         "副業",
         "稼ぐ",
         "月5万"
+      ]
+    },
+    {
+      "keyword": "YouTube Shorts で稼ぐ 2026年 最新マネタイズ方法",
+      "category": "副業",
+      "source": "manual",
+      "score": 86.0,
+      "discovered_at": "2026-04-09T12:22:50.500762",
+      "status": "pending",
+      "keywords": [
+        "YouTube Shorts",
+        "短編動画",
+        "稼ぐ",
+        "広告"
+      ]
+    },
+    {
+      "keyword": "アフィリエイト単価ランキング 2026年 高額ジャンル",
+      "category": "副業",
+      "source": "manual",
+      "score": 84.0,
+      "discovered_at": "2026-04-09T12:22:50.500763",
+      "status": "pending",
+      "keywords": [
+        "アフィリエイト",
+        "単価",
+        "高額",
+        "稼げる"
       ]
     }
   ],
@@ -1747,6 +1845,34 @@
         "ノイキャン",
         "レビュー"
       ]
+    },
+    {
+      "keyword": "Vision Pro 2 2026年 最新AR/VRヘッドセット 日本発売",
+      "category": "ガジェット",
+      "source": "manual",
+      "score": 82.0,
+      "discovered_at": "2026-04-09T12:22:50.500763",
+      "status": "pending",
+      "keywords": [
+        "Vision Pro",
+        "AR",
+        "VR",
+        "Apple"
+      ]
+    },
+    {
+      "keyword": "Pixel 9 Pro 2026年 最新スマートフォン レビュー",
+      "category": "ガジェット",
+      "source": "manual",
+      "score": 81.0,
+      "discovered_at": "2026-04-09T12:22:50.500764",
+      "status": "pending",
+      "keywords": [
+        "Pixel 9",
+        "Google",
+        "スマートフォン",
+        "カメラ"
+      ]
     }
   ],
   "生活改善": [
@@ -2014,6 +2140,34 @@
         "習慣化",
         "朝勉強",
         "生産性"
+      ]
+    },
+    {
+      "keyword": "ノーコード プログラミング 初心者向け 2026年",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 83.0,
+      "discovered_at": "2026-04-09T12:22:50.500765",
+      "status": "pending",
+      "keywords": [
+        "ノーコード",
+        "プログラミング",
+        "初心者",
+        "アプリ作成"
+      ]
+    },
+    {
+      "keyword": "在宅勤務効率化 リモートワーク スタイル 2026年",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 82.0,
+      "discovered_at": "2026-04-09T12:22:50.500766",
+      "status": "pending",
+      "keywords": [
+        "在宅勤務",
+        "リモートワーク",
+        "効率化",
+        "デスク"
       ]
     }
   ]
