@@ -5,6 +5,8 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
+import InteractiveTOC from '../components/InteractiveTOC.astro';
+import { getThemeColors } from '../utils/colorThemes';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -12,6 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage, genre } = Astro.pro
 const currentUrl = Astro.url.href;
 const encodedUrl = encodeURIComponent(currentUrl);
 const encodedTitle = encodeURIComponent(title);
+const themeColors = getThemeColors(genre || 'AIツール');
 ---
 
 <html lang="ja">
@@ -62,6 +65,9 @@ const encodedTitle = encodeURIComponent(title);
             <img src={heroImage} alt={title} class="hero-img" loading="lazy" />
           )}
 
+          <!-- Interactive Table of Contents -->
+          <InteractiveTOC genre={genre} />
+
           <!-- Article body -->
           <div class="prose">
             <slot />
@@ -97,3 +103,52 @@ const encodedTitle = encodeURIComponent(title);
     <Footer />
   </body>
 </html>
+
+<style define:vars={{
+  themeColor: themeColors.primary,
+  themeDark: themeColors.primaryDark,
+  themeLight: themeColors.primaryLight,
+  themeBackground: themeColors.background,
+  themeAccent: themeColors.accent,
+  themeText: themeColors.text
+}}>
+  :global(body) {
+    --theme-color: var(--themeColor);
+    --theme-dark: var(--themeDark);
+    --theme-light: var(--themeLight);
+    --theme-bg: var(--themeBackground);
+    --theme-accent: var(--themeAccent);
+    --theme-text: var(--themeText);
+  }
+
+  :global(.tag) {
+    background: var(--themeColor) !important;
+    color: white !important;
+    border-color: var(--themeDark) !important;
+  }
+
+  :global(.hero-img) {
+    border: 3px solid var(--themeLight);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  :global(.article-meta .tag:hover) {
+    background: var(--themeDark) !important;
+  }
+
+  :global(.prose a) {
+    color: var(--themeColor);
+  }
+
+  :global(.prose a:hover) {
+    color: var(--themeDark);
+  }
+
+  :global(.breadcrumb a) {
+    color: var(--themeColor);
+  }
+
+  :global(.breadcrumb a:hover) {
+    color: var(--themeDark);
+  }
+</style>

@@ -1,0 +1,150 @@
+---
+// InteractiveTOC.astro
+// Rendered HTMLから見出しを抽出して、インタラクティブな目次を生成
+// ジャンル別カラースキーム対応
+
+import { getThemeColors } from '../utils/colorThemes';
+
+interface Props {
+  genre?: string;
+  contentSlot?: string;
+}
+
+const { genre = "AIツール" } = Astro.props;
+const themeColors = getThemeColors(genre);
+---
+
+<div class="interactive-toc-container">
+  <details class="toc-details">
+    <summary class="toc-summary">📑 目次を表示</summary>
+    <nav class="toc-nav">
+      <ol class="toc-list" id="toc-list">
+        <!-- Populated by JavaScript -->
+      </ol>
+    </nav>
+  </details>
+</div>
+
+<script define:vars={{
+  primaryColor: themeColors.primary,
+  primaryDark: themeColors.primaryDark,
+  backgroundColor: themeColors.background,
+  primaryLight: themeColors.primaryLight,
+  accentColor: themeColors.accent
+}}>
+  // ページのh2見出しを抽出して目次を生成
+  const article = document.querySelector('.prose') || document.querySelector('main');
+
+  if (article) {
+    const headings = article.querySelectorAll('h2');
+    const tocList = document.getElementById('toc-list');
+
+    if (headings.length > 0 && tocList) {
+      // 目次の見出しを除外（## 目次【...】）
+      const headingsToShow = Array.from(headings).filter(h => {
+        const text = h.textContent.trim();
+        return !text.includes('目次') &&
+               text !== '関連記事' &&
+               text !== 'サイト内の人気記事' &&
+               text !== '関連キーワード';
+      });
+
+      if (headingsToShow.length >= 5) {
+        headingsToShow.forEach((heading, index) => {
+          // 見出しにIDを付与（ない場合）
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          // 目次項目を作成
+          const li = document.createElement('li');
+          li.className = 'toc-item';
+          const a = document.createElement('a');
+          a.href = `#${heading.id}`;
+          a.className = 'toc-link';
+          a.textContent = heading.textContent;
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+
+        // CSSプロパティを設定
+        document.documentElement.style.setProperty('--color-primary', primaryColor);
+        document.documentElement.style.setProperty('--color-primary-dark', primaryDark);
+        document.documentElement.style.setProperty('--color-background', backgroundColor);
+        document.documentElement.style.setProperty('--color-primary-light', primaryLight);
+        document.documentElement.style.setProperty('--color-accent', accentColor);
+      } else {
+        // 見出しが少ない場合は目次を非表示
+        const container = document.querySelector('.interactive-toc-container');
+        if (container) container.style.display = 'none';
+      }
+    }
+  }
+</script>
+
+<style define:vars={{
+  primaryColor: themeColors.primary,
+  primaryDark: themeColors.primaryDark,
+  backgroundColor: themeColors.background,
+  primaryLight: themeColors.primaryLight,
+  accentColor: themeColors.accent
+}}>
+  .interactive-toc-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--backgroundColor);
+    border: 2px solid var(--primaryLight);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .toc-details {
+    cursor: pointer;
+  }
+
+  .toc-summary {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primaryColor);
+    padding: 0.5rem;
+    margin: -0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    list-style: none;
+  }
+
+  .toc-summary:hover {
+    background: var(--primaryLight);
+    color: var(--primaryDark);
+  }
+
+  .toc-nav {
+    margin-top: 1rem;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    list-style: decimal;
+    color: var(--primaryDark);
+  }
+
+  .toc-link {
+    color: var(--primaryColor);
+    text-decoration: none;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 1px transparent;
+  }
+
+  .toc-link:hover {
+    color: var(--primaryDark);
+    text-decoration: underline;
+    border-bottom-color: var(--accentColor);
+  }
+</style>

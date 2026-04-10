@@ -1,12 +1,17 @@
 ---
 // TableOfContents.astro
 // Markdownの目次セクションを処理して、クリック可能なインタラクティブTOCに変換
+// ジャンル別カラースキーム対応
+
+import { getThemeColors } from '../utils/colorThemes';
 
 interface Props {
   content: string;
+  genre?: string;
 }
 
-const { content } = Astro.props;
+const { content, genre = "AIツール" } = Astro.props;
+const themeColors = getThemeColors(genre);
 
 // ## 見出し【...】 のパターンを抽出
 const tocMatch = content.match(/## 目次【[\s\S]*?\n([\s\S]*?)(?=---|\n##|$)/);
@@ -48,13 +53,20 @@ if (tocMatch) {
   </div>
 )}
 
-<style>
+<style define:vars={{
+  primaryColor: themeColors.primary,
+  primaryDark: themeColors.primaryDark,
+  backgroundColor: themeColors.background,
+  primaryLight: themeColors.primaryLight,
+  accentColor: themeColors.accent
+}}>
   .toc-container {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: #f0f6ff;
-    border: 1px solid #cce5ff;
+    background: var(--backgroundColor);
+    border: 2px solid var(--primaryLight);
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 
   .toc-details {
@@ -64,15 +76,16 @@ if (tocMatch) {
   .toc-summary {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #0066cc;
+    color: var(--primaryColor);
     padding: 0.5rem;
     margin: -0.5rem;
     border-radius: 4px;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
   }
 
   .toc-summary:hover {
-    background: rgba(0, 102, 204, 0.05);
+    background: var(--primaryLight);
+    color: var(--primaryDark);
   }
 
   .toc-nav {
@@ -89,16 +102,19 @@ if (tocMatch) {
     margin: 0.5rem 0;
     padding-left: 1.5rem;
     list-style: decimal;
+    color: var(--primaryDark);
   }
 
   .toc-link {
-    color: #0066cc;
+    color: var(--primaryColor);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 1px transparent;
   }
 
   .toc-link:hover {
-    color: #0052a3;
+    color: var(--primaryDark);
     text-decoration: underline;
+    border-bottom-color: var(--accentColor);
   }
 </style>
