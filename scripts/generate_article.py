@@ -758,7 +758,7 @@ def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -
 
 
 def check_duplicate_article(keyword: str) -> bool:
-    """既存記事との重複をチェック（厳密版）"""
+    """既存記事との重複をチェック（改善版：3語以上マッチで判定）"""
     blog_dir = Path("src/content/blog")
 
     # キーワードから主要な単語を抽出（3文字以上）
@@ -774,10 +774,11 @@ def check_duplicate_article(keyword: str) -> bool:
             if match:
                 title = match.group(1).lower()
 
-                # 重複判定：2つ以上のメイン単語が含まれている場合のみ重複とする
+                # 改善：3つ以上のメイン単語が含まれている場合のみ重複とする
+                # （3語以上の一致で初めて同じ記事と判定。これにより、異なる角度の記事を許可）
                 matched_words = sum(1 for word in main_words if word.lower() in title)
 
-                if matched_words >= 2:
+                if matched_words >= 3:
                     print(f"  ⚠️ 重複検出: {article_file.name} (タイトル: {title[:50]}...)")
                     return True
         except Exception:

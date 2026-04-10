@@ -1,6 +1,164 @@
 {
   "AIツール": [
     {
+      "keyword": "Claude 3.5 Sonnet vs Opus 性能比較",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 95,
+      "discovered_at": "2026-04-11T02:07:04.193192",
+      "status": "pending"
+    },
+    {
+      "keyword": "Gemini 2.0 マルチモーダル API 実装",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 90,
+      "discovered_at": "2026-04-11T02:07:04.193211",
+      "status": "pending"
+    },
+    {
+      "keyword": "ChatGPT Plus $20 レビュー 本当に価値があるか 2026年",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 88.0,
+      "discovered_at": "2026-04-09T12:22:50.500738",
+      "status": "pending",
+      "keywords": [
+        "ChatGPT Plus",
+        "月額20ドル",
+        "値段",
+        "コスパ"
+      ]
+    },
+    {
+      "keyword": "Claude Opus vs Sonnet 性能比較 どっちを選ぶ",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 87.0,
+      "discovered_at": "2026-04-09T12:22:50.500758",
+      "status": "pending",
+      "keywords": [
+        "Claude",
+        "Opus",
+        "Sonnet",
+        "性能"
+      ]
+    },
+    {
+      "keyword": "Gemini Pro 2.0 マルチモーダル対応 使ってみた",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 86.0,
+      "discovered_at": "2026-04-09T12:22:50.500759",
+      "status": "pending",
+      "keywords": [
+        "Gemini Pro",
+        "マルチモーダル",
+        "画像",
+        "動画"
+      ]
+    },
+    {
+      "keyword": "ChatGPT Plus 価格 メリット 値段の価値",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 85.0,
+      "discovered_at": "2026-04-09T07:55:10.535874",
+      "status": "pending",
+      "keywords": [
+        "ChatGPT Plus",
+        "$20",
+        "月額",
+        "価値"
+      ]
+    },
+    {
+      "keyword": "ChatGPT Plus 価格 メリット 値段の価値",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 85.0,
+      "discovered_at": "2026-04-09T07:55:21.316215",
+      "status": "pending",
+      "keywords": [
+        "ChatGPT Plus",
+        "$20",
+        "月額",
+        "価値"
+      ]
+    },
+    {
+      "keyword": "ChatGPT Plus vs Claude Pro 徹底比較",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 85,
+      "discovered_at": "2026-04-11T02:07:04.193213",
+      "status": "pending"
+    },
+    {
+      "keyword": "Claude 3 最新モデル 比較 使い分け",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 84.0,
+      "discovered_at": "2026-04-09T07:55:10.535884",
+      "status": "pending",
+      "keywords": [
+        "Claude 3",
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ]
+    },
+    {
+      "keyword": "Claude 3 最新モデル 比較 使い分け",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 84.0,
+      "discovered_at": "2026-04-09T07:55:21.316228",
+      "status": "pending",
+      "keywords": [
+        "Claude 3",
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ]
+    },
+    {
+      "keyword": "Google Gemini 2.0 最新機能 使い方",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 82.0,
+      "discovered_at": "2026-04-09T07:55:10.535885",
+      "status": "pending",
+      "keywords": [
+        "Gemini 2.0",
+        "Google",
+        "最新",
+        "マルチモーダル"
+      ]
+    },
+    {
+      "keyword": "Google Gemini 2.0 最新機能 使い方",
+      "category": "AIツール",
+      "source": "manual",
+      "score": 82.0,
+      "discovered_at": "2026-04-09T07:55:21.316229",
+      "status": "pending",
+      "keywords": [
+        "Gemini 2.0",
+        "Google",
+        "最新",
+        "マルチモーダル"
+      ]
+    },
+    {
+      "keyword": "Perplexity AI vs Google Search 検索性能",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 78,
+      "discovered_at": "2026-04-11T02:07:04.193215",
+      "status": "pending"
+    },
+    {
       "keyword": "ChatGPT 使い方 初心者 完全ガイド",
       "category": "AIツール",
       "source": "builtin",
@@ -127,6 +285,14 @@
       ]
     },
     {
+      "keyword": "GitHub Copilot Enterprise プログラミング革命",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 72,
+      "discovered_at": "2026-04-11T02:07:04.193216",
+      "status": "pending"
+    },
+    {
       "keyword": "Copilot Pro 価格 使い方 メリット",
       "category": "AIツール",
       "source": "builtin",
@@ -152,6 +318,34 @@
         "AI",
         "デザイン",
         "ロゴ"
+      ]
+    },
+    {
+      "keyword": "Claude 3 Opus 性能 比較 使い方",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 70.0,
+      "discovered_at": "2026-04-08T12:18:25.418818",
+      "status": "pending",
+      "keywords": [
+        "Claude 3",
+        "Opus",
+        "性能",
+        "比較"
+      ]
+    },
+    {
+      "keyword": "Runway Gen-3 動画生成 使い方",
+      "category": "AIツール",
+      "source": "builtin",
+      "score": 69.0,
+      "discovered_at": "2026-04-08T12:18:25.418819",
+      "status": "pending",
+      "keywords": [
+        "Runway",
+        "動画生成",
+        "AI",
+        "テキスト"
       ]
     },
     {
@@ -183,20 +377,6 @@
       ]
     },
     {
-      "keyword": "Claude 3 Opus 性能 比較 使い方",
-      "category": "AIツール",
-      "source": "builtin",
-      "score": 70.0,
-      "discovered_at": "2026-04-08T12:18:25.418818",
-      "status": "pending",
-      "keywords": [
-        "Claude 3",
-        "Opus",
-        "性能",
-        "比較"
-      ]
-    },
-    {
       "keyword": "AI音声生成 ElevenLabs 使い方",
       "category": "AIツール",
       "source": "builtin",
@@ -225,20 +405,6 @@
       ]
     },
     {
-      "keyword": "Runway Gen-3 動画生成 使い方",
-      "category": "AIツール",
-      "source": "builtin",
-      "score": 69.0,
-      "discovered_at": "2026-04-08T12:18:25.418819",
-      "status": "pending",
-      "keywords": [
-        "Runway",
-        "動画生成",
-        "AI",
-        "テキスト"
-      ]
-    },
-    {
       "keyword": "Dify オープンソース AI アプリ",
       "category": "AIツール",
       "source": "builtin",
@@ -250,20 +416,6 @@
         "オープンソース",
         "AI",
         "自構築"
-      ]
-    },
-    {
-      "keyword": "LM Studio ローカル LLM 実行",
-      "category": "AIツール",
-      "source": "builtin",
-      "score": 64.0,
-      "discovered_at": "2026-04-08T12:18:25.418820",
-      "status": "pending",
-      "keywords": [
-        "LM Studio",
-        "ローカル",
-        "LLM",
-        "プライベート"
       ]
     },
     {
@@ -281,133 +433,85 @@
       ]
     },
     {
-      "keyword": "ChatGPT Plus 価格 メリット 値段の価値",
+      "keyword": "LM Studio ローカル LLM 実行",
       "category": "AIツール",
-      "source": "manual",
-      "score": 85.0,
-      "discovered_at": "2026-04-09T07:55:10.535874",
+      "source": "builtin",
+      "score": 64.0,
+      "discovered_at": "2026-04-08T12:18:25.418820",
       "status": "pending",
       "keywords": [
-        "ChatGPT Plus",
-        "$20",
-        "月額",
-        "価値"
-      ]
-    },
-    {
-      "keyword": "Claude 3 最新モデル 比較 使い分け",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 84.0,
-      "discovered_at": "2026-04-09T07:55:10.535884",
-      "status": "pending",
-      "keywords": [
-        "Claude 3",
-        "Opus",
-        "Sonnet",
-        "Haiku"
-      ]
-    },
-    {
-      "keyword": "Google Gemini 2.0 最新機能 使い方",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 82.0,
-      "discovered_at": "2026-04-09T07:55:10.535885",
-      "status": "pending",
-      "keywords": [
-        "Gemini 2.0",
-        "Google",
-        "最新",
-        "マルチモーダル"
-      ]
-    },
-    {
-      "keyword": "ChatGPT Plus 価格 メリット 値段の価値",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 85.0,
-      "discovered_at": "2026-04-09T07:55:21.316215",
-      "status": "pending",
-      "keywords": [
-        "ChatGPT Plus",
-        "$20",
-        "月額",
-        "価値"
-      ]
-    },
-    {
-      "keyword": "Claude 3 最新モデル 比較 使い分け",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 84.0,
-      "discovered_at": "2026-04-09T07:55:21.316228",
-      "status": "pending",
-      "keywords": [
-        "Claude 3",
-        "Opus",
-        "Sonnet",
-        "Haiku"
-      ]
-    },
-    {
-      "keyword": "Google Gemini 2.0 最新機能 使い方",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 82.0,
-      "discovered_at": "2026-04-09T07:55:21.316229",
-      "status": "pending",
-      "keywords": [
-        "Gemini 2.0",
-        "Google",
-        "最新",
-        "マルチモーダル"
-      ]
-    },
-    {
-      "keyword": "ChatGPT Plus $20 レビュー 本当に価値があるか 2026年",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 88.0,
-      "discovered_at": "2026-04-09T12:22:50.500738",
-      "status": "pending",
-      "keywords": [
-        "ChatGPT Plus",
-        "月額20ドル",
-        "値段",
-        "コスパ"
-      ]
-    },
-    {
-      "keyword": "Claude Opus vs Sonnet 性能比較 どっちを選ぶ",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 87.0,
-      "discovered_at": "2026-04-09T12:22:50.500758",
-      "status": "pending",
-      "keywords": [
-        "Claude",
-        "Opus",
-        "Sonnet",
-        "性能"
-      ]
-    },
-    {
-      "keyword": "Gemini Pro 2.0 マルチモーダル対応 使ってみた",
-      "category": "AIツール",
-      "source": "manual",
-      "score": 86.0,
-      "discovered_at": "2026-04-09T12:22:50.500759",
-      "status": "pending",
-      "keywords": [
-        "Gemini Pro",
-        "マルチモーダル",
-        "画像",
-        "動画"
+        "LM Studio",
+        "ローカル",
+        "LLM",
+        "プライベート"
       ]
     }
   ],
   "自動化ツール": [
+    {
+      "keyword": "Make vs Zapier 2026年の比較 どっちが優れているか",
+      "category": "自動化ツール",
+      "source": "manual",
+      "score": 85.0,
+      "discovered_at": "2026-04-09T12:22:50.500760",
+      "status": "pending",
+      "keywords": [
+        "Make",
+        "Zapier",
+        "比較",
+        "ワークフロー"
+      ]
+    },
+    {
+      "keyword": "n8n 無料 セルフホスト型自動化ツール 完全ガイド",
+      "category": "自動化ツール",
+      "source": "manual",
+      "score": 83.0,
+      "discovered_at": "2026-04-09T12:22:50.500761",
+      "status": "pending",
+      "keywords": [
+        "n8n",
+        "オープンソース",
+        "セルフホスト",
+        "無料"
+      ]
+    },
+    {
+      "keyword": "Zapier 2026年 最新機能 使用例",
+      "category": "自動化ツール",
+      "source": "manual",
+      "score": 80.0,
+      "discovered_at": "2026-04-09T07:55:10.535886",
+      "status": "pending",
+      "keywords": [
+        "Zapier",
+        "自動化",
+        "ワークフロー",
+        "連携"
+      ]
+    },
+    {
+      "keyword": "Zapier 2026年 最新機能 使用例",
+      "category": "自動化ツール",
+      "source": "manual",
+      "score": 80.0,
+      "discovered_at": "2026-04-09T07:55:21.316230",
+      "status": "pending",
+      "keywords": [
+        "Zapier",
+        "自動化",
+        "ワークフロー",
+        "連携"
+      ]
+    },
+    {
+      "keyword": "Make vs Zapier 完全ガイド 2026年",
+      "category": "自動化ツール",
+      "source": "fallback",
+      "score": 80,
+      "discovered_at": "2026-04-11T02:07:04.193214",
+      "status": "pending"
+    },
     {
       "keyword": "Zapier 使い方 自動化 初心者 おすすめ",
       "category": "自動化ツール",
@@ -521,20 +625,6 @@
       ]
     },
     {
-      "keyword": "RPA UiPath 導入 メリット",
-      "category": "自動化ツール",
-      "source": "builtin",
-      "score": 65.0,
-      "discovered_at": "2026-04-08T12:18:25.418822",
-      "status": "pending",
-      "keywords": [
-        "RPA",
-        "UiPath",
-        "自動化",
-        "業務"
-      ]
-    },
-    {
       "keyword": "Discord API 使い方 ボット開発",
       "category": "自動化ツール",
       "source": "builtin",
@@ -563,6 +653,14 @@
       ]
     },
     {
+      "keyword": "Notion AI 最新機能 実装例",
+      "category": "自動化ツール",
+      "source": "fallback",
+      "score": 68,
+      "discovered_at": "2026-04-11T02:07:04.193218",
+      "status": "pending"
+    },
+    {
       "keyword": "Node-RED 使い方 IoT自動化",
       "category": "自動化ツール",
       "source": "builtin",
@@ -574,6 +672,20 @@
         "IoT",
         "自動化",
         "ノードベース"
+      ]
+    },
+    {
+      "keyword": "RPA UiPath 導入 メリット",
+      "category": "自動化ツール",
+      "source": "builtin",
+      "score": 65.0,
+      "discovered_at": "2026-04-08T12:18:25.418822",
+      "status": "pending",
+      "keywords": [
+        "RPA",
+        "UiPath",
+        "自動化",
+        "業務"
       ]
     },
     {
@@ -617,65 +729,93 @@
         "スケジュール",
         "自動化"
       ]
-    },
-    {
-      "keyword": "Zapier 2026年 最新機能 使用例",
-      "category": "自動化ツール",
-      "source": "manual",
-      "score": 80.0,
-      "discovered_at": "2026-04-09T07:55:10.535886",
-      "status": "pending",
-      "keywords": [
-        "Zapier",
-        "自動化",
-        "ワークフロー",
-        "連携"
-      ]
-    },
-    {
-      "keyword": "Zapier 2026年 最新機能 使用例",
-      "category": "自動化ツール",
-      "source": "manual",
-      "score": 80.0,
-      "discovered_at": "2026-04-09T07:55:21.316230",
-      "status": "pending",
-      "keywords": [
-        "Zapier",
-        "自動化",
-        "ワークフロー",
-        "連携"
-      ]
-    },
-    {
-      "keyword": "Make vs Zapier 2026年の比較 どっちが優れているか",
-      "category": "自動化ツール",
-      "source": "manual",
-      "score": 85.0,
-      "discovered_at": "2026-04-09T12:22:50.500760",
-      "status": "pending",
-      "keywords": [
-        "Make",
-        "Zapier",
-        "比較",
-        "ワークフロー"
-      ]
-    },
-    {
-      "keyword": "n8n 無料 セルフホスト型自動化ツール 完全ガイド",
-      "category": "自動化ツール",
-      "source": "manual",
-      "score": 83.0,
-      "discovered_at": "2026-04-09T12:22:50.500761",
-      "status": "pending",
-      "keywords": [
-        "n8n",
-        "オープンソース",
-        "セルフホスト",
-        "無料"
-      ]
     }
   ],
   "副業": [
+    {
+      "keyword": "YouTube Shorts で稼ぐ 2026年 最新マネタイズ方法",
+      "category": "副業",
+      "source": "manual",
+      "score": 86.0,
+      "discovered_at": "2026-04-09T12:22:50.500762",
+      "status": "pending",
+      "keywords": [
+        "YouTube Shorts",
+        "短編動画",
+        "稼ぐ",
+        "広告"
+      ]
+    },
+    {
+      "keyword": "アフィリエイト単価ランキング 2026年 高額ジャンル",
+      "category": "副業",
+      "source": "manual",
+      "score": 84.0,
+      "discovered_at": "2026-04-09T12:22:50.500763",
+      "status": "pending",
+      "keywords": [
+        "アフィリエイト",
+        "単価",
+        "高額",
+        "稼げる"
+      ]
+    },
+    {
+      "keyword": "AIで稼ぐ 2026年 新しい副業 始め方",
+      "category": "副業",
+      "source": "manual",
+      "score": 83.0,
+      "discovered_at": "2026-04-09T07:55:10.535887",
+      "status": "pending",
+      "keywords": [
+        "AI副業",
+        "稼ぐ",
+        "在宅",
+        "2026年"
+      ]
+    },
+    {
+      "keyword": "AIで稼ぐ 2026年 新しい副業 始め方",
+      "category": "副業",
+      "source": "manual",
+      "score": 83.0,
+      "discovered_at": "2026-04-09T07:55:21.316231",
+      "status": "pending",
+      "keywords": [
+        "AI副業",
+        "稼ぐ",
+        "在宅",
+        "2026年"
+      ]
+    },
+    {
+      "keyword": "ブログで月5万稼ぐ 初心者向け戦略",
+      "category": "副業",
+      "source": "manual",
+      "score": 81.0,
+      "discovered_at": "2026-04-09T07:55:10.535888",
+      "status": "pending",
+      "keywords": [
+        "ブログ",
+        "副業",
+        "稼ぐ",
+        "月5万"
+      ]
+    },
+    {
+      "keyword": "ブログで月5万稼ぐ 初心者向け戦略",
+      "category": "副業",
+      "source": "manual",
+      "score": 81.0,
+      "discovered_at": "2026-04-09T07:55:21.316233",
+      "status": "pending",
+      "keywords": [
+        "ブログ",
+        "副業",
+        "稼ぐ",
+        "月5万"
+      ]
+    },
     {
       "keyword": "AI副業 おすすめ 初心者 稼ぎ方 2024",
       "category": "副業",
@@ -761,6 +901,28 @@
       ]
     },
     {
+      "keyword": "AI副業 初心者向け稼ぐ方法 2026年",
+      "category": "副業",
+      "source": "fallback",
+      "score": 75,
+      "discovered_at": "2026-04-11T02:07:04.193216",
+      "status": "pending"
+    },
+    {
+      "keyword": "YouTuber 始め方 月収 稼ぎ方",
+      "category": "副業",
+      "source": "builtin",
+      "score": 74.0,
+      "discovered_at": "2026-04-08T12:18:25.418825",
+      "status": "pending",
+      "keywords": [
+        "YouTube",
+        "副業",
+        "動画",
+        "稼ぐ"
+      ]
+    },
+    {
       "keyword": "ライター 副業 クラウドソーシング 単価",
       "category": "副業",
       "source": "builtin",
@@ -786,20 +948,6 @@
         "副業",
         "グラフィック",
         "案件"
-      ]
-    },
-    {
-      "keyword": "YouTuber 始め方 月収 稼ぎ方",
-      "category": "副業",
-      "source": "builtin",
-      "score": 74.0,
-      "discovered_at": "2026-04-08T12:18:25.418825",
-      "status": "pending",
-      "keywords": [
-        "YouTube",
-        "副業",
-        "動画",
-        "稼ぐ"
       ]
     },
     {
@@ -831,6 +979,14 @@
       ]
     },
     {
+      "keyword": "ブログアフィリエイト AI記事生成戦略",
+      "category": "副業",
+      "source": "fallback",
+      "score": 70,
+      "discovered_at": "2026-04-11T02:07:04.193217",
+      "status": "pending"
+    },
+    {
       "keyword": "暗号資産 副業 NFT初心者 始め方",
       "category": "副業",
       "source": "builtin",
@@ -842,20 +998,6 @@
         "NFT",
         "副業",
         "初心者"
-      ]
-    },
-    {
-      "keyword": "ポイント還元 副業 コツコツ稼ぐ",
-      "category": "副業",
-      "source": "builtin",
-      "score": 65.0,
-      "discovered_at": "2026-04-08T12:18:25.418827",
-      "status": "pending",
-      "keywords": [
-        "ポイント",
-        "副業",
-        "楽天",
-        "モッピー"
       ]
     },
     {
@@ -887,88 +1029,50 @@
       ]
     },
     {
-      "keyword": "AIで稼ぐ 2026年 新しい副業 始め方",
+      "keyword": "ポイント還元 副業 コツコツ稼ぐ",
       "category": "副業",
-      "source": "manual",
-      "score": 83.0,
-      "discovered_at": "2026-04-09T07:55:10.535887",
+      "source": "builtin",
+      "score": 65.0,
+      "discovered_at": "2026-04-08T12:18:25.418827",
       "status": "pending",
       "keywords": [
-        "AI副業",
-        "稼ぐ",
-        "在宅",
-        "2026年"
-      ]
-    },
-    {
-      "keyword": "ブログで月5万稼ぐ 初心者向け戦略",
-      "category": "副業",
-      "source": "manual",
-      "score": 81.0,
-      "discovered_at": "2026-04-09T07:55:10.535888",
-      "status": "pending",
-      "keywords": [
-        "ブログ",
+        "ポイント",
         "副業",
-        "稼ぐ",
-        "月5万"
+        "楽天",
+        "モッピー"
       ]
     },
     {
-      "keyword": "AIで稼ぐ 2026年 新しい副業 始め方",
+      "keyword": "投資 副業 初心者 資産形成",
       "category": "副業",
-      "source": "manual",
-      "score": 83.0,
-      "discovered_at": "2026-04-09T07:55:21.316231",
-      "status": "pending",
-      "keywords": [
-        "AI副業",
-        "稼ぐ",
-        "在宅",
-        "2026年"
-      ]
+      "source": "fallback",
+      "score": 60,
+      "discovered_at": "2026-04-11T02:07:04.193221",
+      "status": "pending"
     },
     {
-      "keyword": "ブログで月5万稼ぐ 初心者向け戦略",
+      "keyword": "クラウドソーシング 副業 稼ぎ方ランキング",
       "category": "副業",
-      "source": "manual",
-      "score": 81.0,
-      "discovered_at": "2026-04-09T07:55:21.316233",
-      "status": "pending",
-      "keywords": [
-        "ブログ",
-        "副業",
-        "稼ぐ",
-        "月5万"
-      ]
+      "source": "fallback",
+      "score": 58,
+      "discovered_at": "2026-04-11T02:07:04.193221",
+      "status": "pending"
     },
     {
-      "keyword": "YouTube Shorts で稼ぐ 2026年 最新マネタイズ方法",
+      "keyword": "フリーランス 始め方 案件獲得 収入増加",
       "category": "副業",
-      "source": "manual",
-      "score": 86.0,
-      "discovered_at": "2026-04-09T12:22:50.500762",
-      "status": "pending",
-      "keywords": [
-        "YouTube Shorts",
-        "短編動画",
-        "稼ぐ",
-        "広告"
-      ]
+      "source": "fallback",
+      "score": 33,
+      "discovered_at": "2026-04-11T02:07:04.193229",
+      "status": "pending"
     },
     {
-      "keyword": "アフィリエイト単価ランキング 2026年 高額ジャンル",
+      "keyword": "アフィリエイト 単価ランキング 高額ジャンル",
       "category": "副業",
-      "source": "manual",
-      "score": 84.0,
-      "discovered_at": "2026-04-09T12:22:50.500763",
-      "status": "pending",
-      "keywords": [
-        "アフィリエイト",
-        "単価",
-        "高額",
-        "稼げる"
-      ]
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-04-11T02:07:04.193230",
+      "status": "pending"
     }
   ],
   "plants": [
@@ -1015,20 +1119,6 @@
       ]
     },
     {
-      "keyword": "アイビー ヘデラ 育て方 初心者",
-      "category": "plants",
-      "source": "builtin",
-      "score": 74.0,
-      "discovered_at": "2026-04-08T12:18:25.418830",
-      "status": "pending",
-      "keywords": [
-        "アイビー",
-        "ヘデラ",
-        "育て方",
-        "初心者"
-      ]
-    },
-    {
       "keyword": "パキラ 育て方 花言葉 意味",
       "category": "plants",
       "source": "builtin",
@@ -1040,6 +1130,20 @@
         "育て方",
         "花言葉",
         "風水"
+      ]
+    },
+    {
+      "keyword": "アイビー ヘデラ 育て方 初心者",
+      "category": "plants",
+      "source": "builtin",
+      "score": 74.0,
+      "discovered_at": "2026-04-08T12:18:25.418830",
+      "status": "pending",
+      "keywords": [
+        "アイビー",
+        "ヘデラ",
+        "育て方",
+        "初心者"
       ]
     },
     {
@@ -1127,20 +1231,6 @@
       ]
     },
     {
-      "keyword": "カラジウム 育て方 休眠期 保存",
-      "category": "plants",
-      "source": "builtin",
-      "score": 69.0,
-      "discovered_at": "2026-04-08T12:18:25.418834",
-      "status": "pending",
-      "keywords": [
-        "カラジウム",
-        "育て方",
-        "季節",
-        "保存"
-      ]
-    },
-    {
       "keyword": "ペペロミア 育て方 繁殖 かわいい",
       "category": "plants",
       "source": "builtin",
@@ -1155,17 +1245,17 @@
       ]
     },
     {
-      "keyword": "オーガスタ ストレリチア 育て方",
+      "keyword": "カラジウム 育て方 休眠期 保存",
       "category": "plants",
       "source": "builtin",
-      "score": 68.0,
-      "discovered_at": "2026-04-08T12:18:25.418835",
+      "score": 69.0,
+      "discovered_at": "2026-04-08T12:18:25.418834",
       "status": "pending",
       "keywords": [
-        "ストレリチア",
+        "カラジウム",
         "育て方",
-        "大型",
-        "南国"
+        "季節",
+        "保存"
       ]
     },
     {
@@ -1180,6 +1270,20 @@
         "育て方",
         "小型",
         "初心者"
+      ]
+    },
+    {
+      "keyword": "オーガスタ ストレリチア 育て方",
+      "category": "plants",
+      "source": "builtin",
+      "score": 68.0,
+      "discovered_at": "2026-04-08T12:18:25.418835",
+      "status": "pending",
+      "keywords": [
+        "ストレリチア",
+        "育て方",
+        "大型",
+        "南国"
       ]
     }
   ],
@@ -1297,20 +1401,6 @@
       ]
     },
     {
-      "keyword": "フェレット 飼い方 初心者 費用",
-      "category": "pets",
-      "source": "builtin",
-      "score": 70.0,
-      "discovered_at": "2026-04-08T12:18:25.418840",
-      "status": "pending",
-      "keywords": [
-        "フェレット",
-        "飼い方",
-        "費用",
-        "初心者"
-      ]
-    },
-    {
       "keyword": "爬虫類 初心者 飼い方 おすすめ",
       "category": "pets",
       "source": "builtin",
@@ -1325,17 +1415,17 @@
       ]
     },
     {
-      "keyword": "アクアポニックス メダカ野菜栽培",
+      "keyword": "フェレット 飼い方 初心者 費用",
       "category": "pets",
       "source": "builtin",
-      "score": 69.0,
-      "discovered_at": "2026-04-08T12:18:25.418841",
+      "score": 70.0,
+      "discovered_at": "2026-04-08T12:18:25.418840",
       "status": "pending",
       "keywords": [
-        "アクアポニックス",
-        "メダカ",
-        "野菜",
-        "栽培"
+        "フェレット",
+        "飼い方",
+        "費用",
+        "初心者"
       ]
     },
     {
@@ -1350,6 +1440,20 @@
         "ドッグフード",
         "栄養",
         "選び方"
+      ]
+    },
+    {
+      "keyword": "アクアポニックス メダカ野菜栽培",
+      "category": "pets",
+      "source": "builtin",
+      "score": 69.0,
+      "discovered_at": "2026-04-08T12:18:25.418841",
+      "status": "pending",
+      "keywords": [
+        "アクアポニックス",
+        "メダカ",
+        "野菜",
+        "栽培"
       ]
     },
     {
@@ -1537,20 +1641,6 @@
       ]
     },
     {
-      "keyword": "時間感覚 改善 効率化 心理学",
-      "category": "mindset",
-      "source": "builtin",
-      "score": 70.0,
-      "discovered_at": "2026-04-08T12:18:25.418849",
-      "status": "pending",
-      "keywords": [
-        "時間感覚",
-        "改善",
-        "効率化",
-        "心理学"
-      ]
-    },
-    {
       "keyword": "目標達成 心理学 コツ 実践",
       "category": "mindset",
       "source": "builtin",
@@ -1562,6 +1652,20 @@
         "心理学",
         "コツ",
         "実践"
+      ]
+    },
+    {
+      "keyword": "時間感覚 改善 効率化 心理学",
+      "category": "mindset",
+      "source": "builtin",
+      "score": 70.0,
+      "discovered_at": "2026-04-08T12:18:25.418849",
+      "status": "pending",
+      "keywords": [
+        "時間感覚",
+        "改善",
+        "効率化",
+        "心理学"
       ]
     },
     {
@@ -1608,6 +1712,62 @@
     }
   ],
   "ガジェット": [
+    {
+      "keyword": "Vision Pro 2 2026年 最新AR/VRヘッドセット 日本発売",
+      "category": "ガジェット",
+      "source": "manual",
+      "score": 82.0,
+      "discovered_at": "2026-04-09T12:22:50.500763",
+      "status": "pending",
+      "keywords": [
+        "Vision Pro",
+        "AR",
+        "VR",
+        "Apple"
+      ]
+    },
+    {
+      "keyword": "Pixel 9 Pro 2026年 最新スマートフォン レビュー",
+      "category": "ガジェット",
+      "source": "manual",
+      "score": 81.0,
+      "discovered_at": "2026-04-09T12:22:50.500764",
+      "status": "pending",
+      "keywords": [
+        "Pixel 9",
+        "Google",
+        "スマートフォン",
+        "カメラ"
+      ]
+    },
+    {
+      "keyword": "AirPods Pro 2代目 2026年 最新レビュー",
+      "category": "ガジェット",
+      "source": "manual",
+      "score": 79.0,
+      "discovered_at": "2026-04-09T07:55:10.535889",
+      "status": "pending",
+      "keywords": [
+        "AirPods Pro",
+        "イヤホン",
+        "ノイキャン",
+        "レビュー"
+      ]
+    },
+    {
+      "keyword": "AirPods Pro 2代目 2026年 最新レビュー",
+      "category": "ガジェット",
+      "source": "manual",
+      "score": 79.0,
+      "discovered_at": "2026-04-09T07:55:21.316234",
+      "status": "pending",
+      "keywords": [
+        "AirPods Pro",
+        "イヤホン",
+        "ノイキャン",
+        "レビュー"
+      ]
+    },
     {
       "keyword": "ワイヤレスイヤホン おすすめ 比較 2024",
       "category": "ガジェット",
@@ -1679,20 +1839,6 @@
       ]
     },
     {
-      "keyword": "iPad タブレット 比較 選び方",
-      "category": "ガジェット",
-      "source": "builtin",
-      "score": 72.0,
-      "discovered_at": "2026-04-08T12:18:25.418828",
-      "status": "pending",
-      "keywords": [
-        "iPad",
-        "タブレット",
-        "比較",
-        "選び方"
-      ]
-    },
-    {
       "keyword": "iPhone 14 15 カメラ 性能 比較",
       "category": "ガジェット",
       "source": "builtin",
@@ -1704,6 +1850,20 @@
         "カメラ",
         "性能",
         "比較"
+      ]
+    },
+    {
+      "keyword": "iPad タブレット 比較 選び方",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 72.0,
+      "discovered_at": "2026-04-08T12:18:25.418828",
+      "status": "pending",
+      "keywords": [
+        "iPad",
+        "タブレット",
+        "比較",
+        "選び方"
       ]
     },
     {
@@ -1721,20 +1881,6 @@
       ]
     },
     {
-      "keyword": "ドローン おすすめ 初心者 DJI",
-      "category": "ガジェット",
-      "source": "builtin",
-      "score": 70.0,
-      "discovered_at": "2026-04-08T12:18:25.418830",
-      "status": "pending",
-      "keywords": [
-        "ドローン",
-        "DJI",
-        "初心者",
-        "価格"
-      ]
-    },
-    {
       "keyword": "スマートウォッチ おすすめ Apple Watch",
       "category": "ガジェット",
       "source": "builtin",
@@ -1746,6 +1892,20 @@
         "Apple Watch",
         "健康管理",
         "比較"
+      ]
+    },
+    {
+      "keyword": "ドローン おすすめ 初心者 DJI",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 70.0,
+      "discovered_at": "2026-04-08T12:18:25.418830",
+      "status": "pending",
+      "keywords": [
+        "ドローン",
+        "DJI",
+        "初心者",
+        "価格"
       ]
     },
     {
@@ -1763,20 +1923,6 @@
       ]
     },
     {
-      "keyword": "USB-C ケーブル 高速充電 耐久性",
-      "category": "ガジェット",
-      "source": "builtin",
-      "score": 68.0,
-      "discovered_at": "2026-04-08T12:18:25.418831",
-      "status": "pending",
-      "keywords": [
-        "USB-C",
-        "ケーブル",
-        "充電",
-        "耐久性"
-      ]
-    },
-    {
       "keyword": "Bluetooth スピーカー ポータブル おすすめ",
       "category": "ガジェット",
       "source": "builtin",
@@ -1788,6 +1934,20 @@
         "スピーカー",
         "ポータブル",
         "音質"
+      ]
+    },
+    {
+      "keyword": "USB-C ケーブル 高速充電 耐久性",
+      "category": "ガジェット",
+      "source": "builtin",
+      "score": 68.0,
+      "discovered_at": "2026-04-08T12:18:25.418831",
+      "status": "pending",
+      "keywords": [
+        "USB-C",
+        "ケーブル",
+        "充電",
+        "耐久性"
       ]
     },
     {
@@ -1819,63 +1979,123 @@
       ]
     },
     {
-      "keyword": "AirPods Pro 2代目 2026年 最新レビュー",
+      "keyword": "動画編集 AI ツール比較 ElevenLabs Synthesia",
       "category": "ガジェット",
-      "source": "manual",
-      "score": 79.0,
-      "discovered_at": "2026-04-09T07:55:10.535889",
-      "status": "pending",
-      "keywords": [
-        "AirPods Pro",
-        "イヤホン",
-        "ノイキャン",
-        "レビュー"
-      ]
+      "source": "fallback",
+      "score": 65,
+      "discovered_at": "2026-04-11T02:07:04.193219",
+      "status": "pending"
     },
     {
-      "keyword": "AirPods Pro 2代目 2026年 最新レビュー",
+      "keyword": "モバイルバッテリー おすすめ 大容量 2026年",
       "category": "ガジェット",
-      "source": "manual",
-      "score": 79.0,
-      "discovered_at": "2026-04-09T07:55:21.316234",
-      "status": "pending",
-      "keywords": [
-        "AirPods Pro",
-        "イヤホン",
-        "ノイキャン",
-        "レビュー"
-      ]
+      "source": "fallback",
+      "score": 55,
+      "discovered_at": "2026-04-11T02:07:04.193222",
+      "status": "pending"
     },
     {
-      "keyword": "Vision Pro 2 2026年 最新AR/VRヘッドセット 日本発売",
+      "keyword": "ワイヤレスイヤホン ノイキャン 比較 2026年",
       "category": "ガジェット",
-      "source": "manual",
-      "score": 82.0,
-      "discovered_at": "2026-04-09T12:22:50.500763",
-      "status": "pending",
-      "keywords": [
-        "Vision Pro",
-        "AR",
-        "VR",
-        "Apple"
-      ]
+      "source": "fallback",
+      "score": 52,
+      "discovered_at": "2026-04-11T02:07:04.193223",
+      "status": "pending"
     },
     {
-      "keyword": "Pixel 9 Pro 2026年 最新スマートフォン レビュー",
+      "keyword": "メカニカルキーボード おすすめ テレワーク",
       "category": "ガジェット",
-      "source": "manual",
-      "score": 81.0,
-      "discovered_at": "2026-04-09T12:22:50.500764",
-      "status": "pending",
-      "keywords": [
-        "Pixel 9",
-        "Google",
-        "スマートフォン",
-        "カメラ"
-      ]
+      "source": "fallback",
+      "score": 28,
+      "discovered_at": "2026-04-11T02:07:04.193231",
+      "status": "pending"
     }
   ],
   "生活改善": [
+    {
+      "keyword": "ノーコード プログラミング 初心者向け 2026年",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 83.0,
+      "discovered_at": "2026-04-09T12:22:50.500765",
+      "status": "pending",
+      "keywords": [
+        "ノーコード",
+        "プログラミング",
+        "初心者",
+        "アプリ作成"
+      ]
+    },
+    {
+      "keyword": "在宅勤務効率化 リモートワーク スタイル 2026年",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 82.0,
+      "discovered_at": "2026-04-09T12:22:50.500766",
+      "status": "pending",
+      "keywords": [
+        "在宅勤務",
+        "リモートワーク",
+        "効率化",
+        "デスク"
+      ]
+    },
+    {
+      "keyword": "瞑想 初心者向け やり方 効果 毎日",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 80.0,
+      "discovered_at": "2026-04-09T07:55:10.535890",
+      "status": "pending",
+      "keywords": [
+        "瞑想",
+        "マインドフルネス",
+        "瞑想アプリ",
+        "初心者"
+      ]
+    },
+    {
+      "keyword": "瞑想 初心者向け やり方 効果 毎日",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 80.0,
+      "discovered_at": "2026-04-09T07:55:21.316234",
+      "status": "pending",
+      "keywords": [
+        "瞑想",
+        "マインドフルネス",
+        "瞑想アプリ",
+        "初心者"
+      ]
+    },
+    {
+      "keyword": "朝活 習慣化 コツ メリット 実践方法",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 78.0,
+      "discovered_at": "2026-04-09T07:55:10.535890",
+      "status": "pending",
+      "keywords": [
+        "朝活",
+        "習慣化",
+        "朝勉強",
+        "生産性"
+      ]
+    },
+    {
+      "keyword": "朝活 習慣化 コツ メリット 実践方法",
+      "category": "生活改善",
+      "source": "manual",
+      "score": 78.0,
+      "discovered_at": "2026-04-09T07:55:21.316235",
+      "status": "pending",
+      "keywords": [
+        "朝活",
+        "習慣化",
+        "朝勉強",
+        "生産性"
+      ]
+    },
     {
       "keyword": "節約 アプリ おすすめ 家計管理 比較",
       "category": "生活改善",
@@ -2087,88 +2307,70 @@
       ]
     },
     {
-      "keyword": "瞑想 初心者向け やり方 効果 毎日",
+      "keyword": "観葉植物 育て方 初心者向けガイド",
       "category": "生活改善",
-      "source": "manual",
-      "score": 80.0,
-      "discovered_at": "2026-04-09T07:55:10.535890",
-      "status": "pending",
-      "keywords": [
-        "瞑想",
-        "マインドフルネス",
-        "瞑想アプリ",
-        "初心者"
-      ]
+      "source": "fallback",
+      "score": 50,
+      "discovered_at": "2026-04-11T02:07:04.193224",
+      "status": "pending"
     },
     {
-      "keyword": "朝活 習慣化 コツ メリット 実践方法",
+      "keyword": "睡眠の質 改善 快眠テクニック",
       "category": "生活改善",
-      "source": "manual",
-      "score": 78.0,
-      "discovered_at": "2026-04-09T07:55:10.535890",
-      "status": "pending",
-      "keywords": [
-        "朝活",
-        "習慣化",
-        "朝勉強",
-        "生産性"
-      ]
+      "source": "fallback",
+      "score": 48,
+      "discovered_at": "2026-04-11T02:07:04.193224",
+      "status": "pending"
     },
     {
-      "keyword": "瞑想 初心者向け やり方 効果 毎日",
+      "keyword": "節約アプリ 家計管理 お金の管理術",
       "category": "生活改善",
-      "source": "manual",
-      "score": 80.0,
-      "discovered_at": "2026-04-09T07:55:21.316234",
-      "status": "pending",
-      "keywords": [
-        "瞑想",
-        "マインドフルネス",
-        "瞑想アプリ",
-        "初心者"
-      ]
+      "source": "fallback",
+      "score": 45,
+      "discovered_at": "2026-04-11T02:07:04.193225",
+      "status": "pending"
     },
     {
-      "keyword": "朝活 習慣化 コツ メリット 実践方法",
+      "keyword": "タスク管理アプリ Todoist Notion 比較",
       "category": "生活改善",
-      "source": "manual",
-      "score": 78.0,
-      "discovered_at": "2026-04-09T07:55:21.316235",
-      "status": "pending",
-      "keywords": [
-        "朝活",
-        "習慣化",
-        "朝勉強",
-        "生産性"
-      ]
+      "source": "fallback",
+      "score": 42,
+      "discovered_at": "2026-04-11T02:07:04.193226",
+      "status": "pending"
     },
     {
-      "keyword": "ノーコード プログラミング 初心者向け 2026年",
+      "keyword": "犬 飼い方 初心者 費用 必要な準備",
       "category": "生活改善",
-      "source": "manual",
-      "score": 83.0,
-      "discovered_at": "2026-04-09T12:22:50.500765",
-      "status": "pending",
-      "keywords": [
-        "ノーコード",
-        "プログラミング",
-        "初心者",
-        "アプリ作成"
-      ]
+      "source": "fallback",
+      "score": 40,
+      "discovered_at": "2026-04-11T02:07:04.193227",
+      "status": "pending"
+    }
+  ],
+  "プログラミング": [
+    {
+      "keyword": "Python 自動化スクリプト 業務効率化 2026年",
+      "category": "プログラミング",
+      "source": "fallback",
+      "score": 62,
+      "discovered_at": "2026-04-11T02:07:04.193220",
+      "status": "pending"
     },
     {
-      "keyword": "在宅勤務効率化 リモートワーク スタイル 2026年",
-      "category": "生活改善",
-      "source": "manual",
-      "score": 82.0,
-      "discovered_at": "2026-04-09T12:22:50.500766",
-      "status": "pending",
-      "keywords": [
-        "在宅勤務",
-        "リモートワーク",
-        "効率化",
-        "デスク"
-      ]
+      "keyword": "Google Apps Script 自動化 初心者ガイド",
+      "category": "プログラミング",
+      "source": "fallback",
+      "score": 38,
+      "discovered_at": "2026-04-11T02:07:04.193228",
+      "status": "pending"
+    },
+    {
+      "keyword": "Excel VBA マクロ 業務自動化 入門",
+      "category": "プログラミング",
+      "source": "fallback",
+      "score": 35,
+      "discovered_at": "2026-04-11T02:07:04.193228",
+      "status": "pending"
     }
   ]
 }
