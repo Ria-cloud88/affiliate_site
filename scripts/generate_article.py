@@ -670,48 +670,33 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     return output_path
 
 
-def load_keywords_from_pool(count: int = 1) -> list[tuple[str, str, list[str]]]:
+def load_evergreen_keywords(count: int = 1) -> list[tuple[str, str, list[str]]]:
     """
-    keywords_pool.json から優先度付きでキーワードを取得
-    優先順：新ジャンル > 高スコアキーワード > 既存KEYWORD_POOLS（フォールバック）
+    evergreen_keywords.json から優先度付きでキーワードを取得
     戻り値: [(keyword, category, related_kws), ...]
     """
-    keywords_pool_path = Path("scripts/keywords_pool.json")
+    evergreen_path = Path("scripts/evergreen_keywords.json")
 
-    if not keywords_pool_path.exists():
-        print("WARNING: keywords_pool.json が見つかりません。既存キーワードプールから選択します")
-        # フォールバック：既存の KEYWORD_POOLS から選択
-        result = []
-        for i in range(count):
-            genre, main_kw, related_kws = select_keyword()
-            result.append((main_kw, genre, related_kws))
-        return result
+    if not evergreen_path.exists():
+        return []
 
     try:
-        pool = json.loads(keywords_pool_path.read_text(encoding='utf-8'))
+        data = json.loads(evergreen_path.read_text(encoding='utf-8'))
 
         candidates = []
 
-        # すべてのカテゴリから pending キーワードを収集
-        for category, items in pool.items():
+        # すべてのカテゴリからキーワードを収集
+        for category, items in data.items():
             if not isinstance(items, list):
                 continue
 
             for item in items:
-                if item.get('status') == 'pending' and item.get('keyword'):
-                    # 優先度スコア計算
-                    priority = item.get('score', 0)
-
-                    # 新ジャンル（genre_name を持つ）なら優先度UP
-                    if item.get('genre_name'):
-                        priority += 50
-
+                if item.get('keyword'):
                     candidates.append({
                         'keyword': item.get('keyword'),
                         'category': category,
-                        'related_kws': item.get('keywords', []) if isinstance(item.get('keywords'), list) else [],
-                        'priority': priority,
-                        'item': item  # 元のアイテムを保持
+                        'related_kws': item.get('related_kws', []) if isinstance(item.get('related_kws'), list) else [],
+                        'priority': item.get('priority', 50)
                     })
 
         # 優先度でソート（降順）
@@ -725,8 +710,80 @@ def load_keywords_from_pool(count: int = 1) -> list[tuple[str, str, list[str]]]:
         return result
 
     except Exception as e:
-        print(f"ERROR: keywords_pool.json 読み込み失敗: {e}")
+        print(f"WARNING: evergreen_keywords.json 読み込み失敗: {e}")
         return []
+
+
+def load_keywords_from_pool(count: int = 1, blend_evergreen: bool = True) -> list[tuple[str, str, list[str]]]:
+    """
+    keywords_pool.json と evergreen_keywords.json をブレンドしてキーワードを取得
+    优先顺：新ジャンル > 高スコアキーワード
+    blend_evergreen=True の場合、約50%をトレンディング、50%をエバーグリーンから取得
+    戻り値: [(keyword, category, related_kws), ...]
+    """
+    keywords_pool_path = Path("scripts/keywords_pool.json")
+
+    # トレンディングキーワードを取得
+    trending_keywords = []
+    if keywords_pool_path.exists():
+        try:
+            pool = json.loads(keywords_pool_path.read_text(encoding='utf-8'))
+
+            candidates = []
+
+            # すべてのカテゴリから pending キーワードを収集
+            for category, items in pool.items():
+                if not isinstance(items, list):
+                    continue
+
+                for item in items:
+                    if item.get('status') == 'pending' and item.get('keyword'):
+                        # 優先度スコア計算
+                        priority = item.get('score', 0)
+
+                        # 新ジャンル（genre_name を持つ）なら優先度UP
+                        if item.get('genre_name'):
+                            priority += 50
+
+                        candidates.append({
+                            'keyword': item.get('keyword'),
+                            'category': category,
+                            'related_kws': item.get('keywords', []) if isinstance(item.get('keywords'), list) else [],
+                            'priority': priority,
+                            'item': item  # 元のアイテムを保持
+                        })
+
+            # 優先度でソート（降順）
+            candidates.sort(key=lambda x: x['priority'], reverse=True)
+
+            # 取得する数：count の 50% + 10% 余裕
+            trending_count = max(int(count * 0.55), 1)
+            for i, c in enumerate(candidates[:trending_count]):
+                trending_keywords.append((c['keyword'], c['category'], c['related_kws']))
+
+        except Exception as e:
+            print(f"WARNING: keywords_pool.json 読み込み失敗: {e}")
+
+    # エバーグリーンキーワードを取得
+    evergreen_keywords = []
+    if blend_evergreen:
+        evergreen_count = max(count - len(trending_keywords), 1)
+        evergreen_keywords = load_evergreen_keywords(count=evergreen_count + 5)  # 余裕を持たせ取得
+
+    # 合算してランダムに返す
+    all_keywords = trending_keywords + evergreen_keywords
+    if not all_keywords:
+        # フォールバック：既存の KEYWORD_POOLS から選択
+        print("WARNING: キーワードプールが見つかりません。既存キーワードプールから選択します")
+        result = []
+        for i in range(count):
+            genre, main_kw, related_kws = select_keyword()
+            result.append((main_kw, genre, related_kws))
+        return result
+
+    # ランダムに順序を混ぜて返す（トレンディングとエバーグリーンを混在させる）
+    random.shuffle(all_keywords)
+    return all_keywords[:count]
 
 
 def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -> None:

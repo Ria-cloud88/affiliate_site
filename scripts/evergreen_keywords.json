@@ -1,0 +1,258 @@
+{
+  "植物・園芸": [
+    {
+      "keyword": "観葉植物 育て方 初心者向け",
+      "related_kws": ["観葉植物", "初心者", "育て方", "水やり"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "多肉植物 育て方 初心者 乾燥",
+      "related_kws": ["多肉植物", "育て方", "水やり", "冬越し"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ガーデニング初心者 花を育てるコツ",
+      "related_kws": ["ガーデニング", "花", "育てる", "初心者"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "エアプランツの育て方 水やり ミスト",
+      "related_kws": ["エアプランツ", "育て方", "水やり", "霧吹き"],
+      "priority": 70,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "アイビー ヘデラ育て方 室内",
+      "related_kws": ["アイビー", "ヘデラ", "育て方", "室内"],
+      "priority": 70,
+      "source": "evergreen"
+    }
+  ],
+  "ペット": [
+    {
+      "keyword": "ハムスター 飼い方 初心者 準備 必要なもの",
+      "related_kws": ["ハムスター", "飼い方", "初心者", "準備"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "犬 飼い方 初心者 しつけ",
+      "related_kws": ["犬", "飼い方", "初心者", "しつけ"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "猫 飼い方 初めて 準備 生活",
+      "related_kws": ["猫", "飼い方", "初めて", "準備"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "金魚 飼い方 初心者 水槽",
+      "related_kws": ["金魚", "飼い方", "初心者", "水槽"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "小鳥 セキセイインコ 飼い方 初心者",
+      "related_kws": ["セキセイインコ", "小鳥", "飼い方", "初心者"],
+      "priority": 70,
+      "source": "evergreen"
+    }
+  ],
+  "生活・家計": [
+    {
+      "keyword": "節約 アプリ おすすめ 家計管理 比較",
+      "related_kws": ["節約", "アプリ", "家計管理", "無料"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ふるさと納税 初心者 やり方 仕組み",
+      "related_kws": ["ふるさと納税", "初心者", "やり方", "節税"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "家計簿 つけ方 初心者 続けるコツ",
+      "related_kws": ["家計簿", "つけ方", "初心者", "続ける"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "断捨離 やり方 収納術 スッキリ",
+      "related_kws": ["断捨離", "やり方", "収納", "片付け"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "電気代 節約 方法 実践的",
+      "related_kws": ["電気代", "節約", "方法", "実践"],
+      "priority": 75,
+      "source": "evergreen"
+    }
+  ],
+  "美容・健康": [
+    {
+      "keyword": "肌荒れ改善 原因 対策 スキンケア",
+      "related_kws": ["肌荒れ", "改善", "スキンケア", "原因"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ダイエット 効果的 方法 初心者",
+      "related_kws": ["ダイエット", "効果的", "方法", "初心者"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "睡眠 改善 質 良くする方法",
+      "related_kws": ["睡眠", "改善", "質", "方法"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ニキビ対策 治し方 スキンケア",
+      "related_kws": ["ニキビ", "対策", "治し方", "スキンケア"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "運動習慣 つける方法 初心者",
+      "related_kws": ["運動", "習慣", "つける", "初心者"],
+      "priority": 75,
+      "source": "evergreen"
+    }
+  ],
+  "料理・食べ物": [
+    {
+      "keyword": "初心者 料理レシピ 簡単 おすすめ",
+      "related_kws": ["料理", "レシピ", "簡単", "初心者"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "弁当 詰め方 コツ 初心者",
+      "related_kws": ["弁当", "詰め方", "コツ", "初心者"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "コーヒー 入れ方 初心者 淹れ方",
+      "related_kws": ["コーヒー", "入れ方", "初心者", "淹れ方"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "玄米 食べ方 炊き方 健康効果",
+      "related_kws": ["玄米", "食べ方", "炊き方", "健康"],
+      "priority": 70,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "味噌汁 作り方 初心者 レシピ",
+      "related_kws": ["味噌汁", "作り方", "初心者", "レシピ"],
+      "priority": 70,
+      "source": "evergreen"
+    }
+  ],
+  "趣味・娯楽": [
+    {
+      "keyword": "読書習慣 つけ方 初心者",
+      "related_kws": ["読書", "習慣", "つけ方", "初心者"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "イラスト 描き方 初心者 上手くなるコツ",
+      "related_kws": ["イラスト", "描き方", "初心者", "上達"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ブログ 始め方 初心者 続けるコツ",
+      "related_kws": ["ブログ", "始め方", "初心者", "続ける"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "動画編集 初心者 ソフト おすすめ",
+      "related_kws": ["動画編集", "初心者", "ソフト", "おすすめ"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ゲーム 始める 初心者 やり方",
+      "related_kws": ["ゲーム", "始める", "初心者", "やり方"],
+      "priority": 75,
+      "source": "evergreen"
+    }
+  ],
+  "学習・教育": [
+    {
+      "keyword": "英語 勉強方法 初心者 効果的",
+      "related_kws": ["英語", "勉強", "初心者", "効果的"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "プログラミング学習 初心者 始め方",
+      "related_kws": ["プログラミング", "学習", "初心者", "始め方"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "数学 わかりやすい 勉強方法",
+      "related_kws": ["数学", "わかりやすい", "勉強", "方法"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "歴史 わかりやすく 学ぶ コツ",
+      "related_kws": ["歴史", "わかりやすく", "学ぶ", "コツ"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "資格取得 勉強方法 初心者",
+      "related_kws": ["資格", "取得", "勉強", "初心者"],
+      "priority": 75,
+      "source": "evergreen"
+    }
+  ],
+  "キャリア・仕事": [
+    {
+      "keyword": "転職 初めて 準備 流れ",
+      "related_kws": ["転職", "初めて", "準備", "流れ"],
+      "priority": 85,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "職務経歴書 書き方 初心者 テンプレート",
+      "related_kws": ["職務経歴書", "書き方", "初心者", "テンプレート"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "面接対策 初心者 よくある質問",
+      "related_kws": ["面接", "対策", "初心者", "質問"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "起業 始め方 初心者 準備",
+      "related_kws": ["起業", "始め方", "初心者", "準備"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "副業 初心者 おすすめ 始め方",
+      "related_kws": ["副業", "初心者", "おすすめ", "始め方"],
+      "priority": 80,
+      "source": "evergreen"
+    }
+  ]
+}
