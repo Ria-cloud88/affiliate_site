@@ -26,19 +26,22 @@ jobs:
           python-version: '3.11'
 
       - name: 依存パッケージインストール
-        run: pip install anthropic pytrends
+        run: pip install anthropic pytrends feedparser
 
-      - name: キーワード自動発掘 + 記事生成（優先度付け）
+      - name: トレンドキーワード自動抽出 + 記事生成
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          # キーワードプールを確実に初期化（builtin）
+          # キーワードプールを確実に初期化
           python scripts/init_keywords_pool.py
 
-          # キーワード発掘＆プール更新（オプション・失敗許容）
-          python scripts/discover_keywords.py --limit 30 --update || echo "Note: discover_keywords skipped"
+          # ステップ1: RSS フィードからトレンドキーワード自動抽出
+          python scripts/extract_keywords_from_news.py --update
 
-          # 優先度付きで記事生成（デフォルト2記事）
+          # ステップ2: フォールバックとして discover_keywords も実行
+          python scripts/discover_keywords.py --limit 20 --update || echo "Note: discover_keywords skipped (optional)"
+
+          # ステップ3: 優先度付きで記事生成（2記事）
           python scripts/generate_article.py --auto-discover 2
 
       - name: 生成した記事をコミット＆プッシュ
