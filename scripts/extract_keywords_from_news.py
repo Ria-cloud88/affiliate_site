@@ -31,6 +31,7 @@ NEWS_FEEDS = [
 
     # === ガジェット・家電 ===
     ("Engadget Japanese", "https://japanese.engadget.com/rss.xml"),
+    ("CNET Japan", "https://japan.cnet.com/xml/rss.xml"),
 
     # === プログラミング・開発 ===
     ("Zenn トレンド", "https://zenn.dev/feed.atom"),
@@ -39,9 +40,14 @@ NEWS_FEEDS = [
     # === 副業・キャリア ===
     ("Wantedly News", "https://news.wantedly.com/feed"),
 
+    # === IT・テック総合 ===
+    ("マイナビニュース", "https://news.mynavi.jp/rss/index.xml"),
+    ("アスキー", "https://ascii.jp/feed.xml"),
+
     # === Google News（集約） ===
     ("Google News AI", "https://news.google.com/rss/search?q=AI&hl=ja&gl=JP&ceid=JP:ja"),
     ("Google News 副業", "https://news.google.com/rss/search?q=副業&hl=ja&gl=JP&ceid=JP:ja"),
+    ("Google News スタートアップ", "https://news.google.com/rss/search?q=スタートアップ&hl=ja&gl=JP&ceid=JP:ja"),
 ]
 
 # トレンド判定用：ニュースに頻出するキーワード = トレンド

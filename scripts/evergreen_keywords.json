@@ -29,6 +29,36 @@
       "related_kws": ["アイビー", "ヘデラ", "育て方", "室内"],
       "priority": 70,
       "source": "evergreen"
+    },
+    {
+      "keyword": "モンステラ育て方 大きくする",
+      "related_kws": ["モンステラ", "育て方", "成長", "大きくする"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "パキラ育て方 初心者 増やし方",
+      "related_kws": ["パキラ", "育て方", "初心者", "増やし方"],
+      "priority": 72,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ユーカリ育て方 室内 初心者",
+      "related_kws": ["ユーカリ", "育て方", "室内", "初心者"],
+      "priority": 70,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "プランター 野菜 育て方 初心者",
+      "related_kws": ["プランター", "野菜", "育て方", "初心者"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "アロマプランツ 育て方 香り",
+      "related_kws": ["アロマプランツ", "育て方", "香り", "ハーブ"],
+      "priority": 68,
+      "source": "evergreen"
     }
   ],
   "ペット": [
@@ -61,6 +91,36 @@
       "related_kws": ["セキセイインコ", "小鳥", "飼い方", "初心者"],
       "priority": 70,
       "source": "evergreen"
+    },
+    {
+      "keyword": "うさぎ 飼い方 初心者 世話",
+      "related_kws": ["うさぎ", "飼い方", "初心者", "世話"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "フェレット 飼い方 初心者",
+      "related_kws": ["フェレット", "飼い方", "初心者", "準備"],
+      "priority": 70,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "爬虫類 飼い方 初心者 初期費用",
+      "related_kws": ["爬虫類", "飼い方", "初心者", "費用"],
+      "priority": 72,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "チンチラ 飼い方 特徴 世話",
+      "related_kws": ["チンチラ", "飼い方", "特徴", "世話"],
+      "priority": 68,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ペット 初心者 どの動物 選び方",
+      "related_kws": ["ペット", "初心者", "選び方", "動物"],
+      "priority": 75,
+      "source": "evergreen"
     }
   ],
   "生活・家計": [
@@ -91,6 +151,36 @@
     {
       "keyword": "電気代 節約 方法 実践的",
       "related_kws": ["電気代", "節約", "方法", "実践"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "水道代 節約 節水 方法",
+      "related_kws": ["水道代", "節約", "節水", "方法"],
+      "priority": 72,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ガス代 節約 プロパンガス 都市ガス",
+      "related_kws": ["ガス代", "節約", "プロパンガス", "都市ガス"],
+      "priority": 72,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "貯金 コツ 初心者 目標設定",
+      "related_kws": ["貯金", "コツ", "初心者", "目標"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "クレジットカード 選び方 初心者 ポイント",
+      "related_kws": ["クレジットカード", "選び方", "初心者", "ポイント"],
+      "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "生活費 削減 固定費 見直し",
+      "related_kws": ["生活費", "削減", "固定費", "見直し"],
       "priority": 75,
       "source": "evergreen"
     }
@@ -125,6 +215,36 @@
       "related_kws": ["運動", "習慣", "つける", "初心者"],
       "priority": 75,
       "source": "evergreen"
+    },
+    {
+      "keyword": "シミ取り 予防 対策 スキンケア",
+      "related_kws": ["シミ", "予防", "対策", "スキンケア"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "毛穴ケア 目立つ 原因 改善",
+      "related_kws": ["毛穴", "ケア", "原因", "改善"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "便秘解消 方法 食べ物 改善",
+      "related_kws": ["便秘", "解消", "方法", "食べ物"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "冷え性 改善 原因 対策",
+      "related_kws": ["冷え性", "改善", "原因", "対策"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "疲労 回復 方法 栄養",
+      "related_kws": ["疲労", "回復", "方法", "栄養"],
+      "priority": 72,
+      "source": "evergreen"
     }
   ],
   "料理・食べ物": [
@@ -156,6 +276,36 @@
       "keyword": "味噌汁 作り方 初心者 レシピ",
       "related_kws": ["味噌汁", "作り方", "初心者", "レシピ"],
       "priority": 70,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "パスタ 作り方 初心者 レシピ",
+      "related_kws": ["パスタ", "作り方", "初心者", "レシピ"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "ご飯 炊き方 初心者 土鍋 炊飯器",
+      "related_kws": ["ご飯", "炊き方", "初心者", "炊飯器"],
+      "priority": 72,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "和食 基本 作り方 初心者",
+      "related_kws": ["和食", "基本", "作り方", "初心者"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "家庭菜園 初心者 野菜 育て方",
+      "related_kws": ["家庭菜園", "初心者", "野菜", "育て方"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "お菓子 作り方 初心者 簡単",
+      "related_kws": ["お菓子", "作り方", "初心者", "簡単"],
+      "priority": 72,
       "source": "evergreen"
     }
   ],
@@ -189,6 +339,36 @@
       "related_kws": ["ゲーム", "始める", "初心者", "やり方"],
       "priority": 75,
       "source": "evergreen"
+    },
+    {
+      "keyword": "YouTube 撮影方法 初心者 機材",
+      "related_kws": ["YouTube", "撮影", "初心者", "機材"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "写真 撮り方 初心者 技法",
+      "related_kws": ["写真", "撮り方", "初心者", "技法"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "楽器 初心者 選び方 学び方",
+      "related_kws": ["楽器", "初心者", "選び方", "学び方"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "手芸 初心者 何から始める",
+      "related_kws": ["手芸", "初心者", "何から", "始める"],
+      "priority": 70,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "映画 おすすめ 選び方 初心者",
+      "related_kws": ["映画", "おすすめ", "選び方", "初心者"],
+      "priority": 72,
+      "source": "evergreen"
     }
   ],
   "学習・教育": [
@@ -219,6 +399,36 @@
     {
       "keyword": "資格取得 勉強方法 初心者",
       "related_kws": ["資格", "取得", "勉強", "初心者"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "中国語 勉強方法 初心者",
+      "related_kws": ["中国語", "勉強", "初心者", "方法"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "韓国語 勉強 初心者 覚え方",
+      "related_kws": ["韓国語", "勉強", "初心者", "覚え方"],
+      "priority": 73,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "TOEIC 勉強方法 初心者 対策",
+      "related_kws": ["TOEIC", "勉強", "初心者", "対策"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "オンライン学習 初心者 選び方",
+      "related_kws": ["オンライン学習", "初心者", "選び方", "プラットフォーム"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "勉強習慣 つけ方 続かない",
+      "related_kws": ["勉強", "習慣", "つけ方", "続ける"],
       "priority": 75,
       "source": "evergreen"
     }
@@ -252,6 +462,36 @@
       "keyword": "副業 初心者 おすすめ 始め方",
       "related_kws": ["副業", "初心者", "おすすめ", "始め方"],
       "priority": 80,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "フリーランス 初心者 やり方 準備",
+      "related_kws": ["フリーランス", "初心者", "やり方", "準備"],
+      "priority": 78,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "退職 手続き 準備 流れ",
+      "related_kws": ["退職", "手続き", "準備", "流れ"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "給与 交渉 方法 初めて",
+      "related_kws": ["給与", "交渉", "方法", "初めて"],
+      "priority": 75,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "LinkedIn 活用方法 仕事 転職",
+      "related_kws": ["LinkedIn", "活用", "仕事", "転職"],
+      "priority": 72,
+      "source": "evergreen"
+    },
+    {
+      "keyword": "キャリア形成 初心者 考え方",
+      "related_kws": ["キャリア", "形成", "初心者", "考え方"],
+      "priority": 75,
       "source": "evergreen"
     }
   ]
