@@ -128,7 +128,7 @@
       "source": "manual",
       "score": 82.0,
       "discovered_at": "2026-04-09T07:55:10.535885",
-      "status": "pending",
+      "status": "duplicate",
       "keywords": [
         "Gemini 2.0",
         "Google",
