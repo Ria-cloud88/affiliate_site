@@ -454,7 +454,7 @@
       "source": "manual",
       "score": 85.0,
       "discovered_at": "2026-04-09T12:22:50.500760",
-      "status": "pending",
+      "status": "completed",
       "keywords": [
         "Make",
         "Zapier",
@@ -752,7 +752,7 @@
       "source": "manual",
       "score": 84.0,
       "discovered_at": "2026-04-09T12:22:50.500763",
-      "status": "pending",
+      "status": "duplicate",
       "keywords": [
         "アフィリエイト",
         "単価",
