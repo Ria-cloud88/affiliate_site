@@ -6,7 +6,7 @@
       "source": "fallback",
       "score": 95,
       "discovered_at": "2026-04-11T02:07:04.193192",
-      "status": "pending"
+      "status": "duplicate"
     },
     {
       "keyword": "Gemini 2.0 マルチモーダル API 実装",
@@ -50,7 +50,7 @@
       "source": "manual",
       "score": 86.0,
       "discovered_at": "2026-04-09T12:22:50.500759",
-      "status": "pending",
+      "status": "duplicate",
       "keywords": [
         "Gemini Pro",
         "マルチモーダル",
@@ -100,7 +100,7 @@
       "source": "manual",
       "score": 84.0,
       "discovered_at": "2026-04-09T07:55:10.535884",
-      "status": "pending",
+      "status": "duplicate",
       "keywords": [
         "Claude 3",
         "Opus",
