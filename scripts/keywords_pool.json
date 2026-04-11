@@ -64,7 +64,7 @@
       "source": "manual",
       "score": 85.0,
       "discovered_at": "2026-04-09T07:55:10.535874",
-      "status": "pending",
+      "status": "duplicate",
       "keywords": [
         "ChatGPT Plus",
         "$20",
@@ -92,7 +92,7 @@
       "source": "fallback",
       "score": 85,
       "discovered_at": "2026-04-11T02:07:04.193213",
-      "status": "pending"
+      "status": "duplicate"
     },
     {
       "keyword": "Claude 3 最新モデル 比較 使い分け",
