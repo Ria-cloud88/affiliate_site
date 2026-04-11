@@ -239,7 +239,7 @@ def fix_article_content(content: str) -> str:
         line = lines[i]
 
         # "## まとめ" を検出
-        elif line.strip().startswith('## ') and 'まとめ' in line:
+        if line.strip().startswith('## ') and 'まとめ' in line:
             fixed_lines.append(line)
             i += 1
 
