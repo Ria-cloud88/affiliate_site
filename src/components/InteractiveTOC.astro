@@ -15,14 +15,11 @@ const themeColors = getThemeColors(genre);
 ---
 
 <div class="interactive-toc-container">
-  <details class="toc-details">
-    <summary class="toc-summary">📑 目次を表示</summary>
-    <nav class="toc-nav">
-      <ol class="toc-list" id="toc-list">
-        <!-- Populated by JavaScript -->
-      </ol>
-    </nav>
-  </details>
+  <nav class="toc-nav">
+    <ol class="toc-list" id="toc-list">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </nav>
 </div>
 
 <script define:vars={{
@@ -98,25 +95,6 @@ const themeColors = getThemeColors(genre);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 
-  .toc-details {
-    cursor: pointer;
-  }
-
-  .toc-summary {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primaryColor);
-    padding: 0.5rem;
-    margin: -0.5rem;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-    list-style: none;
-  }
-
-  .toc-summary:hover {
-    background: var(--primaryLight);
-    color: var(--primaryDark);
-  }
 
   .toc-nav {
     margin-top: 1rem;

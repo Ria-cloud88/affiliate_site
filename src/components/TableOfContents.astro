@@ -36,20 +36,17 @@ if (tocMatch) {
 
 {headings.length > 0 && (
   <div class="toc-container">
-    <details class="toc-details">
-      <summary class="toc-summary">📑 目次を表示</summary>
-      <nav class="toc-nav">
-        <ol class="toc-list">
-          {headings.map((heading, index) => (
-            <li class="toc-item">
-              <a href={`#heading-${index}`} class="toc-link">
-                {heading.text}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
-    </details>
+    <nav class="toc-nav">
+      <ol class="toc-list">
+        {headings.map((heading, index) => (
+          <li class="toc-item">
+            <a href={`#heading-${index}`} class="toc-link">
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
   </div>
 )}
 
