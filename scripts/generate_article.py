@@ -269,18 +269,13 @@ def fix_article_content(content: str) -> str:
             i += 1
         # "## まとめ"の後の見出しを処理
         elif in_summary and line.strip().startswith('## '):
-            # "## 関連"や"## サイト内の人気記事"など既知セクションに到達したら終了
-            if any(section in line for section in ['関連', 'サイト内', '人気記事']):
-                in_summary = False
-                fixed_lines.append(line)
+            # ## まとめ の後のすべての ## 見出しを削除
+            # （AIが生成した「## 関連記事」「## サイト内の人気記事」も削除）
+            # 関連記事・人気記事は別途スクリプト（generate_related_articles等）で追加される
+            i += 1
+            # 次の ## 見出しが出現するまで、すべてをスキップ
+            while i < len(lines) and not lines[i].strip().startswith('## '):
                 i += 1
-            else:
-                # 不正な見出しとその本文をすべてスキップ
-                # 見出し行をスキップ
-                i += 1
-                # 次の ## 見出しが出現するまで、すべてをスキップ
-                while i < len(lines) and not lines[i].strip().startswith('## '):
-                    i += 1
         else:
             fixed_lines.append(line)
             i += 1
