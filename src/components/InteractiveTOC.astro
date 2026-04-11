@@ -14,7 +14,7 @@ const { genre = "AIツール" } = Astro.props;
 const themeColors = getThemeColors(genre);
 ---
 
-<div class="interactive-toc-container">
+<div class="interactive-toc-container" style="display: none;">
   <nav class="toc-nav">
     <ol class="toc-list" id="toc-list">
       <!-- Populated by JavaScript -->
@@ -47,6 +47,9 @@ const themeColors = getThemeColors(genre);
       });
 
       if (headingsToShow.length >= 5) {
+        const container = document.querySelector('.interactive-toc-container');
+        if (container) container.style.display = 'block';
+
         headingsToShow.forEach((heading, index) => {
           // 見出しにIDを付与（ない場合）
           if (!heading.id) {
@@ -70,10 +73,6 @@ const themeColors = getThemeColors(genre);
         document.documentElement.style.setProperty('--color-background', backgroundColor);
         document.documentElement.style.setProperty('--color-primary-light', primaryLight);
         document.documentElement.style.setProperty('--color-accent', accentColor);
-      } else {
-        // 見出しが少ない場合は目次を非表示
-        const container = document.querySelector('.interactive-toc-container');
-        if (container) container.style.display = 'none';
       }
     }
   }
