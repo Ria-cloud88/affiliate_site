@@ -234,6 +234,7 @@ def fix_article_content(content: str) -> str:
     lines = content.split('\n')
     fixed_lines = []
     i = 0
+    in_summary = False
 
     while i < len(lines):
         line = lines[i]
@@ -241,26 +242,20 @@ def fix_article_content(content: str) -> str:
         # "## まとめ" を検出
         if line.strip().startswith('## ') and 'まとめ' in line:
             fixed_lines.append(line)
+            in_summary = True
             i += 1
-
-            # その後の行をチェック
-            while i < len(lines):
-                next_line = lines[i]
-
-                # 空行やスパンタグはそのまま追加
-                if next_line.strip() == '' or next_line.strip().startswith('<span'):
-                    fixed_lines.append(next_line)
-                    i += 1
-                # 別の ## 見出しが見つかったら修正
-                elif next_line.strip().startswith('## ') and next_line.strip() != '## ':
-                    # ## を削除して本文テキストに変換
-                    fixed_line = next_line.replace('## ', '', 1).strip()
-                    fixed_lines.append(fixed_line)
-                    i += 1
-                    break
-                # その他の行は追加して終了
-                else:
-                    break
+        # "## まとめ"の後の見出しを処理
+        elif in_summary and line.strip().startswith('## ') and 'まとめ' not in line:
+            # 別セクション（人気記事など）に到達したら終了
+            if '人気記事' in line or 'サイト内' in line or '関連' in line:
+                in_summary = False
+                fixed_lines.append(line)
+                i += 1
+            else:
+                # ## を削除して本文テキストに変換
+                fixed_line = line.replace('## ', '', 1).strip()
+                fixed_lines.append(fixed_line)
+                i += 1
         else:
             fixed_lines.append(line)
             i += 1
