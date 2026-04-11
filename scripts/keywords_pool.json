@@ -14,7 +14,7 @@
       "source": "fallback",
       "score": 90,
       "discovered_at": "2026-04-11T02:07:04.193211",
-      "status": "pending"
+      "status": "duplicate"
     },
     {
       "keyword": "ChatGPT Plus $20 レビュー 本当に価値があるか 2026年",
@@ -738,7 +738,7 @@
       "source": "manual",
       "score": 86.0,
       "discovered_at": "2026-04-09T12:22:50.500762",
-      "status": "pending",
+      "status": "duplicate",
       "keywords": [
         "YouTube Shorts",
         "短編動画",
