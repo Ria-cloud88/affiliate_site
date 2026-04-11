@@ -36,7 +36,7 @@
       "source": "manual",
       "score": 87.0,
       "discovered_at": "2026-04-09T12:22:50.500758",
-      "status": "pending",
+      "status": "duplicate",
       "keywords": [
         "Claude",
         "Opus",
