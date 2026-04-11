@@ -747,6 +747,9 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     # 目次を生成（3500字以上の記事のみ）
     article_body = generate_table_of_contents(article_body)
 
+    # 記事構造の最終修正（目次の【非表示】テキストを削除）
+    article_body = fix_article_content(article_body)
+
     # 記事の本文に追加セクション（関連記事、人気記事、関連キーワード）を追加
     related_articles = generate_related_articles(genre, main_kw)
     popular_articles = generate_popular_articles()
