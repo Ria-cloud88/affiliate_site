@@ -34,7 +34,8 @@ if "ANTHROPIC_API_KEY" in os.environ:
     os.environ["ANTHROPIC_API_KEY"] = os.environ["ANTHROPIC_API_KEY"].strip()
 
 # ジャンル別キーワードプール（現在は未使用 - CSVキーワード優先）
-# KEYWORD_POOLS = {
+"""
+KEYWORD_POOLS = {
     "AIツール": [
         ("ChatGPT 使い方 初心者 完全ガイド", ["ChatGPT", "AI", "無料", "活用法"]),
         ("Claude AI 使い方 ChatGPTとの違い 比較", ["Claude", "Anthropic", "AI比較", "無料"]),
@@ -82,7 +83,7 @@ if "ANTHROPIC_API_KEY" in os.environ:
         ("ペット 初心者 おすすめ 費用 選び方", ["ペット", "初心者", "飼育", "選択"]),
     ],
 }
-# """
+"""
 
 # ニュース取得先RSSフィード（日本語テック系）
 NEWS_FEEDS = [
