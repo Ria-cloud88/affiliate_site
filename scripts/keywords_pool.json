@@ -1211,6 +1211,14 @@
       "status": "pending"
     },
     {
+      "keyword": "副業編",
+      "category": "副業",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-12T22:04:43.848305",
+      "status": "pending"
+    },
+    {
       "keyword": "YouTubeが有料サブスクのYouTube",
       "category": "副業",
       "source": "fallback",

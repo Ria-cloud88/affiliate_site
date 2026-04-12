@@ -46,6 +46,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業編",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -153,6 +160,20 @@
     {
       "keyword": "世界初の適応型ノイズキャンセリングを搭載した睡眠特化型ワイヤレスイヤホン",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Claudeには自分が送信したメッセージをユーザーからのものだと誤認する致命的バグがあるとの指摘",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "医療AIは診断に必要な画像が提供されていなくてもそれらしい診断を出す可能性がある",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
