@@ -1,4 +1,5 @@
 ---
+import { Fragment } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -15,6 +16,16 @@ const currentUrl = Astro.url.href;
 const encodedUrl = encodeURIComponent(currentUrl);
 const encodedTitle = encodeURIComponent(title);
 const themeColors = getThemeColors(genre || 'AIツール');
+
+// スロットコンテンツをHTML文字列として取得
+const slotContent = await Astro.slots.render('default');
+
+// HTML構造を修正：h2とhr混在の問題を解決
+// 空の<h2>の直後に<hr>がある場合、その<h2>を削除
+const fixedContent = slotContent
+  .replace(/<h2[^>]*>([^<]*)<\/h2>\s*<hr\s*\/?>/gi, '<hr />')
+  // または、<h2>の直後に<hr>がある場合、境界を明確にする
+  .replace(/<h2([^>]*)>([^<]*?)<\/h2>\s*(<hr\s*\/>)/gi, '</div>$3<div class="prose">');
 ---
 
 <html lang="ja">
@@ -70,7 +81,7 @@ const themeColors = getThemeColors(genre || 'AIツール');
 
           <!-- Article body -->
           <div class="prose">
-            <slot />
+            <Fragment set:html={fixedContent} />
           </div>
 
           <!-- Bottom share -->
