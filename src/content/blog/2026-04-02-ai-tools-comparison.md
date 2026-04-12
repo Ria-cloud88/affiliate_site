@@ -92,5 +92,3 @@ Google検索・Gmail・Googleドキュメントとの連携が最強。Googleユ
 ### 月$40（約6,000円）
 - **ChatGPT Plus + Claude Pro**
 - 本格的にAI副業するならこの構成が最強
-
-## まとめ

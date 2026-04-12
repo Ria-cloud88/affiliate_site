@@ -77,5 +77,3 @@ genre: 'ガジェット'
 | FPS・ゲーム | 銀軸・赤軸 | Logicool G PRO X |
 | プログラミング | 茶軸・HHKB | HHKB / REALFORCE |
 | 予算重視 | 赤軸 | Redragon K552 |
-
-## まとめ

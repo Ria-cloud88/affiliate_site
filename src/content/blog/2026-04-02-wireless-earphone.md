@@ -110,5 +110,3 @@ genre: 'ガジェット'
 - **とにかく安く**: Anker Soundcore P20i
 - **在宅ワーク・集中したい**: Sony WF-C700N or Anker Life P3
 - **スポーツ・アウトドア**: IPX7のEarfun Air
-
-## まとめ

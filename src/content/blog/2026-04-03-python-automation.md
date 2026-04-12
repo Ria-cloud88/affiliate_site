@@ -115,5 +115,3 @@ summary.to_excel("集計結果.xlsx")
 # 2. 主要ライブラリをインストール
 pip install pandas openpyxl requests beautifulsoup4
 ```
-
-## まとめ

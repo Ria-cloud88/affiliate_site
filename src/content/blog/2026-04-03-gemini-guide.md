@@ -62,5 +62,3 @@ Gmailを開く→メールを選択→「Geminiで返信」→下書きを自動
 | 副業全般 | ChatGPT + Claude |
 
 > ChatGPTとの詳細比較は[Claude vs ChatGPT比較](/blog/2026-04-02-claude-vs-chatgpt/)もご覧ください。
-
-## まとめ
