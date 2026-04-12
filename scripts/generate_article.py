@@ -328,6 +328,28 @@ def mark_csv_keyword_as_used(keyword: str):
         print(f"CSVキーワード更新失敗: {e}")
 
 
+def infer_genre_from_keyword(keyword_first_word: str) -> str:
+    """キーワードの最初の単語からジャンルを推測"""
+    # ジャンル判定マッピング
+    genre_keywords = {
+        "ペット": ["犬", "猫", "ハムスター", "うさぎ", "インコ", "熱帯魚", "爬虫類"],
+        "副業": ["副業", "フリーランス", "転職", "起業", "プログラミング", "Python", "JavaScript"],
+        "生活改善": ["ダイエット", "ヨガ", "プロテイン", "サプリメント", "睡眠", "免疫力",
+                    "コレステロール", "頭痛", "めまい", "スキンケア", "クレンジング", "洗顔",
+                    "化粧水", "美容液", "乳液", "日焼け止め", "ファンデーション", "アイシャドウ",
+                    "リップ", "チーク", "マスカラ", "アイライナー", "シャンプー", "コンディショナー",
+                    "ソファ", "ベッド"],
+        "ガジェット": ["照明", "スマートフォン", "iPhone", "ノートパソコン", "ヘッドフォン",
+                      "スピーカー", "Tシャツ", "パーカー", "スニーカー", "靴", "バッグ"],
+    }
+
+    for genre, keywords in genre_keywords.items():
+        if keyword_first_word in keywords:
+            return genre
+
+    return "副業"  # デフォルト
+
+
 def select_keyword():
     """キーワード選択（CSVを優先、なければKEYWORD_POOLSから選択）"""
     # CSVから未使用キーワードを取得
@@ -341,13 +363,7 @@ def select_keyword():
         related_kws = parts
 
         # ジャンルを推測（最初の単語から）
-        genre = None
-        for g in KEYWORD_POOLS.keys():
-            if parts[0] in [kw[0].split()[0] for kw in KEYWORD_POOLS[g]]:
-                genre = g
-                break
-        if not genre:
-            genre = random.choice(list(KEYWORD_POOLS.keys()))
+        genre = infer_genre_from_keyword(parts[0])
 
         # 使用済みに更新
         mark_csv_keyword_as_used(keyword)
