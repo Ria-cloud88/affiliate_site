@@ -262,6 +262,10 @@ def fix_article_content(content: str) -> str:
     """記事の構造を修正: ## 目次【非表示】→ ## 目次、## まとめセクションの段落を <p> タグで囲む"""
     # "## 目次【非表示】" を "## 目次" に修正
     content = content.replace('## 目次【非表示】', '## 目次')
+    # 古いHTMLコメントを削除（クリーンアップ）
+    content = content.replace('<!-- summary-content-start -->\n', '')
+    content = content.replace('<!-- summary-content-start -->', '')
+    content = content.replace('<!-- preserve-paragraph -->', '')
 
     lines = content.split('\n')
     fixed_lines = []
@@ -290,7 +294,8 @@ def fix_article_content(content: str) -> str:
                 # まとめ内容を <p> タグで囲んで追加
                 if summary_content_lines:
                     summary_text = '\n'.join(summary_content_lines).strip()
-                    fixed_lines.append(f'<p>{summary_text}</p>')
+                    if summary_text:  # 空でない場合のみ追加
+                        fixed_lines.append(f'<p>{summary_text}</p>')
                     fixed_lines.append('')
                 # 新しい見出しを追加
                 fixed_lines.append(line)
@@ -307,14 +312,19 @@ def fix_article_content(content: str) -> str:
                 # まとめ内容を <p> タグで囲んで追加
                 if summary_content_lines:
                     summary_text = '\n'.join(summary_content_lines).strip()
-                    fixed_lines.append(f'<p>{summary_text}</p>')
+                    if summary_text:  # 空でない場合のみ追加
+                        fixed_lines.append(f'<p>{summary_text}</p>')
                     fixed_lines.append('')
                 fixed_lines.append(line)
                 summary_content_lines = []
                 i += 1
                 continue
+            elif line.strip().startswith('<!--') or line.strip().startswith('<span'):
+                # HTMLコメントや span タグはスキップ
+                i += 1
+                continue
             else:
-                # 段落内容を収集
+                # 段落内容を収集（空行でなく、HTMLタグでもない）
                 summary_content_lines.append(line)
                 i += 1
                 continue
