@@ -33,8 +33,8 @@ from keyword_manager import (
 if "ANTHROPIC_API_KEY" in os.environ:
     os.environ["ANTHROPIC_API_KEY"] = os.environ["ANTHROPIC_API_KEY"].strip()
 
-# ジャンル別キーワードプール
-KEYWORD_POOLS = {
+# ジャンル別キーワードプール（現在は未使用 - CSVキーワード優先）
+# KEYWORD_POOLS = {
     "AIツール": [
         ("ChatGPT 使い方 初心者 完全ガイド", ["ChatGPT", "AI", "無料", "活用法"]),
         ("Claude AI 使い方 ChatGPTとの違い 比較", ["Claude", "Anthropic", "AI比較", "無料"]),
@@ -82,6 +82,7 @@ KEYWORD_POOLS = {
         ("ペット 初心者 おすすめ 費用 選び方", ["ペット", "初心者", "飼育", "選択"]),
     ],
 }
+# """
 
 # ニュース取得先RSSフィード（日本語テック系）
 NEWS_FEEDS = [
@@ -1070,15 +1071,13 @@ def check_article_quality(file_path: Path, keyword: str) -> bool:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成")
+    parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成（CSVキーワード優先モード）")
+    parser.add_argument("--count", type=int, default=2, metavar="N", help="生成する記事数（デフォルト: 2）")
     parser.add_argument("--topic", type=str, help="記事にするトピック（例: 'Claude Codeソースコード流出'）")
     parser.add_argument("--news", action="store_true", help="RSSから最新ニュースを取得して記事生成")
     parser.add_argument("--auto", action="store_true", help="対話なしで自動実行（--newsと組み合わせてランダム選択）")
-    parser.add_argument("--auto-discover", type=int, metavar="N", help="キーワード自動発掘で N 個の記事を生成（優先度付け）")
-    parser.add_argument("--csv", action="store_true", help="keyword1,keyword2,keyword3.txt から記事を生成")
-    parser.add_argument("--csv-count", type=int, metavar="N", help="CSV から N 個の記事を生成（--csvと組み合わせて使用）")
     parser.add_argument("--keyword-stats", action="store_true", help="キーワード統計を表示")
-    parser.add_argument("--reset-keywords", action="store_true", help="すべてのキーワードをリセット（未使用状態に戻す）")
+    parser.add_argument("--reset-keywords", action="store_true", help="CSVキーワードをリセット（未使用状態に戻す）")
     args = parser.parse_args()
 
     print("記事生成を開始します...")
@@ -1090,7 +1089,7 @@ def main():
 
     # キーワードリセット
     if args.reset_keywords:
-        if input("本当にすべてのキーワードをリセットしますか？ (yes/no): ").lower() == "yes":
+        if input("本当にCSVキーワードをリセットしますか？ (yes/no): ").lower() == "yes":
             reset_all_keywords()
         return
 
@@ -1147,63 +1146,11 @@ def main():
         print_keyword_stats()
         return
 
-    if args.auto_discover:
-        # 自動発掘モード：N 個の記事を生成
-        print(f"\n自動発掘モード: {args.auto_discover} 記事を生成します")
+    # *** 自動発掘モードはコメントアウト（毎回エラー） ***
+    # if args.auto_discover:
+    #     ...
 
-        # 重複対策：指定数の2.5倍のキーワードを取得
-        fetch_count = max(args.auto_discover * 2, 10)
-        keywords = load_keywords_from_pool(count=fetch_count)
-
-        if not keywords:
-            print("ERROR: keywords_pool.json にキーワードがありません")
-            print("先に: python scripts/discover_keywords.py --update を実行してください")
-            sys.exit(1)
-
-        available_count = len(keywords)
-        print(f"利用可能なキーワード: {available_count}個（重複対策で拡張）")
-
-        generated_count = 0
-        for keyword, category, related_kws in keywords:
-            # 指定数の記事が生成されたら終了
-            if generated_count >= args.auto_discover:
-                break
-
-            print(f"\n[{generated_count+1}/{args.auto_discover}] キーワード: {keyword}")
-
-            # 重複チェック
-            if check_duplicate_article(keyword):
-                print(f"  ⚠️ スキップ: 既存記事と重複 → 次のキーワードを試します")
-                update_keyword_status_in_pool(keyword, 'duplicate')
-                continue
-
-            print("Claude APIで記事生成中...")
-
-            try:
-                content = generate_article(keyword, related_kws if related_kws else [keyword], category)
-                output_path = save_article(content, category, keyword, category=category, source='auto-discover', related_kws=related_kws if related_kws else [keyword])
-                print(f"✓ 完了: {output_path}")
-
-                # 品質チェック
-                check_article_quality(output_path, keyword)
-
-                # status を completed に更新
-                update_keyword_status_in_pool(keyword, 'completed')
-                generated_count += 1
-
-                # レート制限対策
-                time.sleep(3)
-
-            except Exception as e:
-                print(f"✗ エラー: {e}")
-                # エラー時は次のキーワードへ
-
-        if generated_count < args.auto_discover:
-            print(f"\n⚠️ 注意: {args.auto_discover}個中{generated_count}個のみ生成（重複またはエラー）")
-        else:
-            print(f"\n生成完了: {generated_count}/{args.auto_discover}記事")
-
-    elif args.topic:
+    if args.topic:
         # トピック直接指定モード
         print(f"トピック: {args.topic}")
         print("Claude APIで記事生成中...")
@@ -1236,14 +1183,57 @@ def main():
             check_article_quality(output_path, selected['title'])
 
     else:
-        # 通常ランダムモード
-        genre, main_kw, related_kws = select_keyword()
-        print(f"ジャンル: {genre}")
-        print(f"メインKW: {main_kw}")
-        print(f"関連KW: {', '.join(related_kws)}")
-        print("Claude APIで記事生成中...")
-        content = generate_article(main_kw, related_kws, genre)
-        output_path = save_article(content, genre, main_kw, related_kws=related_kws)
+        # デフォルト：CSVキーワードから N 記事を生成
+        csv_count = args.count
+        print(f"\n[CSV MODE] {csv_count} 記事を生成します")
+
+        generated_count = 0
+        for i in range(csv_count):
+            # 未使用キーワードを選択
+            csv_keywords = load_csv_keywords()
+            if not csv_keywords:
+                print("[ERROR] CSVキーワードが見つかりません")
+                break
+
+            selected = random.choice(csv_keywords)
+            keyword = selected['keyword']
+            parts = keyword.split(',')
+            main_kw = ' '.join(parts)
+            related_kws = parts
+            genre = infer_genre_from_keyword(parts[0])
+
+            print(f"\n[{generated_count+1}/{csv_count}] キーワード: {main_kw}")
+            print(f"  ジャンル: {genre}")
+
+            # 重複チェック
+            if check_duplicate_article(main_kw):
+                print(f"  ⚠️ スキップ: 既存記事と重複 → 次のキーワードを試します")
+                mark_csv_keyword_as_used(keyword)
+                continue
+
+            print("Claude APIで記事生成中...")
+
+            try:
+                content = generate_article(main_kw, related_kws, genre)
+                output_path = save_article(content, genre, main_kw, related_kws=related_kws)
+                print(f"✓ 完了: {output_path}")
+
+                # キーワードを使用済みにマーク
+                mark_csv_keyword_as_used(keyword)
+
+                # 品質チェック
+                check_article_quality(output_path, main_kw)
+
+                generated_count += 1
+
+                # レート制限対策
+                time.sleep(3)
+
+            except Exception as e:
+                print(f"✗ エラー: {e}")
+                # エラー時は次のキーワードへ
+
+        print(f"\n生成完了: {generated_count}/{csv_count}記事")
         print(f"✓ 完了: {output_path}")
         check_article_quality(output_path, main_kw)
 
