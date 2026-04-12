@@ -271,8 +271,81 @@ def fix_article_content(content: str) -> str:
     return content
 
 
+def load_csv_keywords() -> list[dict]:
+    """scripts/keywords_from_list.csv からキーワードを読み込み"""
+    csv_path = Path("scripts/keywords_from_list.csv")
+    if not csv_path.exists():
+        return []
+
+    try:
+        import csv
+        keywords = []
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row['status'] == 'unused':
+                    keywords.append({
+                        'keyword': row['keyword'],
+                        'status': row['status']
+                    })
+        return keywords
+    except Exception as e:
+        print(f"CSVキーワード読み込み失敗: {e}")
+        return []
+
+
+def mark_csv_keyword_as_used(keyword: str):
+    """CSVでキーワードをusedに更新"""
+    csv_path = Path("scripts/keywords_from_list.csv")
+    if not csv_path.exists():
+        return
+
+    try:
+        import csv
+        rows = []
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row['keyword'] == keyword:
+                    row['status'] = 'used'
+                rows.append(row)
+
+        # 更新内容を書き込み
+        with open(csv_path, 'w', encoding='utf-8', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=['keyword', 'status'])
+            writer.writeheader()
+            writer.writerows(rows)
+        print(f"✅ キーワードをusedに更新: {keyword}")
+    except Exception as e:
+        print(f"CSVキーワード更新失敗: {e}")
+
+
 def select_keyword():
-    """ジャンルとキーワードをランダム選択"""
+    """キーワード選択（CSVを優先、なければKEYWORD_POOLSから選択）"""
+    # CSVから未使用キーワードを取得
+    csv_keywords = load_csv_keywords()
+    if csv_keywords:
+        selected = random.choice(csv_keywords)
+        keyword = selected['keyword']
+        # キーワードを分割（例："ダイエット,食事制限,やり方" → "ダイエット 食事制限 やり方"）
+        parts = keyword.split(',')
+        main_kw = ' '.join(parts)  # 複合キーワード
+        related_kws = parts
+
+        # ジャンルを推測（最初の単語から）
+        genre = None
+        for g in KEYWORD_POOLS.keys():
+            if parts[0] in [kw[0].split()[0] for kw in KEYWORD_POOLS[g]]:
+                genre = g
+                break
+        if not genre:
+            genre = random.choice(list(KEYWORD_POOLS.keys()))
+
+        # 使用済みに更新
+        mark_csv_keyword_as_used(keyword)
+        return genre, main_kw, related_kws
+
+    # CSVにない場合は従来の方法
     genre = random.choice(list(KEYWORD_POOLS.keys()))
     keyword_data = random.choice(KEYWORD_POOLS[genre])
     main_kw, related_kws = keyword_data
