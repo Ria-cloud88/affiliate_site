@@ -1,5 +1,4 @@
 ---
-import { Fragment } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -109,7 +108,7 @@ const popularArticlesHtml = randomPosts.length > 0
 
           <!-- Article body -->
           <div class="prose">
-            <Fragment set:html={fixedContent} />
+            <div set:html={fixedContent} />
           </div>
 
           <!-- Related articles (added dynamically) -->
