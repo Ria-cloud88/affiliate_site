@@ -22,12 +22,12 @@ export const genreColorThemes: Record<string, ThemeColors> = {
     text: "#003d7a",
   },
   "自動化ツール": {
-    primary: "#0088dd",
-    primaryLight: "#cce0ff",
-    primaryDark: "#0055aa",
-    background: "#f0f5ff",
-    accent: "#00aaff",
-    text: "#003d8a",
+    primary: "#cc3366",
+    primaryLight: "#ffccdd",
+    primaryDark: "#994455",
+    background: "#fff0f5",
+    accent: "#ff5588",
+    text: "#7a1a3d",
   },
   "副業": {
     primary: "#ff9500",
@@ -45,13 +45,13 @@ export const genreColorThemes: Record<string, ThemeColors> = {
     accent: "#00dd66",
     text: "#003d1a",
   },
-  "生活改善": {
-    primary: "#9966ff",
-    primaryLight: "#ede5ff",
-    primaryDark: "#6633cc",
-    background: "#f5f0ff",
-    accent: "#bb88ff",
-    text: "#4d2e99",
+  "ペット": {
+    primary: "#ffcc00",
+    primaryLight: "#fff5cc",
+    primaryDark: "#cc9900",
+    background: "#fffaf0",
+    accent: "#ffdd44",
+    text: "#7a6600",
   },
 };
 
