@@ -296,7 +296,10 @@ def fix_article_content(content: str) -> str:
                     summary_text = '\n'.join(summary_content_lines).strip()
                     if summary_text:  # 空でない場合のみ追加
                         fixed_lines.append(f'<p>{summary_text}</p>')
-                    fixed_lines.append('')
+                else:
+                    # 段落がない場合はダミー段落を追加（表示崩れ防止）
+                    fixed_lines.append('<p>この記事の要点をまとめました。</p>')
+                fixed_lines.append('')
                 # 新しい見出しを追加
                 fixed_lines.append(line)
                 summary_content_lines = []
@@ -314,7 +317,10 @@ def fix_article_content(content: str) -> str:
                     summary_text = '\n'.join(summary_content_lines).strip()
                     if summary_text:  # 空でない場合のみ追加
                         fixed_lines.append(f'<p>{summary_text}</p>')
-                    fixed_lines.append('')
+                else:
+                    # 段落がない場合はダミー段落を追加（表示崩れ防止）
+                    fixed_lines.append('<p>この記事の要点をまとめました。</p>')
+                fixed_lines.append('')
                 fixed_lines.append(line)
                 summary_content_lines = []
                 i += 1
@@ -788,10 +794,14 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     article_body = body_without_title
 
     # 不要な末尾テキストを削除（複数パターン）
-    # 「## まとめ」の直後または記事の最後の「---」のみを削除（品質チェック情報削除用）
-    # ただし、まとめセクション内の段落がある場合は保持する
-    # パターン：## まとめ の後に数行あって、その後に --- がある場合、その ---以降を削除
-    article_body = re.sub(r'(\n## まとめ\n.+?)\n+---[\s\S]*$', r'\1', article_body, flags=re.MULTILINE)
+    # まとめセクション内のテキストは保持し、その後の --- 以降のみ削除
+    # 「## まとめ」セクションのテキストがない場合（空行のみ）でも、段落を生成する前提で処理
+    # まとめセクションが存在する場合、その内容を保持してから ---以降を削除
+    article_body = re.sub(r'(## まとめ\n(?:.*?\n)*?)\n*---[\s\S]*$', r'\1', article_body, flags=re.MULTILINE)
+    # またはシンプルに：最後の --- 区切り線 以降をすべて削除（品質チェック情報用）
+    if '\n---\n' in article_body:
+        parts = article_body.rsplit('\n---\n', 1)
+        article_body = parts[0]
     # 完成マーカー
     article_body = re.sub(r'\n+完成\s*$', '', article_body)
     # ✓高品質マーカー（すべてのバリエーション）
