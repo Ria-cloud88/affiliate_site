@@ -141,14 +141,3 @@ iPhone・iPad・Mac・Apple TVとの連携がシームレスです。
 - 音楽をよく聴く人
 
 ## まとめ
-
-| 目的 | おすすめ |
-|------|---------|
-| とにかく安く始めたい | Echo Pop |
-| 音楽重視 | Google Nest Audio |
-| Apple製品ユーザー | HomePod mini |
-| スマート家電たくさん | Echo（第4世代） |
-
-まずはEcho Pop（5,980円）で試して、スマート家電生活に慣れてからアップグレードするのが賢い選択です。
-
-**Amazon Echoを今すぐチェック** → [Amazon Echo シリーズ](https://www.amazon.co.jp/b?node=5816607051)

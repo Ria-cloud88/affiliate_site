@@ -64,5 +64,3 @@ Gmailを開く→メールを選択→「Geminiで返信」→下書きを自動
 > ChatGPTとの詳細比較は[Claude vs ChatGPT比較](/blog/2026-04-02-claude-vs-chatgpt/)もご覧ください。
 
 ## まとめ
-
-GeminiはGoogleユーザーにとって**最もコスパの高いAI**です。無料版だけでもGmail・Docsで大幅な効率化が実現できます。まずは無料版から始めてみましょう。

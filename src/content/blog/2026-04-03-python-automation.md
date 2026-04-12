@@ -117,9 +117,3 @@ pip install pandas openpyxl requests beautifulsoup4
 ```
 
 ## まとめ
-
-**ChatGPTがコードを書いてくれる今、Pythonの入門ハードルは5年前の1/10**になっています。
-
-まずは「ダウンロードフォルダの整理スクリプト」を動かしてみてください。動いた瞬間の感動が、Python学習を続けるモチベーションになります。
-
-> AI×副業の組み合わせは[AI副業おすすめ5選](/blog/2026-04-02-ai-fukugyou/)をご覧ください。
