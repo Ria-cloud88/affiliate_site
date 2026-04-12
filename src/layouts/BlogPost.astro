@@ -31,7 +31,19 @@ const articleTitle = title;
 const currentGenre = genre;
 
 // 関連記事を取得（同じジャンルの記事から最新3件）
-const allPosts = await Astro.glob('../content/blog/*.md');
+// import.meta.glob()はビルド時に静的に解決されるため、相対パスで指定
+const allPostsModules = import.meta.glob<{frontmatter: any}>('../content/blog/*.md');
+const allPosts = await Promise.all(
+  Object.entries(allPostsModules).map(async ([path, module]) => {
+    const m = await module();
+    return {
+      path,
+      frontmatter: m.frontmatter,
+      slug: path.split('/').pop()?.replace('.md', '')
+    };
+  })
+);
+
 const sortedPosts = allPosts
   .filter(post => post.frontmatter?.genre === currentGenre && post.frontmatter?.title !== articleTitle)
   .sort((a, b) => new Date(b.frontmatter?.pubDate).getTime() - new Date(a.frontmatter?.pubDate).getTime())
@@ -39,18 +51,18 @@ const sortedPosts = allPosts
 
 const relatedArticlesHtml = sortedPosts.length > 0
   ? `<h2 id="related-articles">関連記事</h2>\n<ul>\n${sortedPosts
-      .map(post => `<li><a href="/blog/${post.file.split('/').pop()?.replace('.md', '')}">${post.frontmatter?.title}</a></li>`)
+      .map(post => `<li><a href="/blog/${post.slug}">${post.frontmatter?.title}</a></li>`)
       .join('\n')}\n</ul>`
   : '';
 
-// 人気記事を動的に生成（最新の記事からランダムに3件）
+// 人気記事を動的に生成（ランダムに3件）
 const randomPosts = allPosts
   .sort(() => Math.random() - 0.5)
   .slice(0, 3);
 
 const popularArticlesHtml = randomPosts.length > 0
   ? `<h2 id="popular-articles">サイト内の人気記事</h2>\n<ul>\n${randomPosts
-      .map(post => `<li><a href="/blog/${post.file.split('/').pop()?.replace('.md', '')}">${post.frontmatter?.title}</a></li>`)
+      .map(post => `<li><a href="/blog/${post.slug}">${post.frontmatter?.title}</a></li>`)
       .join('\n')}\n</ul>`
   : '';
 ---
