@@ -258,6 +258,7 @@ def fix_article_content(content: str) -> str:
     fixed_lines = []
     i = 0
     in_summary = False
+    summary_found = False
 
     while i < len(lines):
         line = lines[i]
@@ -265,9 +266,12 @@ def fix_article_content(content: str) -> str:
         # "## まとめ" を検出
         if line.strip().startswith('## ') and 'まとめ' in line:
             fixed_lines.append(line)
+            fixed_lines.append('')  # 空行を追加
             # ## まとめ の直後にHTMLコメントを挿入して、段落と見出しの分離を明確化
             # これにより、Astroが直後のテキストを見出しとして誤認識するのを防ぐ
             fixed_lines.append('<!-- summary-content-start -->')
+            fixed_lines.append('')  # 空行を追加
+            summary_found = True
             in_summary = True
             i += 1
         # "## まとめ"の後の見出しを処理
