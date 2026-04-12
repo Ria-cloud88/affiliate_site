@@ -788,8 +788,10 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     article_body = body_without_title
 
     # 不要な末尾テキストを削除（複数パターン）
-    # 区切り線以降のすべてのテキスト（品質チェック情報）を削除
-    article_body = re.sub(r'\n+---[\s\S]*$', '', article_body)
+    # 「## まとめ」の直後または記事の最後の「---」のみを削除（品質チェック情報削除用）
+    # ただし、まとめセクション内の段落がある場合は保持する
+    # パターン：## まとめ の後に数行あって、その後に --- がある場合、その ---以降を削除
+    article_body = re.sub(r'(\n## まとめ\n.+?)\n+---[\s\S]*$', r'\1', article_body, flags=re.MULTILINE)
     # 完成マーカー
     article_body = re.sub(r'\n+完成\s*$', '', article_body)
     # ✓高品質マーカー（すべてのバリエーション）
@@ -1017,7 +1019,7 @@ def check_article_quality(file_path: Path, keyword: str) -> bool:
         status = report["overall_status"]
         score = report["overall_score"]
 
-        print(f"\n📊 品質チェック: {status} (スコア: {score}/100)")
+        print(f"\n[Quality Check] {status} (Score: {score}/100)")
 
         # 警告表示
         if report["ai_likeness"]["found_phrases"]:
@@ -1061,7 +1063,7 @@ def main():
     # CSV キーワードファイルから記事生成
     if args.csv:
         csv_count = args.csv_count or 1
-        print(f"\n📄 CSVキーワードモード: {csv_count} 記事を生成します")
+        print(f"\n[CSV MODE] {csv_count} articles will be generated")
         print_keyword_stats()
 
         generated_count = 0
@@ -1069,7 +1071,7 @@ def main():
             # 未使用キーワードを選択
             result = select_unused_keyword()
             if result is None:
-                print("❌ 利用可能なキーワードがありません")
+                print("[ERROR] No available keywords")
                 break
 
             main_kw, related_kws = result
