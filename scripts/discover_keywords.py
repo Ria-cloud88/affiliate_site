@@ -133,9 +133,9 @@ def load_fallback_keywords() -> List[Dict]:
         for item in data.get('keywords', []):
             keywords.append({
                 'keyword': item['keyword'],
-                'category': item['category'],
+                'category': item.get('category', 'その他'),
                 'source': 'fallback',
-                'score': item['priority'],
+                'score': item.get('score', item.get('priority', 10)),  # scoreまたはpriorityフィールドを使用
                 'discovered_at': datetime.now().isoformat()
             })
 
@@ -143,7 +143,7 @@ def load_fallback_keywords() -> List[Dict]:
         return keywords
 
     except Exception as e:
-        print(f"  ERROR: フォールバック読み込み失敗 - {type(e).__name__}")
+        print(f"  ERROR: フォールバック読み込み失敗 - {type(e).__name__}: {str(e)[:60]}")
         return []
 
 

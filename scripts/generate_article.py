@@ -15,6 +15,7 @@ import json
 import os
 import random
 import re
+import subprocess
 import sys
 import time
 import urllib.error
@@ -294,8 +295,21 @@ def load_csv_keywords() -> list[dict]:
             reader = csv.DictReader(f)
             for row in reader:
                 if row['status'] == 'unused':
+                    # keyword の形式: """キーワード1,キーワード2,キーワード3"""
+                    # ダブルクォートを削除してキーワードリストに変換
+                    keyword_str = row['keyword'].strip()
+                    # 先頭と末尾のダブルクォート（""" または "）を削除
+                    if keyword_str.startswith('"""') and keyword_str.endswith('"""'):
+                        keyword_str = keyword_str[3:-3]
+                    elif keyword_str.startswith('"') and keyword_str.endswith('"'):
+                        keyword_str = keyword_str[1:-1]
+
+                    # カンマで分割してキーワード配列に変換
+                    parts = [kw.strip() for kw in keyword_str.split(',')]
+
                     keywords.append({
-                        'keyword': row['keyword'],
+                        'keyword': keyword_str,  # 元の形式
+                        'parts': parts,          # 分割後のリスト
                         'status': row['status']
                     })
         return keywords
@@ -1074,9 +1088,12 @@ def check_article_quality(file_path: Path, keyword: str) -> bool:
 def main():
     parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成（CSVキーワード優先モード）")
     parser.add_argument("--count", type=int, default=2, metavar="N", help="生成する記事数（デフォルト: 2）")
+    parser.add_argument("--csv", action="store_true", help="CSVキーワードから生成（デフォルト）")
+    parser.add_argument("--csv-count", type=int, metavar="N", help="CSV記事生成数")
     parser.add_argument("--topic", type=str, help="記事にするトピック（例: 'Claude Codeソースコード流出'）")
     parser.add_argument("--news", action="store_true", help="RSSから最新ニュースを取得して記事生成")
     parser.add_argument("--auto", action="store_true", help="対話なしで自動実行（--newsと組み合わせてランダム選択）")
+    parser.add_argument("--auto-discover", type=int, metavar="N", help="トレンドキーワード発掘 + 記事生成（N記事）")
     parser.add_argument("--keyword-stats", action="store_true", help="キーワード統計を表示")
     parser.add_argument("--reset-keywords", action="store_true", help="CSVキーワードをリセット（未使用状態に戻す）")
     args = parser.parse_args()
@@ -1147,9 +1164,84 @@ def main():
         print_keyword_stats()
         return
 
-    # *** 自動発掘モードはコメントアウト（毎回エラー） ***
-    # if args.auto_discover:
-    #     ...
+    # トレンドキーワード自動発掘モード
+    if args.auto_discover:
+        print(f"\n[AUTO-DISCOVER MODE] トレンドキーワード発掘 + {args.auto_discover}記事生成")
+
+        # discover_keywords.py を実行してキーワード発掘
+        try:
+            result = subprocess.run(
+                ["python", "scripts/discover_keywords.py"],
+                capture_output=True,
+                text=True,
+                timeout=120
+            )
+
+            if result.returncode != 0:
+                print(f"[WARN] キーワード発掘: スキップ（discover_keywords.py エラー）")
+                print(f"  {result.stderr[:200]}")
+            else:
+                print("[OK] キーワード発掘: 完了")
+        except Exception as e:
+            print(f"⚠️ キーワード発掘: スキップ（{type(e).__name__}）")
+
+        # 発掘されたキーワード（trending_keywords.json）から記事生成
+        try:
+            trending_path = Path("scripts/trending_keywords.json")
+            if not trending_path.exists():
+                print("[ERROR] trending_keywords.json が見つかりません")
+                return
+
+            trending_data = json.loads(trending_path.read_text(encoding='utf-8'))
+            trending_keywords = trending_data.get('keywords', [])
+
+            if not trending_keywords:
+                print("[ERROR] トレンドキーワードが見つかりません")
+                return
+
+            # スコアが高い順にソート
+            trending_keywords.sort(key=lambda x: x.get('score', 0), reverse=True)
+
+            generated_count = 0
+            for i, kw_item in enumerate(trending_keywords[:args.auto_discover]):
+                main_kw = kw_item['keyword']
+                genre = kw_item.get('category', 'トレンド')
+                related_kws = [main_kw]  # 関連キーワードはキーワード本体のみ
+
+                print(f"\n[{i+1}/{min(args.auto_discover, len(trending_keywords))}] キーワード: {main_kw}")
+                print(f"  ジャンル: {genre}")
+                print(f"  スコア: {kw_item.get('score', 0)}")
+
+                # 重複チェック
+                if check_duplicate_article(main_kw):
+                    print(f"  [SKIP] 既存記事と重複")
+                    continue
+
+                print("Claude APIで記事生成中...")
+
+                try:
+                    content = generate_article(main_kw, related_kws, genre)
+                    output_path = save_article(content, genre, main_kw, related_kws=related_kws)
+                    print(f"[OK] 完了: {output_path}")
+
+                    # 品質チェック
+                    check_article_quality(output_path, main_kw)
+
+                    generated_count += 1
+
+                    # レート制限対策
+                    time.sleep(3)
+
+                except Exception as e:
+                    print(f"[ERROR] {e}")
+                    continue
+
+            print(f"\n生成完了: {generated_count}/{min(args.auto_discover, len(trending_keywords))}記事")
+
+        except Exception as e:
+            print(f"[ERROR] 自動発掘モード実行失敗: {e}")
+
+        return
 
     if args.topic:
         # トピック直接指定モード
@@ -1235,8 +1327,6 @@ def main():
                 # エラー時は次のキーワードへ
 
         print(f"\n生成完了: {generated_count}/{csv_count}記事")
-        print(f"✓ 完了: {output_path}")
-        check_article_quality(output_path, main_kw)
 
 
 if __name__ == "__main__":
