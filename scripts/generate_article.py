@@ -4,6 +4,9 @@
   python scripts/generate_article.py              # ランダム記事
   python scripts/generate_article.py --topic "Claude Codeソースコード流出"
   python scripts/generate_article.py --news       # RSSから最新ニュース取得して生成
+  python scripts/generate_article.py --csv --csv-count 3  # CSVキーワードから3記事生成
+  python scripts/generate_article.py --keyword-stats      # キーワード統計表示
+  python scripts/generate_article.py --reset-keywords     # キーワードをリセット
 """
 
 import anthropic
@@ -19,6 +22,12 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
+from keyword_manager import (
+    select_unused_keyword,
+    mark_keyword_as_used,
+    print_keyword_stats,
+    reset_all_keywords,
+)
 
 # APIキーの改行文字を除去（GitHub Secrets貼り付け時の混入対策）
 if "ANTHROPIC_API_KEY" in os.environ:
@@ -998,9 +1007,77 @@ def main():
     parser.add_argument("--news", action="store_true", help="RSSから最新ニュースを取得して記事生成")
     parser.add_argument("--auto", action="store_true", help="対話なしで自動実行（--newsと組み合わせてランダム選択）")
     parser.add_argument("--auto-discover", type=int, metavar="N", help="キーワード自動発掘で N 個の記事を生成（優先度付け）")
+    parser.add_argument("--csv", action="store_true", help="keyword1,keyword2,keyword3.txt から記事を生成")
+    parser.add_argument("--csv-count", type=int, metavar="N", help="CSV から N 個の記事を生成（--csvと組み合わせて使用）")
+    parser.add_argument("--keyword-stats", action="store_true", help="キーワード統計を表示")
+    parser.add_argument("--reset-keywords", action="store_true", help="すべてのキーワードをリセット（未使用状態に戻す）")
     args = parser.parse_args()
 
     print("記事生成を開始します...")
+
+    # キーワード統計表示
+    if args.keyword_stats:
+        print_keyword_stats()
+        return
+
+    # キーワードリセット
+    if args.reset_keywords:
+        if input("本当にすべてのキーワードをリセットしますか？ (yes/no): ").lower() == "yes":
+            reset_all_keywords()
+        return
+
+    # CSV キーワードファイルから記事生成
+    if args.csv:
+        csv_count = args.csv_count or 1
+        print(f"\n📄 CSVキーワードモード: {csv_count} 記事を生成します")
+        print_keyword_stats()
+
+        generated_count = 0
+        for i in range(csv_count):
+            # 未使用キーワードを選択
+            result = select_unused_keyword()
+            if result is None:
+                print("❌ 利用可能なキーワードがありません")
+                break
+
+            main_kw, related_kws = result
+            genre = "ブログ"  # CSVファイルのキーワードはジャンル指定なし
+
+            print(f"\n[{generated_count+1}/{csv_count}] メインキーワード: {main_kw}")
+            print(f"  関連キーワード: {', '.join(related_kws)}")
+
+            # 重複チェック
+            if check_duplicate_article(main_kw):
+                print(f"  ⚠️ スキップ: 既存記事と重複 → 次のキーワードを試します")
+                mark_keyword_as_used(main_kw)  # 重複した場合も使用済みにマーク
+                i -= 1  # カウントを減らして再試行
+                continue
+
+            print("Claude APIで記事生成中...")
+
+            try:
+                content = generate_article(main_kw, related_kws, genre)
+                output_path = save_article(content, genre, main_kw, related_kws=related_kws)
+                print(f"✓ 完了: {output_path}")
+
+                # キーワードを使用済みにマーク
+                mark_keyword_as_used(main_kw)
+
+                # 品質チェック
+                check_article_quality(output_path, main_kw)
+
+                generated_count += 1
+
+                # レート制限対策
+                time.sleep(3)
+
+            except Exception as e:
+                print(f"✗ エラー: {e}")
+                # エラー時は次のキーワードへ
+
+        print(f"\n生成完了: {generated_count}/{csv_count}記事")
+        print_keyword_stats()
+        return
 
     if args.auto_discover:
         # 自動発掘モード：N 個の記事を生成
