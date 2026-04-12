@@ -445,6 +445,118 @@
         "LLM",
         "プライベート"
       ]
+    },
+    {
+      "keyword": "小野田紀美AI戦略担当相",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-12T16:57:11.037037",
+      "status": "pending"
+    },
+    {
+      "keyword": "自身のAI利用は",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-12T16:57:11.037050",
+      "status": "pending"
+    },
+    {
+      "keyword": "Claude",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-12T16:57:11.037054",
+      "status": "pending"
+    },
+    {
+      "keyword": "無料でローカルAI環境を簡単に導入できる",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037058",
+      "status": "pending"
+    },
+    {
+      "keyword": "Tailslayer",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037063",
+      "status": "pending"
+    },
+    {
+      "keyword": "AI需要が爆発的に増加も計算能力が制約に",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037066",
+      "status": "pending"
+    },
+    {
+      "keyword": "大規模に投資していたOpenAIが巻き返しをはかる",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037067",
+      "status": "pending"
+    },
+    {
+      "keyword": "Anthropicの最新AI巡り",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037068",
+      "status": "pending"
+    },
+    {
+      "keyword": "Claudeを",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037069",
+      "status": "pending"
+    },
+    {
+      "keyword": "を使ってFirefoxのサイドバーにあるAIチャット機能を完全ローカル化してみた",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037070",
+      "status": "pending"
+    },
+    {
+      "keyword": "キーボード一体型PCで作業環境が超スッキリなHPのAI搭載PC",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037072",
+      "status": "pending"
+    },
+    {
+      "keyword": "OpenAIのサム",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037073",
+      "status": "pending"
+    },
+    {
+      "keyword": "をチャットAIが実在する病気としてユーザーに提示してしまう",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037076",
+      "status": "pending"
+    },
+    {
+      "keyword": "OpenAIのアルトマンCEO",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037077",
+      "status": "pending"
     }
   ],
   "自動化ツール": [
@@ -1072,6 +1184,38 @@
       "source": "fallback",
       "score": 30,
       "discovered_at": "2026-04-11T02:07:04.193230",
+      "status": "pending"
+    },
+    {
+      "keyword": "副業詐欺に注意",
+      "category": "副業",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-12T16:57:11.037052",
+      "status": "pending"
+    },
+    {
+      "keyword": "副業クリエイター応援",
+      "category": "副業",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-12T16:57:11.037055",
+      "status": "pending"
+    },
+    {
+      "keyword": "オリジナルグッズ副業の始め方を動画でも解説",
+      "category": "副業",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-12T16:57:11.037057",
+      "status": "pending"
+    },
+    {
+      "keyword": "YouTubeが有料サブスクのYouTube",
+      "category": "副業",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037065",
       "status": "pending"
     }
   ],
@@ -2008,6 +2152,22 @@
       "source": "fallback",
       "score": 28,
       "discovered_at": "2026-04-11T02:07:04.193231",
+      "status": "pending"
+    },
+    {
+      "keyword": "気になる音漏れも心配無用なオープンイヤーBluetoothイヤホン",
+      "category": "ガジェット",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037074",
+      "status": "pending"
+    },
+    {
+      "keyword": "Samsung",
+      "category": "ガジェット",
+      "source": "fallback",
+      "score": 10,
+      "discovered_at": "2026-04-12T16:57:11.037075",
       "status": "pending"
     }
   ],
