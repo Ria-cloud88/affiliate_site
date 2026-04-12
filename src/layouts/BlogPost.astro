@@ -26,6 +26,34 @@ const fixedContent = slotContent
   .replace(/<h2[^>]*>([^<]*)<\/h2>\s*<hr\s*\/?>/gi, '<hr />')
   // または、<h2>の直後に<hr>がある場合、境界を明確にする
   .replace(/<h2([^>]*)>([^<]*?)<\/h2>\s*(<hr\s*\/>)/gi, '</div>$3<div class="prose">');
+
+// 関連記事と人気記事を動的に生成
+const articleTitle = title;
+const currentGenre = genre;
+
+// 関連記事を取得（同じジャンルの記事から最新3件）
+const allPosts = await Astro.glob('../content/blog/*.md');
+const sortedPosts = allPosts
+  .filter(post => post.frontmatter?.genre === currentGenre && post.frontmatter?.title !== articleTitle)
+  .sort((a, b) => new Date(b.frontmatter?.pubDate).getTime() - new Date(a.frontmatter?.pubDate).getTime())
+  .slice(0, 3);
+
+const relatedArticlesHtml = sortedPosts.length > 0
+  ? `<h2 id="related-articles">関連記事</h2>\n<ul>\n${sortedPosts
+      .map(post => `<li><a href="/blog/${post.file.split('/').pop()?.replace('.md', '')}">${post.frontmatter?.title}</a></li>`)
+      .join('\n')}\n</ul>`
+  : '';
+
+// 人気記事を動的に生成（最新の記事からランダムに3件）
+const randomPosts = allPosts
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 3);
+
+const popularArticlesHtml = randomPosts.length > 0
+  ? `<h2 id="popular-articles">サイト内の人気記事</h2>\n<ul>\n${randomPosts
+      .map(post => `<li><a href="/blog/${post.file.split('/').pop()?.replace('.md', '')}">${post.frontmatter?.title}</a></li>`)
+      .join('\n')}\n</ul>`
+  : '';
 ---
 
 <html lang="ja">
@@ -83,6 +111,20 @@ const fixedContent = slotContent
           <div class="prose">
             <Fragment set:html={fixedContent} />
           </div>
+
+          <!-- Related articles (added dynamically) -->
+          {relatedArticlesHtml && (
+            <div class="prose" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+              <Fragment set:html={relatedArticlesHtml} />
+            </div>
+          )}
+
+          <!-- Popular articles (added dynamically) -->
+          {popularArticlesHtml && (
+            <div class="prose" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+              <Fragment set:html={popularArticlesHtml} />
+            </div>
+          )}
 
           <!-- Bottom share -->
           <div style="margin-top:2em; padding-top:1.5em; border-top:1px solid #e2e8f0;">

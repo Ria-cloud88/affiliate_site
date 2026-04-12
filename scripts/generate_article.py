@@ -759,13 +759,11 @@ genre: '{genre}'{hero_line}{category_line}{source_line}
     # 記事構造の最終修正（目次の【非表示】テキストを削除）
     article_body = fix_article_content(article_body)
 
-    # 記事の本文に追加セクション（関連記事、人気記事）を追加
-    related_articles = generate_related_articles(genre, main_kw)
-    popular_articles = generate_popular_articles()
+    # 記事本文のみを保存（関連記事・人気記事はレイアウト側で追加）
     # keywords_section は削除（ユーザー要望）
 
-    # フルコンテンツを組み立て
-    full_content = frontmatter + article_body + related_articles + popular_articles
+    # フルコンテンツを組み立て（記事本文のみ）
+    full_content = frontmatter + article_body
 
     output_path = Path("src/content/blog") / f"{slug}.md"
     output_path.write_text(full_content, encoding="utf-8")
