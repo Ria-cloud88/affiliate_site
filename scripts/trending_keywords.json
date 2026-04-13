@@ -4,6 +4,13 @@
   "update_method": "auto_news_extraction",
   "keywords": [
     {
+      "keyword": "副業紹介",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -173,6 +180,34 @@
     },
     {
       "keyword": "医療AIは診断に必要な画像が提供されていなくてもそれらしい診断を出す可能性がある",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicがキリスト教指導者たちや哲学者とサミットを開催",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleニュースの",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "がセンシティブなテーマの描写を理由にGoogle",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ClaudeでWordの要約や修正が可能な拡張機能",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
