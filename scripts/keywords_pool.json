@@ -2187,6 +2187,14 @@
       "status": "pending"
     },
     {
+      "keyword": "Google",
+      "category": "ガジェット",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-13T23:31:31.041509",
+      "status": "pending"
+    },
+    {
       "keyword": "気になる音漏れも心配無用なオープンイヤーBluetoothイヤホン",
       "category": "ガジェット",
       "source": "fallback",
