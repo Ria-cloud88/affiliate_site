@@ -471,6 +471,14 @@
       "status": "pending"
     },
     {
+      "keyword": "AIアニメ",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-13T12:13:30.010829",
+      "status": "pending"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "source": "fallback",
@@ -1224,6 +1232,14 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T22:04:43.848305",
+      "status": "pending"
+    },
+    {
+      "keyword": "経理代行や事務サポートの副業",
+      "category": "副業",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-13T12:13:30.010831",
       "status": "pending"
     },
     {

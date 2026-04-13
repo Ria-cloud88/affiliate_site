@@ -60,6 +60,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIアニメ",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "経理代行や事務サポートの副業",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -208,6 +222,27 @@
     },
     {
       "keyword": "ClaudeでWordの要約や修正が可能な拡張機能",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTをマラソントレーナーに育成して9kg超の減量",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIを搭載した自律型兵器の開発競争が激化している",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIのメモリ使用量を6分の1に削減するGoogleの",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
