@@ -102,6 +102,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "数学研究におけるAI革命が到来",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -292,6 +299,20 @@
     },
     {
       "keyword": "AnthropicのClaudeが一般的な使い方であっという間に使用量制限に到達して使い物にならないという報告",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "空気圧駆動ディスプレイ",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "RAW現像やAI顔補正やテザー撮影も可能",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
