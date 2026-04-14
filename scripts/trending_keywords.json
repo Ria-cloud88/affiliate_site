@@ -81,6 +81,27 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIが発展しても",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業初期費用",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "SNS副業詐欺で約130万円被害",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -264,6 +285,13 @@
     },
     {
       "keyword": "AIの出力をそのまま使う",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AnthropicのClaudeが一般的な使い方であっという間に使用量制限に到達して使い物にならないという報告",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,

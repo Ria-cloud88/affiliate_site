@@ -479,6 +479,14 @@
       "status": "pending"
     },
     {
+      "keyword": "AIが発展しても",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-14T06:22:17.830346",
+      "status": "pending"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "source": "fallback",
@@ -1240,6 +1248,22 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-13T12:13:30.010831",
+      "status": "pending"
+    },
+    {
+      "keyword": "副業初期費用",
+      "category": "副業",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-14T06:22:17.830348",
+      "status": "pending"
+    },
+    {
+      "keyword": "SNS副業詐欺で約130万円被害",
+      "category": "副業",
+      "source": "fallback",
+      "score": 20,
+      "discovered_at": "2026-04-14T06:22:17.830349",
       "status": "pending"
     },
     {
