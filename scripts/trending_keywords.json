@@ -172,6 +172,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "YouTube",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "AIでICU患者急変リスク予測",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -433,6 +447,13 @@
     {
       "keyword": "Googleが",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "YouTubeの動画を公式機能より細かい条件で検索できる",
+      "category": "副業",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
