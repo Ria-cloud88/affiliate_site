@@ -346,17 +346,22 @@ def mark_csv_keyword_as_used(keyword: str):
 
 def infer_genre_from_keyword(keyword_first_word: str) -> str:
     """キーワードの最初の単語からジャンルを推測"""
-    # ジャンル判定マッピング
+    # ジャンル判定マッピング（新ジャンル対応版）
     genre_keywords = {
-        "ペット": ["犬", "猫", "ハムスター", "うさぎ", "インコ", "熱帯魚", "爬虫類"],
-        "副業": ["副業", "フリーランス", "転職", "起業", "プログラミング", "Python", "JavaScript"],
+        "動物": ["犬", "猫", "ハムスター", "うさぎ", "インコ", "熱帯魚", "爬虫類", "メダカ", "金魚"],
+        "植物": ["観葉植物", "多肉植物", "ガーデニング", "花", "エアプランツ", "アイビー", "モンステラ",
+                "パキラ", "ユーカリ", "ポトス"],
+        "食べ物": ["料理", "レシピ", "食材", "デザート", "お菓子", "パン", "麺"],
+        "副業": ["副業", "フリーランス", "転職", "起業", "プログラミング", "Python", "JavaScript",
+                "クラウドソーシング", "ブログ", "アフィリエイト", "動画編集"],
         "生活改善": ["ダイエット", "ヨガ", "プロテイン", "サプリメント", "睡眠", "免疫力",
                     "コレステロール", "頭痛", "めまい", "スキンケア", "クレンジング", "洗顔",
                     "化粧水", "美容液", "乳液", "日焼け止め", "ファンデーション", "アイシャドウ",
                     "リップ", "チーク", "マスカラ", "アイライナー", "シャンプー", "コンディショナー",
-                    "ソファ", "ベッド"],
+                    "ソファ", "ベッド", "英語学習", "時間管理", "集中力"],
         "ガジェット": ["照明", "スマートフォン", "iPhone", "ノートパソコン", "ヘッドフォン",
-                      "スピーカー", "Tシャツ", "パーカー", "スニーカー", "靴", "バッグ"],
+                      "スピーカー", "Tシャツ", "パーカー", "スニーカー", "靴", "バッグ",
+                      "モニター", "キーボード", "マウス"],
     }
 
     for genre, keywords in genre_keywords.items():
@@ -572,6 +577,9 @@ GENRE_KEYWORDS = {
     "副業": "business,work,laptop",
     "ガジェット": "gadget,technology,electronics",
     "生活改善": "lifestyle,wellness,health",
+    "動物": "animal,pet,cute,dog,cat",
+    "植物": "plant,garden,green,nature,leaf",
+    "食べ物": "food,cooking,recipe,delicious,kitchen",
     "ニュース": "technology,news,digital",
 }
 
@@ -809,6 +817,14 @@ def save_article(content: str, genre: str, main_kw: str, category: str = None, s
     today = datetime.now().strftime("%Y-%m-%d")
     slug = f"{today}-{slugify(main_kw)}"
 
+    # スラッグ重複チェック：同じスラッグが既に存在する場合、ユニークIDを追加
+    blog_dir = Path("src/content/blog")
+    if (blog_dir / f"{slug}.md").exists():
+        import string
+        unique_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
+        slug = f"{today}-{slugify(main_kw)}-{unique_id}"
+        print(f"  ℹ️ スラッグ重複回避: {unique_id} を追加")
+
     # frontmatter生成
     # 本文からh1タイトルを除去してdescriptionを抽出
     body_without_title = re.sub(r'^#\s+.+\n', '', content, count=1).strip()
@@ -1029,8 +1045,15 @@ def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -
 
 
 def check_duplicate_article(keyword: str) -> bool:
-    """既存記事との重複をチェック（改善版：3語以上マッチで判定）"""
+    """既存記事との重複をチェック（強化版：スラッグ重複・キーワード完全一致・高類似度を検出）"""
     blog_dir = Path("src/content/blog")
+
+    # 1. スラッグの完全一致チェック（最も厳密）
+    slug = f"*-{slugify(keyword)}.md"
+    existing_slug_files = list(blog_dir.glob(slug))
+    if existing_slug_files:
+        print(f"  ⚠️ 重複検出（スラッグ一致）: {', '.join(f.name for f in existing_slug_files)}")
+        return True
 
     # キーワードから主要な単語を抽出（3文字以上）
     main_words = [w for w in keyword.split() if len(w) >= 3]
@@ -1040,17 +1063,23 @@ def check_duplicate_article(keyword: str) -> bool:
     for article_file in blog_dir.glob("*.md"):
         try:
             content = article_file.read_text(encoding="utf-8")
-            # frontmatter からタイトルを抽出
-            match = re.search(r"^title:\s*['\"](.+?)['\"]", content, re.MULTILINE)
-            if match:
-                title = match.group(1).lower()
+            # frontmatter からタイトルとキーワード情報を抽出
+            title_match = re.search(r"^title:\s*['\"](.+?)['\"]", content, re.MULTILINE)
+            if title_match:
+                title = title_match.group(1).lower()
 
-                # 改善：3つ以上のメイン単語が含まれている場合のみ重複とする
-                # （3語以上の一致で初めて同じ記事と判定。これにより、異なる角度の記事を許可）
+                # 2. メインキーワードの完全一致チェック
+                if keyword.lower() in title or title in keyword.lower():
+                    print(f"  ⚠️ 重複検出（キーワード完全一致）: {article_file.name}")
+                    return True
+
+                # 3. メイン単語の類似度チェック（4語以上で判定をより厳密に）
                 matched_words = sum(1 for word in main_words if word.lower() in title)
+                total_main_words = len(main_words)
 
-                if matched_words >= 3:
-                    print(f"  ⚠️ 重複検出: {article_file.name} (タイトル: {title[:50]}...)")
+                # マッチ率が70%以上、かつ4語以上マッチ = 高い重複可能性
+                if matched_words >= 4 and (matched_words / total_main_words) >= 0.7:
+                    print(f"  ⚠️ 重複検出（高類似度）: {article_file.name} ({matched_words}/{total_main_words} 語マッチ)")
                     return True
         except Exception:
             pass

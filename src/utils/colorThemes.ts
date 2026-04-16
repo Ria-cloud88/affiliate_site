@@ -53,6 +53,30 @@ export const genreColorThemes: Record<string, ThemeColors> = {
     accent: "#ffdd44",
     text: "#7a6600",
   },
+  "動物": {
+    primary: "#ff8844",
+    primaryLight: "#ffd9b3",
+    primaryDark: "#cc6633",
+    background: "#fff5f0",
+    accent: "#ff9966",
+    text: "#7a3d1a",
+  },
+  "植物": {
+    primary: "#22aa44",
+    primaryLight: "#ccf0dd",
+    primaryDark: "#1a7d33",
+    background: "#f0faf5",
+    accent: "#44dd66",
+    text: "#0d5a1f",
+  },
+  "食べ物": {
+    primary: "#88aa22",
+    primaryLight: "#d9e6b3",
+    primaryDark: "#669900",
+    background: "#fafef0",
+    accent: "#aadd44",
+    text: "#5a6b00",
+  },
 };
 
 /**
