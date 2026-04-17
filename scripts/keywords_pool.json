@@ -452,7 +452,7 @@
       "source": "fallback",
       "score": 30,
       "discovered_at": "2026-04-15T06:23:05.714667",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "小野田紀美AI戦略担当相",
@@ -460,7 +460,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037037",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "自身のAI利用は",
@@ -468,7 +468,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037050",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "Claude",
@@ -476,7 +476,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037054",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "AIアニメ",
@@ -1240,7 +1240,7 @@
       "source": "fallback",
       "score": 30,
       "discovered_at": "2026-04-13T07:28:55.020637",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "副業詐欺に注意",
@@ -1248,7 +1248,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037052",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "副業クリエイター応援",
@@ -1256,7 +1256,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037055",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "オリジナルグッズ副業の始め方を動画でも解説",
