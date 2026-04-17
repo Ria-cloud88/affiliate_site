@@ -484,7 +484,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-13T12:13:30.010829",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "AIが発展しても",
@@ -492,7 +492,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830346",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "数学研究におけるAI革命が到来",
@@ -1280,7 +1280,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-13T12:13:30.010831",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "副業初期費用",
@@ -1288,7 +1288,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830348",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "SNS副業詐欺で約130万円被害",
@@ -2264,7 +2264,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-13T23:31:31.041509",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "気になる音漏れも心配無用なオープンイヤーBluetoothイヤホン",
