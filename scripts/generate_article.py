@@ -1045,7 +1045,7 @@ def update_keyword_status_in_pool(keyword: str, new_status: str = 'completed') -
 
 
 def check_duplicate_article(keyword: str) -> bool:
-    """既存記事との重複をチェック（強化版：スラッグ重複・キーワード完全一致・高類似度を検出）"""
+    """既存記事との重複をチェック（スラッグ重複・キーワード完全一致のみ）"""
     blog_dir = Path("src/content/blog")
 
     # 1. スラッグの完全一致チェック（最も厳密）
@@ -1063,24 +1063,22 @@ def check_duplicate_article(keyword: str) -> bool:
     for article_file in blog_dir.glob("*.md"):
         try:
             content = article_file.read_text(encoding="utf-8")
-            # frontmatter からタイトルとキーワード情報を抽出
+            # frontmatter からタイトルを抽出
             title_match = re.search(r"^title:\s*['\"](.+?)['\"]", content, re.MULTILINE)
             if title_match:
                 title = title_match.group(1).lower()
 
-                # 2. メインキーワードの完全一致チェック
+                # 2. 完全一致チェック（同一タイトル）
+                if keyword.lower() == title:
+                    print(f"  ⚠️ 重複検出（完全一致）: {article_file.name}")
+                    return True
+
+                # 3. 部分一致チェック（一方が他方を完全に含む）
                 if keyword.lower() in title or title in keyword.lower():
-                    print(f"  ⚠️ 重複検出（キーワード完全一致）: {article_file.name}")
+                    print(f"  ⚠️ 重複検出（部分一致）: {article_file.name}")
                     return True
 
-                # 3. メイン単語の類似度チェック（4語以上で判定をより厳密に）
-                matched_words = sum(1 for word in main_words if word.lower() in title)
-                total_main_words = len(main_words)
-
-                # マッチ率が70%以上、かつ4語以上マッチ = 高い重複可能性
-                if matched_words >= 4 and (matched_words / total_main_words) >= 0.7:
-                    print(f"  ⚠️ 重複検出（高類似度）: {article_file.name} ({matched_words}/{total_main_words} 語マッチ)")
-                    return True
+                # 注: 高類似度の記事は「関連記事」として別扱い（重複ではない）
         except Exception:
             pass
 
@@ -1147,7 +1145,11 @@ def main():
         print_keyword_stats()
 
         generated_count = 0
-        for i in range(csv_count):
+        excluded_keywords = set()  # 除外キーワード
+        target_count = csv_count
+
+        # 生成成功件数が目標に達するまでループ
+        while generated_count < target_count:
             # 未使用キーワードを選択
             result = select_unused_keyword()
             if result is None:
@@ -1157,14 +1159,14 @@ def main():
             main_kw, related_kws = result
             genre = "ブログ"  # CSVファイルのキーワードはジャンル指定なし
 
-            print(f"\n[{generated_count+1}/{csv_count}] メインキーワード: {main_kw}")
+            print(f"\n[{generated_count+1}/{target_count}] メインキーワード: {main_kw}")
             print(f"  関連キーワード: {', '.join(related_kws)}")
 
             # 重複チェック
             if check_duplicate_article(main_kw):
-                print(f"  ⚠️ スキップ: 既存記事と重複 → 次のキーワードを試します")
+                print(f"  ⚠️ スキップ: 既存記事と重複 → 除外リストに追加して次へ")
                 mark_keyword_as_used(main_kw)  # 重複した場合も使用済みにマーク
-                i -= 1  # カウントを減らして再試行
+                excluded_keywords.add(main_kw)
                 continue
 
             print("Claude APIで記事生成中...")
@@ -1188,8 +1190,12 @@ def main():
             except Exception as e:
                 print(f"✗ エラー: {e}")
                 # エラー時は次のキーワードへ
+                mark_keyword_as_used(main_kw)
+                excluded_keywords.add(main_kw)
 
-        print(f"\n生成完了: {generated_count}/{csv_count}記事")
+        print(f"\n生成完了: {generated_count}/{target_count}記事")
+        if excluded_keywords:
+            print(f"除外キーワード: {', '.join(excluded_keywords)}")
         print_keyword_stats()
         return
 
@@ -1232,18 +1238,28 @@ def main():
             trending_keywords.sort(key=lambda x: x.get('score', 0), reverse=True)
 
             generated_count = 0
-            for i, kw_item in enumerate(trending_keywords[:args.auto_discover]):
+            excluded_keywords = set()  # 除外キーワード
+            kw_index = 0  # キーワードリストのインデックス
+            target_count = args.auto_discover
+
+            # 生成成功件数が目標に達するまで、またはキーワード尽きるまでループ
+            while generated_count < target_count and kw_index < len(trending_keywords):
+                kw_item = trending_keywords[kw_index]
                 main_kw = kw_item['keyword']
                 genre = kw_item.get('category', 'トレンド')
                 related_kws = [main_kw]  # 関連キーワードはキーワード本体のみ
 
-                print(f"\n[{i+1}/{min(args.auto_discover, len(trending_keywords))}] キーワード: {main_kw}")
+                print(f"\n[{generated_count+1}/{target_count}] キーワード: {main_kw}")
                 print(f"  ジャンル: {genre}")
                 print(f"  スコア: {kw_item.get('score', 0)}")
 
                 # 重複チェック
                 if check_duplicate_article(main_kw):
-                    print(f"  [SKIP] 既存記事と重複")
+                    print(f"  [SKIP] 既存記事と重複 → 除外リストに追加して次へ")
+                    excluded_keywords.add(main_kw)
+                    # 除外キーワードをプールから「excluded」ステータスで更新
+                    update_keyword_status_in_pool(main_kw, 'excluded')
+                    kw_index += 1
                     continue
 
                 print("Claude APIで記事生成中...")
@@ -1252,6 +1268,9 @@ def main():
                     content = generate_article(main_kw, related_kws, genre)
                     output_path = save_article(content, genre, main_kw, related_kws=related_kws)
                     print(f"[OK] 完了: {output_path}")
+
+                    # キーワードを「completed」にマーク
+                    update_keyword_status_in_pool(main_kw, 'completed')
 
                     # 品質チェック
                     check_article_quality(output_path, main_kw)
@@ -1263,9 +1282,15 @@ def main():
 
                 except Exception as e:
                     print(f"[ERROR] {e}")
-                    continue
+                    # エラー時も除外して次へ進む
+                    excluded_keywords.add(main_kw)
+                    update_keyword_status_in_pool(main_kw, 'excluded')
 
-            print(f"\n生成完了: {generated_count}/{min(args.auto_discover, len(trending_keywords))}記事")
+                kw_index += 1
+
+            print(f"\n生成完了: {generated_count}/{target_count}記事")
+            if excluded_keywords:
+                print(f"除外キーワード: {', '.join(excluded_keywords)}")
 
         except Exception as e:
             print(f"[ERROR] 自動発掘モード実行失敗: {e}")
@@ -1310,7 +1335,11 @@ def main():
         print(f"\n[CSV MODE] {csv_count} 記事を生成します")
 
         generated_count = 0
-        for i in range(csv_count):
+        excluded_keywords = set()  # 除外キーワード
+        target_count = csv_count
+
+        # 生成成功件数が目標に達するまでループ
+        while generated_count < target_count:
             # 未使用キーワードを選択
             csv_keywords = load_csv_keywords()
             if not csv_keywords:
@@ -1324,13 +1353,14 @@ def main():
             related_kws = parts
             genre = infer_genre_from_keyword(parts[0])
 
-            print(f"\n[{generated_count+1}/{csv_count}] キーワード: {main_kw}")
+            print(f"\n[{generated_count+1}/{target_count}] キーワード: {main_kw}")
             print(f"  ジャンル: {genre}")
 
             # 重複チェック
             if check_duplicate_article(main_kw):
-                print(f"  ⚠️ スキップ: 既存記事と重複 → 次のキーワードを試します")
+                print(f"  ⚠️ スキップ: 既存記事と重複 → 除外リストに追加して次へ")
                 mark_csv_keyword_as_used(keyword)
+                excluded_keywords.add(main_kw)
                 continue
 
             print("Claude APIで記事生成中...")
@@ -1353,9 +1383,13 @@ def main():
 
             except Exception as e:
                 print(f"✗ エラー: {e}")
-                # エラー時は次のキーワードへ
+                # エラー時も除外して次のキーワードへ
+                mark_csv_keyword_as_used(keyword)
+                excluded_keywords.add(main_kw)
 
-        print(f"\n生成完了: {generated_count}/{csv_count}記事")
+        print(f"\n生成完了: {generated_count}/{target_count}記事")
+        if excluded_keywords:
+            print(f"除外キーワード: {', '.join(excluded_keywords)}")
 
 
 if __name__ == "__main__":
