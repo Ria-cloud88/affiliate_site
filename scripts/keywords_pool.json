@@ -492,7 +492,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830346",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "数学研究におけるAI革命が到来",
@@ -500,7 +500,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T12:11:25.364499",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "Anthropic",
@@ -1288,7 +1288,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830348",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "SNS副業詐欺で約130万円被害",
@@ -1296,7 +1296,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830349",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "SNSで副業話",
