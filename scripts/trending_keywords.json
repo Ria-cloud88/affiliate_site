@@ -228,6 +228,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "県職員が副業として農作業全般への協力可能に",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
