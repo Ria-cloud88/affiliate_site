@@ -1248,7 +1248,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037052",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "副業クリエイター応援",
@@ -1256,7 +1256,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037055",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "オリジナルグッズ副業の始め方を動画でも解説",
@@ -1264,7 +1264,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037057",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "副業編",
@@ -1272,7 +1272,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T22:04:43.848305",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "経理代行や事務サポートの副業",
