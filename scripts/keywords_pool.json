@@ -524,7 +524,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-15T06:23:05.714699",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
