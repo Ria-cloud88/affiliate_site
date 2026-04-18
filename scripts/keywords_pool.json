@@ -500,7 +500,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T12:11:25.364499",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "Anthropic",
@@ -1296,7 +1296,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830349",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "SNSで副業話",
@@ -1304,7 +1304,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T18:51:28.907008",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "副業型地域活性化起業人",
@@ -1312,7 +1312,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T18:51:28.907009",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "YouTubeが有料サブスクのYouTube",
