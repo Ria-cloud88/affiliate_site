@@ -460,7 +460,7 @@
       "source": "fallback",
       "score": 30,
       "discovered_at": "2026-04-18T08:10:20.237434",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "小野田紀美AI戦略担当相",
@@ -516,7 +516,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-15T06:23:05.714697",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "OpenAI",
@@ -524,7 +524,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-15T06:23:05.714699",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
