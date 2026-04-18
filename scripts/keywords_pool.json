@@ -455,6 +455,14 @@
       "status": "excluded"
     },
     {
+      "keyword": "AIデザインツール",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-04-18T08:10:20.237434",
+      "status": "completed"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "source": "fallback",
@@ -508,7 +516,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-15T06:23:05.714697",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "OpenAI",
@@ -1304,7 +1312,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T18:51:28.907008",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "副業型地域活性化起業人",
@@ -1312,7 +1320,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T18:51:28.907009",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "YouTubeが有料サブスクのYouTube",
