@@ -556,7 +556,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037067",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "Anthropicの最新AI巡り",
@@ -564,7 +564,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037068",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "Claudeを",
@@ -572,7 +572,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037069",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "を使ってFirefoxのサイドバーにあるAIチャット機能を完全ローカル化してみた",
@@ -580,7 +580,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037070",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "キーボード一体型PCで作業環境が超スッキリなHPのAI搭載PC",
