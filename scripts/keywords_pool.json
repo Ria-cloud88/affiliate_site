@@ -548,7 +548,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037066",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "大規模に投資していたOpenAIが巻き返しをはかる",
@@ -556,7 +556,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037067",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "Anthropicの最新AI巡り",
@@ -564,7 +564,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037068",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "Claudeを",
@@ -1328,7 +1328,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037065",
-      "status": "completed"
+      "status": "excluded"
     }
   ],
   "plants": [
