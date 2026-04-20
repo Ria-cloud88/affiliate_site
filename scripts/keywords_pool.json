@@ -572,7 +572,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037069",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "を使ってFirefoxのサイドバーにあるAIチャット機能を完全ローカル化してみた",
@@ -580,7 +580,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037070",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "キーボード一体型PCで作業環境が超スッキリなHPのAI搭載PC",
@@ -588,7 +588,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037072",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "OpenAIのサム",
