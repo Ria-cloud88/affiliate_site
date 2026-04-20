@@ -452,7 +452,15 @@
       "source": "fallback",
       "score": 30,
       "discovered_at": "2026-04-15T06:23:05.714667",
-      "status": "pending"
+      "status": "excluded"
+    },
+    {
+      "keyword": "AIデザインツール",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-04-18T08:10:20.237434",
+      "status": "excluded"
     },
     {
       "keyword": "小野田紀美AI戦略担当相",
@@ -460,7 +468,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037037",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "自身のAI利用は",
@@ -468,7 +476,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037050",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "Claude",
@@ -476,7 +484,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037054",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "AIアニメ",
@@ -484,7 +492,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-13T12:13:30.010829",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "AIが発展しても",
@@ -492,7 +500,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830346",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "数学研究におけるAI革命が到来",
@@ -500,7 +508,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T12:11:25.364499",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "Anthropic",
@@ -508,7 +516,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-15T06:23:05.714697",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "OpenAI",
@@ -516,7 +524,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-15T06:23:05.714699",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
@@ -524,7 +532,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037058",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "Tailslayer",
@@ -532,7 +540,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037063",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "AI需要が爆発的に増加も計算能力が制約に",
@@ -540,7 +548,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037066",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "大規模に投資していたOpenAIが巻き返しをはかる",
@@ -548,7 +556,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037067",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "Anthropicの最新AI巡り",
@@ -556,7 +564,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037068",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "Claudeを",
@@ -564,7 +572,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037069",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "を使ってFirefoxのサイドバーにあるAIチャット機能を完全ローカル化してみた",
@@ -572,7 +580,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037070",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "キーボード一体型PCで作業環境が超スッキリなHPのAI搭載PC",
@@ -1240,7 +1248,7 @@
       "source": "fallback",
       "score": 30,
       "discovered_at": "2026-04-13T07:28:55.020637",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "副業詐欺に注意",
@@ -1248,7 +1256,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037052",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "副業クリエイター応援",
@@ -1256,7 +1264,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037055",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "オリジナルグッズ副業の始め方を動画でも解説",
@@ -1264,7 +1272,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T16:57:11.037057",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "副業編",
@@ -1272,7 +1280,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-12T22:04:43.848305",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "経理代行や事務サポートの副業",
@@ -1280,7 +1288,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-13T12:13:30.010831",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "副業初期費用",
@@ -1288,7 +1296,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830348",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "SNS副業詐欺で約130万円被害",
@@ -1296,7 +1304,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T06:22:17.830349",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "SNSで副業話",
@@ -1304,7 +1312,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T18:51:28.907008",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "副業型地域活性化起業人",
@@ -1312,7 +1320,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-14T18:51:28.907009",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "YouTubeが有料サブスクのYouTube",
@@ -1320,7 +1328,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037065",
-      "status": "pending"
+      "status": "excluded"
     }
   ],
   "plants": [
@@ -2264,7 +2272,7 @@
       "source": "fallback",
       "score": 20,
       "discovered_at": "2026-04-13T23:31:31.041509",
-      "status": "pending"
+      "status": "excluded"
     },
     {
       "keyword": "気になる音漏れも心配無用なオープンイヤーBluetoothイヤホン",
