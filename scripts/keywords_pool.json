@@ -596,7 +596,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037073",
-      "status": "completed"
+      "status": "excluded"
     },
     {
       "keyword": "をチャットAIが実在する病気としてユーザーに提示してしまう",
@@ -2280,7 +2280,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037074",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "keyword": "Samsung",
@@ -2288,7 +2288,7 @@
       "source": "fallback",
       "score": 10,
       "discovered_at": "2026-04-12T16:57:11.037075",
-      "status": "pending"
+      "status": "completed"
     }
   ],
   "生活改善": [
