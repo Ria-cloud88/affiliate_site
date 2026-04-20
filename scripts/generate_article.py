@@ -1113,14 +1113,15 @@ def check_article_quality(file_path: Path, keyword: str) -> bool:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成（CSVキーワード優先モード）")
+    parser = argparse.ArgumentParser(description="アフィリエイト記事自動生成（ハイブリッドモード）")
     parser.add_argument("--count", type=int, default=2, metavar="N", help="生成する記事数（デフォルト: 2）")
-    parser.add_argument("--csv", action="store_true", help="CSVキーワードから生成（デフォルト）")
+    parser.add_argument("--csv", action="store_true", help="CSVキーワードから生成のみ")
     parser.add_argument("--csv-count", type=int, metavar="N", help="CSV記事生成数")
     parser.add_argument("--topic", type=str, help="記事にするトピック（例: 'Claude Codeソースコード流出'）")
     parser.add_argument("--news", action="store_true", help="RSSから最新ニュースを取得して記事生成")
     parser.add_argument("--auto", action="store_true", help="対話なしで自動実行（--newsと組み合わせてランダム選択）")
     parser.add_argument("--auto-discover", type=int, metavar="N", help="トレンドキーワード発掘 + 記事生成（N記事）")
+    parser.add_argument("--hybrid", action="store_true", help="ハイブリッドモード：1記事RSSフィード + 1記事CSV（デフォルト）")
     parser.add_argument("--keyword-stats", action="store_true", help="キーワード統計を表示")
     parser.add_argument("--reset-keywords", action="store_true", help="CSVキーワードをリセット（未使用状態に戻す）")
     args = parser.parse_args()
@@ -1330,7 +1331,124 @@ def main():
             check_article_quality(output_path, selected['title'])
 
     else:
-        # デフォルト：CSVキーワードから N 記事を生成
+        # デフォルト：ハイブリッドモード（1記事RSSフィード + 1記事CSV）
+        if not args.csv and not args.auto_discover and not args.topic and not args.news:
+            # --hybrid フラグがなくても、他のオプションがなければハイブリッドモード
+            args.hybrid = True
+
+        if args.hybrid:
+            print("\n[HYBRID MODE] RSSフィード(1記事) + CSV(1記事)を生成します")
+
+            # ステップ1：RSSフィード発掘 + 1記事生成
+            print("\n【ステップ1】RSSフィードからトレンドキーワード発掘...")
+            try:
+                result = subprocess.run(
+                    ["python", "scripts/discover_keywords.py"],
+                    capture_output=True,
+                    text=True,
+                    timeout=120
+                )
+                if result.returncode == 0:
+                    print("[OK] キーワード発掘: 完了")
+                else:
+                    print(f"[WARN] キーワード発掘: スキップ")
+            except Exception as e:
+                print(f"[WARN] キーワード発掘: スキップ（{type(e).__name__}）")
+
+            # 発掘されたキーワードから1記事生成
+            try:
+                trending_path = Path("scripts/trending_keywords.json")
+                if trending_path.exists():
+                    trending_data = json.loads(trending_path.read_text(encoding='utf-8'))
+                    trending_keywords = trending_data.get('keywords', [])
+
+                    if trending_keywords:
+                        trending_keywords.sort(key=lambda x: x.get('score', 0), reverse=True)
+
+                        # スコアが高いキーワードから重複なしで1記事生成
+                        kw_index = 0
+                        while kw_index < len(trending_keywords):
+                            kw_item = trending_keywords[kw_index]
+                            main_kw = kw_item['keyword']
+                            genre = kw_item.get('category', 'トレンド')
+                            related_kws = [main_kw]
+
+                            print(f"\n[1/2] RSSキーワード: {main_kw}")
+                            print(f"  ジャンル: {genre}")
+
+                            if not check_duplicate_article(main_kw):
+                                print("Claude APIで記事生成中...")
+                                try:
+                                    content = generate_article(main_kw, related_kws, genre)
+                                    output_path = save_article(content, genre, main_kw, related_kws=related_kws)
+                                    print(f"[OK] 完了: {output_path}")
+                                    check_article_quality(output_path, main_kw)
+                                    time.sleep(3)
+                                    break
+                                except Exception as e:
+                                    print(f"[ERROR] {e}")
+                            else:
+                                print("  [SKIP] 重複検出")
+
+                            kw_index += 1
+            except Exception as e:
+                print(f"[ERROR] RSS記事生成失敗: {e}")
+
+            # ステップ2：CSVキーワードから1記事生成
+            print("\n【ステップ2】CSVキーワードから1記事生成...")
+            csv_count = 1
+            generated_count = 0
+            excluded_keywords = set()
+            target_count = csv_count
+
+            while generated_count < target_count:
+                # 未使用キーワードを選択
+                result = select_unused_keyword()
+                if result is None:
+                    print("[ERROR] CSVキーワードが見つかりません")
+                    break
+
+                main_kw, related_kws = result
+                genre = "ブログ"
+
+                print(f"\n[2/2] CSVキーワード: {main_kw}")
+                print(f"  関連キーワード: {', '.join(related_kws)}")
+
+                # 重複チェック
+                if check_duplicate_article(main_kw):
+                    print(f"  [SKIP] 重複検出 → 次へ")
+                    mark_keyword_as_used(main_kw)
+                    excluded_keywords.add(main_kw)
+                    continue
+
+                print("Claude APIで記事生成中...")
+
+                try:
+                    content = generate_article(main_kw, related_kws, genre)
+                    output_path = save_article(content, genre, main_kw, related_kws=related_kws)
+                    print(f"[OK] 完了: {output_path}")
+
+                    # キーワードを使用済みにマーク
+                    mark_keyword_as_used(main_kw)
+
+                    # 品質チェック
+                    check_article_quality(output_path, main_kw)
+
+                    generated_count += 1
+
+                    time.sleep(3)
+
+                except Exception as e:
+                    print(f"[ERROR] {e}")
+                    mark_keyword_as_used(main_kw)
+                    excluded_keywords.add(main_kw)
+
+            print(f"\n生成完了: ハイブリッドモード（RSS + CSV）")
+            if excluded_keywords:
+                print(f"除外キーワード: {', '.join(excluded_keywords)}")
+            return
+
+        # CSVキーワード単独モード（--csv オプション指定時）
         csv_count = args.count
         print(f"\n[CSV MODE] {csv_count} 記事を生成します")
 
@@ -1341,12 +1459,12 @@ def main():
         # 生成成功件数が目標に達するまでループ
         while generated_count < target_count:
             # 未使用キーワードを選択
-            csv_keywords = load_csv_keywords()
-            if not csv_keywords:
+            result = select_unused_keyword()
+            if result is None:
                 print("[ERROR] CSVキーワードが見つかりません")
                 break
 
-            selected = random.choice(csv_keywords)
+            main_kw, related_kws = result
             keyword = selected['keyword']
             parts = keyword.split(',')
             main_kw = ' '.join(parts)
