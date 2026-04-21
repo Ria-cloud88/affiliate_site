@@ -13,6 +13,18 @@ import anthropic
 import argparse
 import json
 import os
+from pathlib import Path
+
+# .env.local をロード
+env_path = Path(__file__).parent.parent / ".env.local"
+if env_path.exists():
+    with open(env_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, value = line.split("=", 1)
+                os.environ[key.strip()] = value.strip().strip('"\'')
+
 import random
 import re
 import subprocess
@@ -591,24 +603,31 @@ GENRE_KEYWORDS = {
 
 
 def init_gemini_api():
-    """Gemini APIを初期化"""
+    """Gemini APIを初期化（複数キーのフォールバック対応）"""
     if not GEMINI_AVAILABLE:
         print("[WARNING] google-generativeai がインストールされていません")
         print("  インストール: pip install google-generativeai")
         return False
 
-    api_key = os.environ.get("GOOGLE_API_KEY")
-    if not api_key:
-        print("[WARNING] GOOGLE_API_KEY が設定されていません")
-        print("  .env.local に GOOGLE_API_KEY=... を追加してください")
-        return False
+    # 優先度順に試す
+    api_keys = [
+        ("GEMINI_API_KEY_2", os.environ.get("GEMINI_API_KEY_2")),
+        ("GOOGLE_API_KEY", os.environ.get("GOOGLE_API_KEY")),
+    ]
 
-    try:
-        genai.configure(api_key=api_key)
-        return True
-    except Exception as e:
-        print(f"[ERROR] Gemini API初期化失敗: {e}")
-        return False
+    for key_name, api_key in api_keys:
+        if api_key:
+            try:
+                genai.configure(api_key=api_key)
+                print(f"[OK] Gemini API initialized ({key_name})")
+                return True
+            except Exception as e:
+                print(f"  [{key_name}] failed: {type(e).__name__}")
+                continue
+
+    print("[WARNING] No valid Gemini API key available")
+    print("  .env.local に GOOGLE_API_KEY または GEMINI_API_KEY_2 を追加してください")
+    return False
 
 
 def generate_image_with_gemini(prompt: str, width: int = 800, height: int = 400) -> bytes | None:
