@@ -724,11 +724,16 @@ def generate_hero_image(title: str, genre: str, slug: str) -> str | None:
 
 
 def embed_images_in_article(content: str, genre: str, slug: str) -> str:
-    """記事の各H2見出しの後に画像を埋め込む（Gemini → Pollinations.ai）"""
+    """記事に最適な枚数の画像を埋め込む（読者視点で最適化）"""
     import urllib.parse as up
 
-    # ## で始まる見出しを抽出（最大2～3個）
-    headings = re.findall(r'^## (.+)$', content, re.MULTILINE)[1:4]  # 最初のH2は除外（タイトル直後）
+    # 記事の長さから必要な画像枚数を決定（読みやすさ最適化）
+    period_count = content.count('。')
+    target_images = 2 if period_count < 100 else 3 if period_count < 120 else 4
+
+    # H2見出しを抽出（最初のH2=目次は除外）
+    all_headings = re.findall(r'^## (.+)$', content, re.MULTILINE)[1:]
+    headings = all_headings[:target_images]
 
     if not headings:
         return content
@@ -759,9 +764,9 @@ def embed_images_in_article(content: str, genre: str, slug: str) -> str:
                     print(f"  [OK] Section image({i+1}) (Gemini): {img_filename}")
                     success = True
             except Exception as e:
-                pass  # Fallback へ
+                pass
 
-        # 2. Gemini失敗時は Pollinations.ai で取得
+        # 2. Pollinations.ai フォールバック
         if not success:
             try:
                 pollinations_url = f"https://image.pollinations.ai/prompt/{up.quote(prompt)}?width=800&height=400&nologo=true&seed={seed}"
@@ -774,7 +779,42 @@ def embed_images_in_article(content: str, genre: str, slug: str) -> str:
                     print(f"  [OK] Section image({i+1}) (Pollinations): {img_filename}")
                     success = True
             except Exception as e:
-                print(f"  [FAIL] Section image({heading}): {type(e).__name__}")
+                pass
+
+        # 3. loremflickr フォールバック（最後の手段：確実に取得）
+        if not success:
+            for kw_try in [kw.split(",")[0], "article", "content"]:
+                try:
+                    url = f"https://loremflickr.com/800/400/{kw_try}?lock={seed}"
+                    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                    with urllib.request.urlopen(req, timeout=30) as resp:
+                        data = resp.read()
+                    if len(data) >= 1000:
+                        img_path.write_bytes(data)
+                        images_to_embed[heading] = f"/images/blog/{img_filename}"
+                        print(f"  [OK] Section image({i+1}) (loremflickr): {img_filename}")
+                        success = True
+                        break
+                except Exception:
+                    pass
+
+        # 4. picsum.photos 最後の砦
+        if not success:
+            try:
+                url = f"https://picsum.photos/seed/{seed}/800/400"
+                req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    data = resp.read()
+                if len(data) >= 1000:
+                    img_path.write_bytes(data)
+                    images_to_embed[heading] = f"/images/blog/{img_filename}"
+                    print(f"  [OK] Section image({i+1}) (picsum): {img_filename}")
+                    success = True
+            except Exception:
+                pass
+
+        if not success:
+            print(f"  [WARN] Section image({heading}): すべての生成方法が失敗")
 
     # H2見出し直後に画像を埋め込む
     if images_to_embed:
