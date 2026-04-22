@@ -333,6 +333,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIの時代",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -866,6 +873,62 @@
     },
     {
       "keyword": "反AI派による抵抗運動が高まってきている",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "YouTubeが類似性検出技術の利用範囲を拡大",
+      "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "双方の主張を入力すると数学的に公平な妥協案を出してくれるAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "っぽい画像をChatGPT",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "0やその他の画像生成AIで作ってみた結果は",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicが",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "気分を伝えたり自撮りを見せたりするとAIがオススメドリンクを提案してくれるChatGPTのミニアプリをスターバックスが提供",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "GoogleがGemini",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Proベースの新型AIエージェント",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
