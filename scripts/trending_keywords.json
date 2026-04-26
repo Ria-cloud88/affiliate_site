@@ -396,6 +396,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "をAIで解消する",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -1287,6 +1294,20 @@
     {
       "keyword": "習慣的なコーヒー摂取は腸内細菌を介して気分やストレスに影響することが判明",
       "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "日立と日立ハイテクが独自エッジAI半導体を開発",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI導入補助金2026",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
