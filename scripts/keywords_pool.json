@@ -1251,6 +1251,22 @@
       "status": "excluded"
     },
     {
+      "keyword": "YouTuber",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-04-28T21:41:35.266070",
+      "status": "excluded"
+    },
+    {
+      "keyword": "日立の社員はどんな副業をしているのか",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-04-28T21:41:35.266072",
+      "status": "completed"
+    },
+    {
       "keyword": "副業詐欺に注意",
       "category": "副業",
       "source": "fallback",
