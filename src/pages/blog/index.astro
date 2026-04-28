@@ -6,10 +6,16 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import Sidebar from '../../components/Sidebar.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { getThemeColors } from '../../utils/colorThemes';
 
-const posts = (await getCollection('blog')).sort(
+const allPosts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const genreParam = Astro.url.searchParams.get('genre');
+const posts = genreParam
+  ? allPosts.filter(p => p.data.genre === genreParam)
+  : allPosts;
 ---
 
 <!doctype html>
@@ -23,7 +29,7 @@ const posts = (await getCollection('blog')).sort(
     <div class="site-body">
       <main class="main-content">
         <h1 style="font-size:1.3em; border-left:4px solid #1a56db; padding:6px 14px; background:#f0f4ff; margin-bottom:24px;">
-          ブログ一覧
+          {genreParam ? `${genreParam}の記事 (${posts.length}件)` : 'ブログ一覧'}
         </h1>
 
         {posts.length === 0 ? (
@@ -37,13 +43,13 @@ const posts = (await getCollection('blog')).sort(
                 {post.data.heroImage ? (
                   <img src={post.data.heroImage} alt={post.data.title} class="card-img" loading="lazy" />
                 ) : (
-                  <div class="card-img-placeholder">
+                  <div class="card-img-placeholder" style={`--themeColor: ${getThemeColors(post.data.genre).primary}; --themeLight: ${getThemeColors(post.data.genre).primaryLight}`}>
                     {post.data.genre || 'ブログ'}
                   </div>
                 )}
                 <div class="card-body">
                   <div class="card-meta">
-                    {post.data.genre && <span class="tag" style="font-size:0.7em;">{post.data.genre}</span>}
+                    {post.data.genre && <span class="tag" style={`font-size:0.7em; background-color: ${getThemeColors(post.data.genre).primary};`}>{post.data.genre}</span>}
                     <FormattedDate date={post.data.pubDate} />
                   </div>
                   <p class="card-title">{post.data.title}</p>

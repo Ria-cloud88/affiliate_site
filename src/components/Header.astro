@@ -8,13 +8,28 @@ import { SITE_TITLE } from '../consts';
       <span class="logo-main">AIツール・副業</span>
       <span class="logo-sub">完全ガイド</span>
     </a>
-    <nav>
+    <nav id="desktop-nav">
       <a href="/">ホーム</a>
       <a href="/blog">ブログ一覧</a>
       <a href="/blog?genre=AIツール">AIツール</a>
       <a href="/blog?genre=副業">副業</a>
+      <a href="/blog?genre=ガジェット">ガジェット</a>
+      <a href="/blog?genre=生活改善">生活改善</a>
     </nav>
+    <button class="mobile-menu-btn" aria-label="メニュー" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+  <nav id="mobile-menu" class="mobile-menu">
+    <a href="/">ホーム</a>
+    <a href="/blog">ブログ一覧</a>
+    <a href="/blog?genre=AIツール">AIツール</a>
+    <a href="/blog?genre=副業">副業</a>
+    <a href="/blog?genre=ガジェット">ガジェット</a>
+    <a href="/blog?genre=生活改善">生活改善</a>
+  </nav>
 </header>
 
 <style>
@@ -57,12 +72,12 @@ import { SITE_TITLE } from '../consts';
     font-weight: bold;
   }
 
-  nav {
+  #desktop-nav {
     display: flex;
     gap: 4px;
   }
 
-  nav a {
+  #desktop-nav a {
     padding: 6px 12px;
     color: #333;
     font-size: 0.85em;
@@ -71,13 +86,107 @@ import { SITE_TITLE } from '../consts';
     transition: background 0.15s;
   }
 
-  nav a:hover {
+  #desktop-nav a:hover {
     background: #f0f4ff;
     color: #1a56db;
     text-decoration: none;
   }
 
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #1a2b5f;
+    border-radius: 1px;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 3px solid #1a2b5f;
+    z-index: 150;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    padding: 14px 16px;
+    color: #333;
+    font-size: 0.95em;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f4ff;
+    transition: background 0.15s;
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-menu a:hover {
+    background: #f0f4ff;
+    color: #1a56db;
+  }
+
   @media (max-width: 600px) {
-    nav a:not(:first-child) { display: none; }
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    #desktop-nav {
+      display: none;
+    }
   }
 </style>
+
+<script>
+  const btn = document.querySelector('.mobile-menu-btn') as HTMLButtonElement;
+  const menu = document.getElementById('mobile-menu') as HTMLElement;
+  const menuLinks = menu?.querySelectorAll('a') || [];
+
+  btn?.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    menu?.classList.toggle('open');
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      btn.setAttribute('aria-expanded', 'false');
+      menu?.classList.remove('open');
+    });
+  });
+</script>
