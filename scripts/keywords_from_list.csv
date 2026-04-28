@@ -14,7 +14,7 @@ keyword,status
 """ダイエット,間食,選び方""",unused
 """ヨガ,料金,安い""",unused
 """ヨガ,料金,相場""",unused
-"""ヨガ,料金,比較""",used
+"""ヨガ,料金,比較""",unused
 """ヨガ,オンライン,おすすめ""",unused
 """ヨガ,オンライン,無料""",unused
 """ヨガ,オンライン,比較""",unused
@@ -156,7 +156,7 @@ keyword,status
 """スマートフォン,おすすめ,2026""",unused
 """スマートフォン,Android,おすすめ""",unused
 """iPhone,最新,比較""",unused
-"""iPhone,在庫,状況""",used
+"""iPhone,在庫,状況""",unused
 """ノートパソコン,軽量,おすすめ""",unused
 """ノートパソコン,軽量,人気""",unused
 """ノートパソコン,高性能,比較""",unused
