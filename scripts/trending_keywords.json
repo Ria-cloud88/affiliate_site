@@ -487,6 +487,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIで新ロゴ作成も4日で使用中止に",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "生成AIロゴ",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -1846,6 +1860,13 @@
     },
     {
       "keyword": "の容量が大きくなる問題についてGoogleが理由を説明",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "キーボードを取り外してデュアル有機ELタッチディスプレイに変形するASUSのIntel",
       "category": "ガジェット",
       "frequency": 1,
       "score": 10,
