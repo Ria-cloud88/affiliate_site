@@ -529,6 +529,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業先のコンビニから現金11万円を盗んだ疑いで逮捕",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -1938,6 +1945,13 @@
     {
       "keyword": "コンソール版Copilotの開発を中止する",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "YouTubeやXを見過ぎると猫ちゃんが現れて画面を占領してくるChrome拡張機能",
+      "category": "副業",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
