@@ -557,6 +557,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業募集の広告にアクセスして詐欺被害",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -2056,6 +2063,48 @@
     },
     {
       "keyword": "Google検索のAI機能が進化",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "コスパ重視AIモデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "脚本部門はAIの演技",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTの新しいデフォルトモデルに",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "長大コンテキストの処理でClaude",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Opusを超える性能を示す効率設計AIモデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Chromeが約4GBのオンデバイスAIモデルを勝手に保存していると指摘される",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
