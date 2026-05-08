@@ -620,6 +620,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI推進企業のコロプラがクリエイター保護ツール",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -2322,6 +2329,27 @@
     },
     {
       "keyword": "ChatGPTに",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの検閲を突破してNG質問にも回答させる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "GoogleのAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "アルゴリズム発見AIの実績まとめ",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
