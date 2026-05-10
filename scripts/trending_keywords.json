@@ -2459,6 +2459,34 @@
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleの廉価版スマホ",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "のベンチマークスコアやバッテリー持続時間を検証してみたよレビュー",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "就職の面接官がAIだって",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI面接官",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
     }
   ]
 }
