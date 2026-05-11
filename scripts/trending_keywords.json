@@ -704,6 +704,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "米最新AIの使用権要求",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -2659,6 +2666,27 @@
     {
       "keyword": "多くの人が健康情報源として頼っている",
       "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国の主要AIラボを訪問したアメリカ人研究者が語る",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国AIエコシステム",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "は欧米のAI研究と何が違うのか",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
