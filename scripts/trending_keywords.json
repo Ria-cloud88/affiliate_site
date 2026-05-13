@@ -725,6 +725,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業広告発端",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -2903,6 +2910,34 @@
     },
     {
       "keyword": "MicrosoftがAIセキュリティシステム",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "単体アプリになって複数アプリ間でタスクを横断できるAIエージェントに進化",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "マウスポインタをAIの入力として活用するべき",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "でAIに通じる時代が来るか",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIで法務を効率化するためのClaude連携アプリをAnthropicがリリース",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
