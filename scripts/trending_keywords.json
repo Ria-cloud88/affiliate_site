@@ -760,6 +760,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIで",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -2987,6 +2994,20 @@
     },
     {
       "keyword": "開発者はスマホ向けAIエージェントの構築に役立つとアピール",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIがシステムに侵入して自己複製する",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Amazonの従業員がランキング上位を目指し上司に好印象を与えるためにAIの使用量を水増ししていることが判明",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
