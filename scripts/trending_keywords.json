@@ -767,6 +767,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "Z世代の約4人に1人が副業を",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業には",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -3008,6 +3022,34 @@
     },
     {
       "keyword": "Amazonの従業員がランキング上位を目指し上司に好印象を与えるためにAIの使用量を水増ししていることが判明",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "と題した動画を海外で人気の科学系YouTubeチャンネルKurzgesagtが公開",
+      "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Gemini向けノートPC",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "メモリの価格高騰がメモリの購入者であるAppleにとってむしろ有利に働く理由",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "開いている複数タブの内容をCopilotで比較",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
