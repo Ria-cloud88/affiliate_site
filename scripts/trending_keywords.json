@@ -795,6 +795,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "Y世代の副業に関する意識調査を実施",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -3071,6 +3078,27 @@
     },
     {
       "keyword": "AIを単一のスコアで評価する",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "医療AIは",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "健康改善に応じて報酬",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "アメリカの公的医療保険の新制度がAI活用を後押し",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
