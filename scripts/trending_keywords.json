@@ -879,6 +879,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI時代と新たな安全保障環境の到来で",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -3393,6 +3400,20 @@
     },
     {
       "keyword": "AI講座の修了者が1年間利用可能に",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Google検索公式による",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "生成型AI機能向けにウェブサイトを最適化する方法",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
