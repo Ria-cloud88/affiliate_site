@@ -907,6 +907,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "官民会議の最新AI対策案",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -3491,6 +3498,20 @@
     },
     {
       "keyword": "にオンデマンドAIポッドキャスト機能",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "強力なAIモデルのリリース前に政府のテストと承認を義務づけるよう数十人のMAGA支持者がトランプ大統領に要求",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが大学生活をどのように変えてしまったのか",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
