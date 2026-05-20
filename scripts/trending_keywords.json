@@ -921,6 +921,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "などの簡単な副業で",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -3575,6 +3582,27 @@
     },
     {
       "keyword": "Google検索がAIで大幅刷新",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "GoogleのウェブベースのAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleが映画制作ツール",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIエージェント追加",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
