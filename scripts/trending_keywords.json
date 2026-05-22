@@ -970,6 +970,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "ユーザーはYouTube広告ほぼ非表示",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -3827,6 +3834,48 @@
     },
     {
       "keyword": "生成AIで書かれた可能性が高い",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ベゾスがAIによる雇用不安を否定",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Cohereがエージェントタスク向けに構築されたMoEマルチモーダルAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "TikTokとYouTubeのおすすめ機能は子どもにとって安全ではない",
+      "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIによる雇用喪失に備える行政命令にカリフォルニア州知事が署名",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "スターバックスがAI在庫管理ツールを導入から9カ月で廃止",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ローカルAIを実行可能でFlipper",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
