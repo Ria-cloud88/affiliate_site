@@ -39,6 +39,13 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "副業名目で700万円詐欺被害",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -951,6 +958,13 @@
     {
       "keyword": "フリーランス人材活用",
       "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "AIがコードを書く時代に",
+      "category": "AIツール",
       "frequency": 2,
       "score": 20,
       "reason": "ニュースフィードで2回出現"
@@ -3778,6 +3792,41 @@
     },
     {
       "keyword": "ローカルLLMは本当に手元で動くのか",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTでPowerPointを自動操作してスライドを作れる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "SpotifyがAI活用のライセンス付きカバー",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "音楽生成AI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "SpotifyがElevenLabsのAI技術を搭載したオーディオブック作成ツールをリリース",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "生成AIで書かれた可能性が高い",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,

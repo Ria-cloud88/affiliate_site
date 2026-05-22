@@ -1267,6 +1267,14 @@
       "status": "excluded"
     },
     {
+      "keyword": "副業名目で700万円詐欺被害",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-05-22T03:37:42.110701",
+      "status": "completed"
+    },
+    {
       "keyword": "副業詐欺に注意",
       "category": "副業",
       "source": "fallback",
