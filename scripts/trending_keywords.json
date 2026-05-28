@@ -1075,6 +1075,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "YouTubeがAI生成コンテンツを自動検出へ",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "非番の日に副業",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -4311,6 +4325,20 @@
     {
       "keyword": "ヒト型AIロボスタートアップのアトムが30億円調達",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIでタンパク質を予測",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "の実現は2030年頃と予想しているが2029年の可能性も視野に入れているとGoogle",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
