@@ -1131,6 +1131,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業サポート",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -4619,6 +4626,20 @@
     {
       "keyword": "OpenAI新モデルのアクセス権を取得",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "無料でAI透かしを除去できる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "地域の経済状況と住民のメンタルヘルスには密接な関連があるという研究結果",
+      "category": "生活改善",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
