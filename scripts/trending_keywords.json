@@ -1152,6 +1152,27 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "みんな使い方が違うAIエージェント用語をHugging",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "VCスタートアップ健康保険組合",
+      "category": "生活改善",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "設立2周年スタートアップ業界の健康保険料を約20億円削減",
+      "category": "生活改善",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -4724,6 +4745,34 @@
     {
       "keyword": "Appleはスマートグラス市場でMetaに対抗するだけでなく市場全体を変革しようとしている",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI時代に本当に価値があるのはプログラミング能力ではなく",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIサーバー",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicの人材採用プロセスはこんな感じ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "面接でのAI使用は厳禁",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
