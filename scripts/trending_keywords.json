@@ -1208,6 +1208,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIスタートアップ社長の勝ち筋は",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -4940,6 +4947,27 @@
     },
     {
       "keyword": "10年前のXeonサーバーで最新AIが快適動作",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "1億6000万円超を売り上げた自作キーボード用の小型マイコンボード",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AndroidベースのAIエージェント基盤",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI需要で半導体不足は",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
