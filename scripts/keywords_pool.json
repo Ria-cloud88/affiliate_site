@@ -463,6 +463,14 @@
       "status": "excluded"
     },
     {
+      "keyword": "AIにお礼は電力無駄",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-03T20:56:03.196090",
+      "status": "excluded"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "source": "fallback",
