@@ -1236,6 +1236,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "月収20万円の副業がある",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -5150,6 +5157,20 @@
     },
     {
       "keyword": "AIが抗肥満薬の未知の副作用を発見できる可能性",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが法学教授より学生の質問にうまく答えられるとの研究結果",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ブラインドテストでもAIの方が",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
