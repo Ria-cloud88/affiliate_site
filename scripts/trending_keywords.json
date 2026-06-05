@@ -1243,6 +1243,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "簡単に稼げる副業",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -5178,6 +5185,76 @@
     },
     {
       "keyword": "AIは意識を持っていると考えるべきではない",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "外出先からスマホで自宅の高性能PCに接続してローカルAIを実行できる機能",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI時代を見据えた狙いとは",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ケンタッキーフライドチキンなどが中国アリババのAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "あらゆる注文をチャットで全自動化へ",
+      "category": "自動化ツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTのメモリ機能が賢くアップデートされる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI搭載の言語機能を搭載し作業員がロボットにタスクを割り当てることが可能",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "握力を鍛えると健康になって寿命が延びる",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIで生物兵器の作り方を知れる時代に生物兵器に転用可能な合成DNA",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "RNAをネットで入手できる現状は問題だとしてOpenAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Redditに宣伝コンテンツを大量投稿してChatGPTやGoogleのAI検索結果を操作する事例が増えている",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
