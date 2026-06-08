@@ -1348,6 +1348,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業インフルエンサーの案件獲得事例",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -5570,6 +5577,41 @@
     },
     {
       "keyword": "なぜ姫路市の救急病院AIチャットは",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが私のソフトウェアエンジニアとしてのキャリアを侵食しておりどうすればいいか分からない",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが設計した",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国のAI自立が前進",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleの広告市場独占状態で被害を受けた者は損害賠償を請求できるとするEUの決定を受けてニュース出版社20社以上がGoogleに1000億円以上の賠償請求",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIデータセンター向けに主力転換",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
