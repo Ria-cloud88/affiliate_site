@@ -1376,6 +1376,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIスタートアップのサイトが全部同じに見える問題",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "SNSの副業広告をきっかけに",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -5787,6 +5801,27 @@
     },
     {
       "keyword": "が動画生成AIベンチマークで世界1位と2位を獲得",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "サイバー攻撃性能が高すぎるAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "とAnthropicが指摘",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Baidu",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
