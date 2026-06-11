@@ -1425,6 +1425,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "税務署の20代女性職員が風俗副業で処分",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -6081,6 +6088,27 @@
     },
     {
       "keyword": "AI作曲",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AppleがmacOS上で高速かつ軽量なLinux環境を提供できる",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Container",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIだった可能性",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
