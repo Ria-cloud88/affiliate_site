@@ -1418,6 +1418,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIで無断フルコーラス化",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -5955,6 +5962,55 @@
     },
     {
       "keyword": "ChatGPTで広告表示へ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "をAIの開発に利用するとこっそり性能が制限されることが判明",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicが高度なAIシステムによる壊滅的なリスクへの対処方法と労働市場の混乱への対応方法に関する政策提言を発表",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "16歳未満のソーシャルメディア利用を禁止しAIチャットボットに対して安全基準を定める",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "将来有望なサッカー選手の才能をAIで発掘することはできるのか",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "では会話履歴がAnthropicの従業員によって読まれる場合がある",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "GoogleがGemma",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "4より4倍高速な拡散言語モデル",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
