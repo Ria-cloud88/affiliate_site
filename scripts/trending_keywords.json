@@ -1432,6 +1432,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "などとうたう副業の正体は",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -6116,6 +6123,34 @@
     },
     {
       "keyword": "AIで書いた文章を自分の言葉として伝えるのは倫理的に問題があるのか",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Windows互換レイヤーのCrossOverが最新バージョンの27でAppleシリコン専用となりIntel搭載Macでは利用不可に",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIがCodexの機能強化のためにAI企業",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "についてAnthropicが公式声明を発表",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI研究用途でのモデル弱体化を改善へ",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
