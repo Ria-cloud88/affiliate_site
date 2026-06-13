@@ -1467,6 +1467,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "でYouTube動画作ってみた",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -6200,6 +6207,13 @@
     },
     {
       "keyword": "無料のAI音楽検出ツールを音楽配信サービスのDeezerがリリース",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicがアメリカ政府の指示で",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
