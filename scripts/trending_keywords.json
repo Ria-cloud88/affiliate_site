@@ -1481,6 +1481,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI時代の税制論",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -6229,6 +6236,20 @@
     {
       "keyword": "Anthropicは早期復旧を宣言",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIのLLMアーキテクチャの新技法",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "人間の睡眠はレム睡眠とノンレム睡眠の2種類だが魚は4種類もあることが判明",
+      "category": "生活改善",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
