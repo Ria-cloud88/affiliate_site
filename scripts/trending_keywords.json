@@ -1502,6 +1502,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業職員",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -6354,6 +6361,13 @@
     },
     {
       "keyword": "AppleがEU域内で新製品や新サービスを導入することを禁じる条項は一切ない",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "の発熱やバッテリーの持ちが気になったのでチェックしてみたよレビュー",
       "category": "ガジェット",
       "frequency": 1,
       "score": 10,
