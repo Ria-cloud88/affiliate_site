@@ -53,6 +53,27 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "60社のAI製品大集合",
+      "category": "AIツール",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
+      "keyword": "AI博覧会",
+      "category": "AIツール",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
+      "keyword": "生成AIでデジタル社員まで",
+      "category": "AIツール",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -6389,6 +6410,27 @@
     },
     {
       "keyword": "急拡大するAIインフラの電力需要",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIで女性を裸にしてしまうヌード化ツールがXアカウントで宣伝されている",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国関連のハッカー集団が医学研究機関を標的にして気付かれないまま情報収集活動を行っていたとGoogleが報告",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIへの質問1回の消費電力量は電子レンジを数秒動かす程度",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,

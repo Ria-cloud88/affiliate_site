@@ -471,6 +471,30 @@
       "status": "excluded"
     },
     {
+      "keyword": "60社のAI製品大集合",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-16T11:10:23.130663",
+      "status": "excluded"
+    },
+    {
+      "keyword": "AI博覧会",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-16T11:10:23.130664",
+      "status": "excluded"
+    },
+    {
+      "keyword": "生成AIでデジタル社員まで",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-16T11:10:23.130665",
+      "status": "excluded"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "source": "fallback",
