@@ -1537,6 +1537,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "なぜAIの二大スタートアップは新規上場を急ぐのか",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -6459,6 +6466,27 @@
     },
     {
       "keyword": "OpenAIの高度AIでソフトバンクの脆弱性を1万件発見",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "日常的なコーディング作業でClaudeやGPTからローカルAIモデルに置き換えた事例まとめ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI監視",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "推しAI",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
