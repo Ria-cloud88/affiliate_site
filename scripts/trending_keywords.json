@@ -1544,6 +1544,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "超短時間勤務や副業容認",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "キャリア自律と人材流動化を支援する副業マッチングサービス",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -6516,6 +6530,41 @@
     {
       "keyword": "AI主導の成長でインフラにとてつもない負荷がかかっているため",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIにバレずにAIをテストする手法",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "NVIDIAやAMDのAIサーバーの学習性能を評価するベンチマークテスト",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Training",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleの",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ネコとの触れ合いは必ずしも飼い主のストレスを和らげるわけではない可能性",
+      "category": "生活改善",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
