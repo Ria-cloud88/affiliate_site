@@ -495,6 +495,14 @@
       "status": "excluded"
     },
     {
+      "keyword": "フィジカルAIや半導体",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-20T03:37:41.987261",
+      "status": "excluded"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "source": "fallback",
