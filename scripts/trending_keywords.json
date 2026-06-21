@@ -81,6 +81,13 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "ドローンやAIを活用",
+      "category": "AIツール",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -1623,6 +1630,13 @@
     {
       "keyword": "AIの使い方を見れば一発でわかる",
       "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "SNSの副業の投稿きっかけに",
+      "category": "副業",
       "frequency": 2,
       "score": 20,
       "reason": "ニュースフィードで2回出現"
@@ -6901,6 +6915,20 @@
     {
       "keyword": "API変更でサードパーティモジュール全般が機能停止",
       "category": "自動化ツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "cppがAI言語モデルに使用するファイル形式",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "何千万もの楽曲がAIのトレーニングに利用可能なデータセットとして配布されておりAI生成楽曲の肥やしになっているとの指摘",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
