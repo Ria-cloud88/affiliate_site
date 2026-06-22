@@ -1649,6 +1649,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "踏切に取り残された人をAIで検知",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -7026,6 +7033,48 @@
     },
     {
       "keyword": "うたうAIを提供",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "アメリカ政府がAnthropicの",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "の規制命令を下すもAnthropicが選定した",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "iPadがこっそり公開している情報",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIを高速実行するためのx86拡張命令",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIエージェントだけでCloudflareへの一時的なデプロイを可能にして人間による作業を減らせる機能",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの教育への悪影響を避けるため小学生によるAI使用を禁止するとノルウェーが発表",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
