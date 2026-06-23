@@ -1670,6 +1670,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "国産AI",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -7208,6 +7215,13 @@
     },
     {
       "keyword": "業務でAIを使う人の約38",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "不動産業者がAIで加工した物件画像が賃貸探しを混乱させている",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
