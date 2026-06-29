@@ -1775,6 +1775,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業先へ正社員転換した20代は18",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -7894,6 +7901,27 @@
     },
     {
       "keyword": "AI活用が単発質問の企業は大敗",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "サッカーの才能の宝庫ブラジルでは動画を分析して選手のスカウトを行うAIスカウトアプリが普及しつつある",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ストレスを感じると血液にどのような科学的変化が生じるのか",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIでカンニングしている",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
