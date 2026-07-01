@@ -519,6 +519,14 @@
       "status": "excluded"
     },
     {
+      "keyword": "AI相場の潮目変化",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-01T19:55:14.928648",
+      "status": "excluded"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "source": "fallback",
