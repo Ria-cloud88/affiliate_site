@@ -1347,6 +1347,22 @@
       "status": "excluded"
     },
     {
+      "keyword": "公務員の副業解禁",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-01T03:46:48.186963",
+      "status": "excluded"
+    },
+    {
+      "keyword": "職員の副業を",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-01T03:46:48.186965",
+      "status": "excluded"
+    },
+    {
       "keyword": "副業詐欺に注意",
       "category": "副業",
       "source": "fallback",

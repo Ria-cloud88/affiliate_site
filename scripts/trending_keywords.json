@@ -109,6 +109,20 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "公務員の副業解禁",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
+      "keyword": "職員の副業を",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -1811,6 +1825,13 @@
     },
     {
       "keyword": "AI副業",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "ChatGPTの会話57万件から見えたヘビーな利用実態",
       "category": "AIツール",
       "frequency": 2,
       "score": 20,
@@ -8077,6 +8098,27 @@
     {
       "keyword": "日本にAI",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicが科学者向けAIアプリ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIがAIの科学能力を測定するベンチマークテスト",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleがより高速で安価な画像生成モデル",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
