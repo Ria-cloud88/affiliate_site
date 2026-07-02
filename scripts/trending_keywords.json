@@ -1845,6 +1845,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "11のLLMで",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -8174,6 +8181,41 @@
     },
     {
       "keyword": "AIバイブコーディングでゲームのリリースが急増か",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleでサインイン",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIがウェブサイトに訪問するたびに課金できるシステム",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "折りたたみiPhone",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Cloudに対抗するためAIコンピューティングとAIモデルへのアクセスを販売するクラウドインフラストラクチャ事業を計画中との報道",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "iPhoneより薄いスマホ風AIデバイスをSpaceXが開発中",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
