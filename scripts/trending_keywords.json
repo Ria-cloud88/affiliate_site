@@ -1880,6 +1880,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "インフルエンサー装い副業詐欺",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -8398,6 +8405,34 @@
     },
     {
       "keyword": "AI生成コードを原則禁止へ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIエージェントでSafariを自動操作してテストやデバッグを実行できる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicとアメリカ政府の関係悪化の経緯が裁判で提出されたメールによって明らかに",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIによる創作ではキャラクターが単調になりがちという研究結果",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIは",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
