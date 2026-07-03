@@ -1873,6 +1873,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "10代女性が副業を持ちかけられ現金など約50万円詐欺被害",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -8314,6 +8321,48 @@
     },
     {
       "keyword": "AIカメラから産業用PCまで1つの基盤で開発可能に",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIエージェントの進歩は期待していたほど速くなかった",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ローカルで動作し一部のテストでClaude",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Haiku",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "EU最高裁がGoogleのAndroidをめぐる約7600億円制裁金を支持",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AnthropicがSamsungと独自のAIカスタムチップ開発について協議しているという報道",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "MetaがAIで触って遊べるインタラクティブアイテムを作成",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
