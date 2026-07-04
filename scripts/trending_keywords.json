@@ -1894,6 +1894,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI向けメモリー生産強化",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -8455,6 +8462,20 @@
     {
       "keyword": "無料で簡単にYouTubeなどから動画をダウンロードして保存できる",
       "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "アメリカで家庭用バッテリー設置容量が過去最高を記録",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ディスプレイなしのGoogle製フィットネストラッカー",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
