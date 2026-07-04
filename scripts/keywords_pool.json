@@ -1371,6 +1371,14 @@
       "status": "excluded"
     },
     {
+      "keyword": "副業応援イベント",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-04T06:20:50.870220",
+      "status": "excluded"
+    },
+    {
       "keyword": "副業詐欺に注意",
       "category": "副業",
       "source": "fallback",
