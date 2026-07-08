@@ -1992,6 +1992,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業可能な会計年度任用職員に",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -8958,6 +8965,13 @@
     },
     {
       "keyword": "Slackの内容をAIが覚えて仕事を手伝う",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "コーディング以外にもAI利用が広がっている実態が明らかに",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
