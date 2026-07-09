@@ -2006,6 +2006,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業ブーム",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -8994,6 +9001,55 @@
     {
       "keyword": "フィジカルAI搭載ロボットがモノポリーを実演",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleが中国半導体メーカーCXMTのメモリチップをテスト中",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "GitHubの公開IssueだけでAIに非公開リポジトリの情報を吐き出させる脆弱性",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "の開発チームがAI企業",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国政府機関がClaude",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTの音声モードでより自然な会話を可能にする",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Metaが常時録画機能を備えたAIグラスを開発中との報道",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "YouTube広告ブロック機能",
+      "category": "副業",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
