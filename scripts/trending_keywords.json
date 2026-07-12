@@ -2055,6 +2055,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIの思考っぽい",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "インスタ投稿画像が無断でAI生成素材に",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -9302,6 +9316,13 @@
     {
       "keyword": "AppleがOpenAIを企業秘密侵害で提訴",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ノイキャン性能も大幅に強化されたAnkerの完全ワイヤレスイヤホン",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
