@@ -137,6 +137,13 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "地元企業と副業人材",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,

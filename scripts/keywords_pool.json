@@ -1379,6 +1379,14 @@
       "status": "excluded"
     },
     {
+      "keyword": "地元企業と副業人材",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-12T10:28:07.581662",
+      "status": "excluded"
+    },
+    {
       "keyword": "副業詐欺に注意",
       "category": "副業",
       "source": "fallback",
