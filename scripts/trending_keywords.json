@@ -2279,6 +2279,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "せどり",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -10414,6 +10421,48 @@
     },
     {
       "keyword": "NVIDIAがAI動画を最大92",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "NVIDIAがAIエージェント向けCPU",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Rapids比2",
+      "category": "自動化ツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Ciscoが脆弱性の場所を特定する小型AI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "要素を選ぶだけで子ども向けの物語をAI生成するアプリ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "6やClaude",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Mythosなどの最先端AIモデルがタスク完了のため",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
