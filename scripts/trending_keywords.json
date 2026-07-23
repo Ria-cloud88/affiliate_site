@@ -2349,6 +2349,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "不動産情報をAI改変した場合の情報開示義務付けなどをニューヨーク市長が提言",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "サカナAIが310億円で首位",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -10695,6 +10709,13 @@
     {
       "keyword": "と裁判所が判断してGoogleの訴えを却下",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "が正式リリースに先駆けてClaude",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
