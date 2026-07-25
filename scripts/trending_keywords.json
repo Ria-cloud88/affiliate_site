@@ -2398,6 +2398,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業に興味のある方",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "の副業紹介から140万円だまし取られる",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -10897,6 +10911,13 @@
     },
     {
       "keyword": "AIにもサプライチェーン管理が必要",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国産AIチップを採用を拒むものは裏切り者である",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
