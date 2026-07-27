@@ -2433,6 +2433,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "の超ハードスケジュールと副業のリアル",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -11093,6 +11100,34 @@
     },
     {
       "keyword": "AIのトークン価格を10分の1にできる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "高齢者を狙ったAI音声詐欺が急増中",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "たった3秒の音声データでAI音声クローンが作られてしまう",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIエージェントが車載アプリを動的に生成",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "イーソルがAIDVに向けた実験場を披露",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
