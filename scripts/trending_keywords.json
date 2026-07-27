@@ -2419,6 +2419,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "公務員こそ副業のすすめ",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -10989,6 +10996,55 @@
     {
       "keyword": "中国CXMTに近づくApple",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Apple初の防水iPadが2026年後半に発売予定",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "10よりも高くなることをGoogleのデバイス",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "FaceのCEOがOpenAIのAIによるハッキング事件を受け",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの発展にはアメリカ製オープンモデルが必要不可欠",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "実践的なAI活用術",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIなどがオープンモデル規制反対を表明",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropic従業員は",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
