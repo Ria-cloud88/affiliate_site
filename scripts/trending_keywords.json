@@ -11629,6 +11629,13 @@
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "MicrosoftのWord用Copilotを標的にした文書ベースで自己増殖するAIワームが初めて実証される",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
     }
   ]
 }
