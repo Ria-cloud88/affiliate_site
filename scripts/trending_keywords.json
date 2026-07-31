@@ -11636,6 +11636,41 @@
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "DeepMindがロボット向けAIモデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIがGPT",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "PerplexityがAIエージェントの",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIで発見",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ゲームの品質テストをGeminiで自動化",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
     }
   ]
 }
