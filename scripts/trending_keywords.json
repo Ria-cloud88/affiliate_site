@@ -2573,6 +2573,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI分野の",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -11821,6 +11828,13 @@
     },
     {
       "keyword": "AI連携",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "架空の衛星画像を生成するAI機能",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
