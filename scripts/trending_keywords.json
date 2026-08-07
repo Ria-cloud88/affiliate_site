@@ -2622,6 +2622,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業者3割が",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業経験者96",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -12409,6 +12423,20 @@
     },
     {
       "keyword": "アプリが遅い原因をAIがトレースログから分析してくれる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "勝者はClaude",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIは1カ月",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
