@@ -2657,6 +2657,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIが権限確認を代行する",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "それでも足りない場合は朝までガールズバー副業",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -12613,6 +12627,13 @@
     {
       "keyword": "OpenAIがBlack",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "メカニカルスイッチを搭載した高級キーボード",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
