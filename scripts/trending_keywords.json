@@ -2727,6 +2727,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "相次ぐAIモデル",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "若い頃はずっと副業していた",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -12809,6 +12823,27 @@
     {
       "keyword": "Appleのガラス素材を多用したiPhone20周年記念モデルは2027年の発売に向けて順調に開発が進められている",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "すべての文字起こしAIモデルをサポートするGGMLベースの文字起こしライブラリ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "YouTubeパートナープログラムの新規登録に",
+      "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "過去90日間のショート動画再生回数が2000万回",
+      "category": "副業",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
