@@ -151,6 +151,13 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "副業をサポートする",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -12795,6 +12802,13 @@
     {
       "keyword": "OpenClawなどのAIエージェントの複数一括管理も可能",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleのガラス素材を多用したiPhone20周年記念モデルは2027年の発売に向けて順調に開発が進められている",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
