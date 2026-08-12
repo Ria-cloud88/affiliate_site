@@ -2762,6 +2762,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "中国発AIエージェント",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -12927,6 +12934,20 @@
     },
     {
       "keyword": "NVIDIAがAIエージェント向け高速モデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ザッカーバーグが異様にポジティブなAI未来論を展開",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ついにChatGPT公式デスクトップアプリがLinuxに登場",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
