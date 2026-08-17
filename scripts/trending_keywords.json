@@ -2811,6 +2811,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "現役組み込みエンジニアがAIを業務利用して分かったこと",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業で20万円を超えた会社員が確定申告と住民税で押さえるべきポイント",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -13319,6 +13333,41 @@
     },
     {
       "keyword": "外資AIベンダー襲来",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "iPhoneデザイナーのジョニー",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "aiがコーディング能力に優れたオープンウェイトAIモデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが生成した文章であることを示す電子透かし",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "についてAnthropicが公式解説",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "1兆円超でStripeがAIゲートウェイサービスのOpenRouterを買収か",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
