@@ -2860,6 +2860,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "GPUと比較して最大30倍高速にAIを動かすCerebrasの",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業名目で48万円詐欺被害",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -13816,6 +13830,34 @@
     },
     {
       "keyword": "ChatGPTの反論で",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ローカルAIエージェントアプリ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "がSkillsに対応しCodexやClaude",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの利用拡大を懸念しているアメリカの若者が過半数を突破",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIにより仕事が奪われると考える人も増加している",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
