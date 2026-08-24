@@ -2930,6 +2930,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI分野では",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "AIエージェント向け",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -14321,6 +14335,20 @@
     {
       "keyword": "iPadのような便利なアプリレイアウト",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "謎のAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "コンテキストウィンドウは100万トークンで1日数兆トークンを処理できる匿名ラボがAPIを提供",
+      "category": "自動化ツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
