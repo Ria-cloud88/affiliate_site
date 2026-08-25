@@ -2979,6 +2979,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI生成曲ランクから除外",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -14495,6 +14502,41 @@
     },
     {
       "keyword": "中国へAIサーバーを密輸した疑い",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "WindowsのペイントやMicrosoftフォトのAI生成画像に電子透かしが埋め込まれていることが判明",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIモデルを実際に働かせる4つの仕組み",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicの最上位AIモデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI企業のビジネスモデルが覆される可能性も",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI事業者向け",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
