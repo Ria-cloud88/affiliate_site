@@ -2965,6 +2965,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI動画解析で現場作業を可視化する",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "他部門で副業",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -14425,6 +14439,27 @@
     },
     {
       "keyword": "ランボルギーニのSDV開発やAI設計改善も",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "が子どもたちの肺の健康状態を改善した可能性",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "YouTubeにDMCA召喚状を請求",
+      "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "SpaceXAIがNVIDIAと協力して宇宙空間で動作するAIシステム計画を本格化",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
