@@ -2986,6 +2986,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIエージェントがCAEを動かすとどうなる",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -14698,6 +14705,27 @@
     },
     {
       "keyword": "AIエージェント時代のコーディングテクニック",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの普及による雇用への影響は若年層に集中しているとの研究結果",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "個人で契約したChatGPTに",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "超初心者向けAI解説",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
