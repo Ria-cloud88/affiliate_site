@@ -2993,6 +2993,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "50代が絶対に手を出してはいけない副業の特徴",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -14789,6 +14796,20 @@
     },
     {
       "keyword": "約30秒で口腔がんの疑い検出する歯科用AI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AnthropicがClaude",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Metaが従業員を大量解雇してAIに置き換えようとした",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
