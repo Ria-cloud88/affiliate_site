@@ -15122,6 +15122,83 @@
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleが売上や天気など複数のデータから未来を予測するAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleフェローのフィル",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "EUがChatGPTを",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIにリスク評価や独立監査など追加義務",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国は反データセンター運動を大いに喜んでいる",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIとやり取りし続けると人間が",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "GoogleがuBlock",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "開発元はYouTubeへのDMCA召喚状を取り下げDiscordに焦点",
+      "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "軍事向けChatGPT",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIクリエイター",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI生成プロフィール",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
     }
   ]
 }
