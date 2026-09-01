@@ -3014,6 +3014,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "生成AI画像はなぜ",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -15195,6 +15202,34 @@
     },
     {
       "keyword": "AI生成プロフィール",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "スマホとライトとAIで隠しカメラを発見する技術が開発される",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Editorが史上最大のクリエイティブワークフローアップグレードを実現した",
+      "category": "自動化ツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "開発中のAIで外部を攻撃しないための対策",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI推進に注力",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
