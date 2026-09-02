@@ -158,6 +158,13 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "副業の経費5選",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -15238,6 +15245,27 @@
     {
       "keyword": "AIコーディングで高速開発",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Geminiが動画を自律的に分析する",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI機能",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleマップも",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
