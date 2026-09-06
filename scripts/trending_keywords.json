@@ -3112,6 +3112,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "次期AI予算に9兆4211億ウォン投入へ",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -15580,6 +15587,13 @@
     },
     {
       "keyword": "女性の割合が多い仕事の方がAIによる自動化の影響を受けやすい可能性がある",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "コスト削減のためにAIエージェントの出力を短くすると逆にコストがかさむ事例をGitHubが公開",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
