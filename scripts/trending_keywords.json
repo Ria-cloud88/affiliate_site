@@ -15710,6 +15710,13 @@
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIによる創薬は実際どこまで進んでいるのか",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
     }
   ]
 }
