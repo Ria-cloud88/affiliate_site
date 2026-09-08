@@ -3119,6 +3119,34 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIっぽい",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "大分県内企業と副業",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業をしている会社員の4人に1人以上が",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "本業より副業の方がモチベーションが高い",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
