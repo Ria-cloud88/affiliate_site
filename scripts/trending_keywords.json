@@ -3147,6 +3147,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIの利用OK",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -15812,6 +15819,13 @@
     {
       "keyword": "ローカルLLMブームを生んだ",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "カフェイン入り飲料をたくさん飲む人は睡眠時間が短い一方で眠りは深いとの研究結果",
+      "category": "生活改善",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
