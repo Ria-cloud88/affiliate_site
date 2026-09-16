@@ -3252,6 +3252,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "NVIDIAはAIの中央銀行と化している",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -16686,6 +16693,27 @@
     },
     {
       "keyword": "AIで作ったアプリをUIもデータも単一ファイルで持ち運べる無料ツール",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "国産汎用ロボットによるフィジカルAIのデータ収集で7社が競う",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI向けに立地推進の裏で懸念も",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの協調減速論に",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
