@@ -165,6 +165,13 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "副業支援名目",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -3275,6 +3282,13 @@
     {
       "keyword": "副業始めるのに",
       "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "中国フィジカルAI主要15社と5大集積地で見る",
+      "category": "AIツール",
       "frequency": 2,
       "score": 20,
       "reason": "ニュースフィードで2回出現"
@@ -16967,6 +16981,41 @@
     {
       "keyword": "維持したAIモデル",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "DAZNが取得したスポーツの違法配信に関する差し止め命令にGoogle",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI同士に共同作業をさせたら人間には読めない",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ヘルスセンシングシステムが新しくなって健康トラッカーとして進化",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIは雇用増加ではなく雇用喪失を引き起こす",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Maxでバッテリー修理費用が値上げ",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
