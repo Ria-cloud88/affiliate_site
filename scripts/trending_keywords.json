@@ -3329,6 +3329,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI脅威論はでっちあげだ",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -17204,6 +17211,20 @@
     },
     {
       "keyword": "AI研修を受けた人は1割未満",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "MetaのAIエージェント",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Geminiが使えるスマートウォッチ",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
