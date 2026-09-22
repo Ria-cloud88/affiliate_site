@@ -3350,6 +3350,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIジェミニ搭載パソコンを発売",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -17281,6 +17288,20 @@
     },
     {
       "keyword": "生成AIへの過信",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "単価の安いAIモデルを使うとかえってコストが高くつくことがあるという研究結果",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "フロンティアAIの国際標準づくりを米国主導で進めるよう提言",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
