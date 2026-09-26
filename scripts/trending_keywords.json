@@ -17628,6 +17628,27 @@
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleはカード発行会社に請求されるApple",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIトークンコスト増を44",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "でAIの限界を検証",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
     }
   ]
 }
