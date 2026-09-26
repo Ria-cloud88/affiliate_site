@@ -3406,6 +3406,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "個人用AIチャットボット競争から撤退",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "Copilot刷新",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -17596,6 +17610,20 @@
     },
     {
       "keyword": "リアルタイムで表情豊かに話すAIアバター",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ヘルスケアトラッカーが新しくなってバッテリーの持ちも向上",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI家庭教師と人間の専門家による指導の学習効果は同等",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
