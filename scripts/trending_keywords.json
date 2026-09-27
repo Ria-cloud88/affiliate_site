@@ -3420,6 +3420,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "アフィリエイトで3500万稼いだ元警察官が語る",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "を目指す副業ロードマップ",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -17674,6 +17688,13 @@
     {
       "keyword": "重いしデカイけどバッテリー持ちはバツグンでiPhoneなしでも高精度",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "動画生成AIのAPIを安さや制限の緩さで選んで簡単に使えるようにする",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
