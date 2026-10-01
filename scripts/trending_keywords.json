@@ -18160,6 +18160,27 @@
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIはテストの監視が不十分であるという社内警告を繰り返し無視して追加のセキュリティ対策をせず迅速なリリースを優先していた",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ハードウェアに合わせて自動最適化してオープンモデルを最大2倍高速化するAIエージェント向け推論エンジン",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleシリコン",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
     }
   ]
 }
