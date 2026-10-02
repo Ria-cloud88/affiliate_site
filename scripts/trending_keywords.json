@@ -3511,6 +3511,27 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "オープンソースのAIコーディングツール",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "MCP対応や複数のAIモデルを切り替える機能を追加",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "超党派AI勉強会を開催",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -18205,6 +18226,20 @@
     },
     {
       "keyword": "PS5向けAI採用画質向上技術",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTが服をバーチャル試着できる新機能を追加",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "リアルタイム文字起こしAI",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
