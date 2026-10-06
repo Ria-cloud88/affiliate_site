@@ -6,12 +6,15 @@
   <title>Video & YouTube Annotator</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <style>
     .cursor-pen { cursor: crosshair; }
     .cursor-eraser { cursor: grab; }
+    .cursor-interact { cursor: default; }
     input[type=range] { accent-color: #6366f1; }
 
-    /* 画面サイズに合わせて常に崩れない16:9の動画枠を確保 */
+    /* 崩れない16:9比率 */
     #videoContainer {
       width: min(calc(100vw - 2rem), calc((100vh - 6rem) * 16 / 9));
       aspect-ratio: 16 / 9;
@@ -57,7 +60,7 @@
   <!-- メイン表示領域 -->
   <main class="flex-1 relative flex items-center justify-center p-4 bg-zinc-950 overflow-hidden" id="dropZone">
 
-    <!-- ビデオ＋描画コンテナ（サイズ保証） -->
+    <!-- ビデオ＋描画コンテナ -->
     <div id="videoContainer" class="relative rounded-xl overflow-hidden shadow-2xl border border-zinc-800 bg-black flex items-center justify-center">
 
       <!-- ドラッグ＆ドロップ 催促プレースホルダー -->
@@ -71,14 +74,12 @@
       <!-- ローカル動画要素 -->
       <video id="videoPlayer" class="w-full h-full object-contain pointer-events-none relative z-0" playsinline></video>
 
-      <!-- YouTube iframe 埋め込みコンテナ -->
+      <!-- YouTube iframe コンテナ -->
       <div id="ytContainer" class="absolute inset-0 w-full h-full hidden z-0 bg-black">
-        <iframe id="ytIframe" class="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+        <div id="ytPlayer" class="w-full h-full"></div>
       </div>
 
-      <!-- ペイント用キャンバス（最前面配置） -->
+      <!-- ペイント用キャンバス -->
       <canvas id="paintCanvas" class="absolute inset-0 w-full h-full z-20 cursor-pen"></canvas>
     </div>
 
@@ -113,14 +114,19 @@
           </div>
         </div>
 
-        <!-- 下段：描画ツール / 色 / 太さ / 全画面 -->
+        <!-- 下段：操作モード / 描画ツール / 色 / 太さ / 全画面 -->
         <div class="flex items-center gap-3 pt-1 border-t border-zinc-800/80">
 
+          <!-- 操作モード(動画クリック) / ペン / 消しゴム -->
           <div class="flex items-center bg-zinc-950 rounded-lg p-1 border border-zinc-800">
+            <button id="toolInteract" class="px-2.5 py-1 rounded text-xs font-medium text-zinc-400 hover:text-zinc-200 transition" title="操作モード: YouTubeの字幕・画質等を直接操作 (Q)">
+              👆 操作
+            </button>
             <button id="toolPen" class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-indigo-400 transition" title="ペン (W)">ペン</button>
             <button id="toolEraser" class="px-2.5 py-1 rounded text-xs font-medium text-zinc-400 hover:text-zinc-200 transition" title="消しゴム (E)">消しゴム</button>
           </div>
 
+          <!-- 太さスライダー -->
           <div class="flex items-center gap-2">
             <span class="text-[10px] text-zinc-500">太さ</span>
             <input id="lineWidth" type="range" min="2" max="24" value="5" class="w-16 h-1 bg-zinc-700 rounded cursor-pointer">
@@ -171,9 +177,10 @@
         キーボードショートカット
       </h2>
       <div class="space-y-2 text-xs text-zinc-300">
-        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>再生 / 一時停止</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">Space</kbd></div>
-        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>ペンツール</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">W</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60 font-semibold text-indigo-300"><span>操作モード (YouTube直接操作)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-200 font-mono">Q</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60 font-semibold text-indigo-300"><span>ペンツール (描画モード)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-200 font-mono">W</kbd></div>
         <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>消しゴム (トグル)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">E</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>再生 / 一時停止</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">Space</kbd></div>
         <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>自動フェード (ON/OFF)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">F</kbd></div>
         <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>全画面 (トグル)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">F11</kbd></div>
         <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>元に戻す (Undo)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">Ctrl+Z / Z</kbd></div>
@@ -189,7 +196,6 @@
   <script>
     const video = document.getElementById('videoPlayer');
     const ytContainer = document.getElementById('ytContainer');
-    const ytIframe = document.getElementById('ytIframe');
     const canvas = document.getElementById('paintCanvas');
     const ctx = canvas.getContext('2d', { desynchronized: true });
     const dropZone = document.getElementById('dropZone');
@@ -201,6 +207,7 @@
     const seekBar = document.getElementById('seekBar');
     const currentTimeText = document.getElementById('currentTime');
     const durationText = document.getElementById('duration');
+    const toolInteract = document.getElementById('toolInteract');
     const toolPen = document.getElementById('toolPen');
     const toolEraser = document.getElementById('toolEraser');
     const lineWidthInput = document.getElementById('lineWidth');
@@ -223,11 +230,12 @@
     const loadYtBtn = document.getElementById('loadYtBtn');
 
     let currentMode = 'local';
-    let isYtPlaying = true;
+    let ytPlayer = null;
+    let isYtReady = false;
     let isSeeking = false;
 
+    let currentTool = 'pen'; // 'interact' | 'pen' | 'eraser'
     let isDrawing = false;
-    let currentTool = 'pen';
     let currentColor = '#3b82f6';
     let currentWidth = 5;
     let isFadeActive = false;
@@ -262,7 +270,12 @@
       return match ? match[1] : null;
     }
 
-    // YouTube読み込み処理
+    // YouTube IFrame APIコールバック
+    window.onYouTubeIframeAPIReady = function() {
+      isYtReady = true;
+    };
+
+    // YouTube読み込み（公式API経由で双方向制御）
     function loadYouTube(videoId) {
       currentMode = 'youtube';
       video.pause();
@@ -271,23 +284,42 @@
       ytContainer.classList.remove('hidden');
       dropPrompt.classList.add('hidden');
 
-      // YouTubeの標準埋め込みURLをセット
-      ytIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0`;
-      isYtPlaying = true;
-      updatePlayState();
+      const createPlayer = () => {
+        if (ytPlayer && ytPlayer.destroy) {
+          ytPlayer.destroy();
+        }
+        ytPlayer = new YT.Player('ytPlayer', {
+          videoId: videoId,
+          playerVars: {
+            autoplay: 1,
+            controls: 1,
+            cc_load_policy: 0,
+            rel: 0,
+            modestbranding: 1
+          },
+          events: {
+            onReady: (e) => {
+              e.target.playVideo();
+              updatePlayState();
+              setTimeout(resizeCanvas, 50);
+              showToast('YouTube読み込み完了 (Qで操作切替)');
+            },
+            onStateChange: () => {
+              updatePlayState();
+            }
+          }
+        });
+      };
 
-      // キャンバスをコンテナの大きさに即時フィット
-      setTimeout(resizeCanvas, 50);
-      showToast('YouTubeを読み込みました');
-    }
-
-    function sendYtCommand(func, args = []) {
-      if (ytIframe && ytIframe.contentWindow) {
-        ytIframe.contentWindow.postMessage(JSON.stringify({
-          event: 'command',
-          func: func,
-          args: args
-        }), '*');
+      if (window.YT && window.YT.Player) {
+        createPlayer();
+      } else {
+        const checkInterval = setInterval(() => {
+          if (window.YT && window.YT.Player) {
+            clearInterval(checkInterval);
+            createPlayer();
+          }
+        }, 100);
       }
     }
 
@@ -307,7 +339,7 @@
     function loadLocalVideo(file) {
       if (!file || !file.type.startsWith('video/')) return;
       currentMode = 'local';
-      ytIframe.src = '';
+      if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
       ytContainer.classList.add('hidden');
       video.classList.remove('hidden');
 
@@ -349,20 +381,21 @@
       if (currentMode === 'local') {
         if (!video.src) return;
         if (video.paused) video.play(); else video.pause();
-      } else if (currentMode === 'youtube') {
-        if (isYtPlaying) {
-          sendYtCommand('pauseVideo');
-          isYtPlaying = false;
-        } else {
-          sendYtCommand('playVideo');
-          isYtPlaying = true;
-        }
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getPlayerState) {
+        const state = ytPlayer.getPlayerState();
+        if (state === YT.PlayerState.PLAYING) ytPlayer.pauseVideo();
+        else ytPlayer.playVideo();
       }
       updatePlayState();
     }
 
     function updatePlayState() {
-      const isPaused = currentMode === 'local' ? video.paused : !isYtPlaying;
+      let isPaused = true;
+      if (currentMode === 'local') {
+        isPaused = video.paused;
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getPlayerState) {
+        isPaused = (ytPlayer.getPlayerState() !== YT.PlayerState.PLAYING);
+      }
       playIcon.classList.toggle('hidden', !isPaused);
       pauseIcon.classList.toggle('hidden', isPaused);
     }
@@ -374,19 +407,26 @@
         video.pause();
         const dt = 1 / 60;
         video.currentTime = Math.max(0, Math.min(video.duration || 0, video.currentTime + (forward ? dt : -dt)));
-      } else if (currentMode === 'youtube') {
-        sendYtCommand('pauseVideo');
-        isYtPlaying = false;
-        sendYtCommand('seekTo', [forward ? '+0.05' : '-0.05', true]);
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getCurrentTime) {
+        ytPlayer.pauseVideo();
+        const curr = ytPlayer.getCurrentTime();
+        ytPlayer.seekTo(Math.max(0, curr + (forward ? 0.05 : -0.05)), true);
       }
       updatePlayState();
     }
 
-    // タイムライン更新
+    // タイムライン同期ループ（YouTubeも双方向完全同期）
     function updateTimeline() {
-      if (!isSeeking && currentMode === 'local') {
-        const curr = video.currentTime || 0;
-        const dur = video.duration || 0;
+      if (!isSeeking) {
+        let curr = 0;
+        let dur = 0;
+        if (currentMode === 'local') {
+          curr = video.currentTime || 0;
+          dur = video.duration || 0;
+        } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getCurrentTime) {
+          curr = ytPlayer.getCurrentTime() || 0;
+          dur = ytPlayer.getDuration() || 0;
+        }
         currentTimeText.textContent = formatTime(curr);
         durationText.textContent = formatTime(dur);
         if (dur > 0) seekBar.value = (curr / dur) * 100;
@@ -400,6 +440,9 @@
       const targetPercent = parseFloat(seekBar.value);
       if (currentMode === 'local' && video.duration) {
         video.currentTime = (targetPercent / 100) * video.duration;
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getDuration) {
+        const targetSec = (targetPercent / 100) * ytPlayer.getDuration();
+        ytPlayer.seekTo(targetSec, true);
       }
       isSeeking = false;
     });
@@ -414,6 +457,7 @@
     }
 
     canvas.addEventListener('mousedown', (e) => {
+      if (currentTool === 'interact') return;
       isDrawing = true;
       const pos = getRelPos(e);
       currentStroke = {
@@ -428,7 +472,7 @@
     });
 
     window.addEventListener('mousemove', (e) => {
-      if (!isDrawing || !currentStroke) return;
+      if (!isDrawing || !currentStroke || currentTool === 'interact') return;
       const pos = getRelPos(e);
       currentStroke.points.push(pos);
       redrawCanvas();
@@ -492,25 +536,35 @@
     }
     requestAnimationFrame(animateFade);
 
-    // ツール切り替え
+    // ツール切り替え（Q: 操作モード / W: ペン / E: 消しゴム）
     function setTool(tool) {
       currentTool = tool;
-      if (tool === 'pen') {
+
+      [toolInteract, toolPen, toolEraser].forEach(b => {
+        b.classList.remove('bg-zinc-800', 'text-indigo-400');
+        b.classList.add('text-zinc-400');
+      });
+
+      if (tool === 'interact') {
+        toolInteract.classList.add('bg-zinc-800', 'text-indigo-400');
+        toolInteract.classList.remove('text-zinc-400');
+        canvas.style.pointerEvents = 'none';
+        showToast('操作モード: YouTubeを直接クリック可能 (Q)');
+      } else if (tool === 'pen') {
         toolPen.classList.add('bg-zinc-800', 'text-indigo-400');
         toolPen.classList.remove('text-zinc-400');
-        toolEraser.classList.remove('bg-zinc-800', 'text-indigo-400');
-        toolEraser.classList.add('text-zinc-400');
+        canvas.style.pointerEvents = 'auto';
         canvas.className = 'absolute inset-0 w-full h-full z-20 cursor-pen';
         showToast('ペンツール (W)');
-      } else {
+      } else if (tool === 'eraser') {
         toolEraser.classList.add('bg-zinc-800', 'text-indigo-400');
         toolEraser.classList.remove('text-zinc-400');
-        toolPen.classList.remove('bg-zinc-800', 'text-indigo-400');
-        toolPen.classList.add('text-zinc-400');
+        canvas.style.pointerEvents = 'auto';
         canvas.className = 'absolute inset-0 w-full h-full z-20 cursor-eraser';
         showToast('消しゴム (E)');
       }
     }
+    toolInteract.addEventListener('click', () => setTool('interact'));
     toolPen.addEventListener('click', () => setTool('pen'));
     toolEraser.addEventListener('click', () => setTool('eraser'));
 
@@ -631,28 +685,48 @@
       const code = e.code;
       const key = e.key.toLowerCase();
 
-      if (code === 'KeyW' || key === 'w') {
+      // Q: 操作モード (YouTube直接クリック)
+      if (code === 'KeyQ' || key === 'q') {
+        e.preventDefault();
+        setTool(currentTool === 'interact' ? 'pen' : 'interact');
+      }
+      // W: ペン
+      else if (code === 'KeyW' || key === 'w') {
         e.preventDefault();
         setTool('pen');
-      } else if (code === 'KeyE' || key === 'e') {
+      }
+      // E: 消しゴム
+      else if (code === 'KeyE' || key === 'e') {
         e.preventDefault();
         setTool(currentTool === 'eraser' ? 'pen' : 'eraser');
-      } else if (code === 'KeyF' || key === 'f') {
+      }
+      // F: 自動フェード
+      else if (code === 'KeyF' || key === 'f') {
         e.preventDefault();
         toggleFade();
-      } else if (e.key === 'F11') {
+      }
+      // F11: 全画面
+      else if (e.key === 'F11') {
         e.preventDefault();
         toggleFullscreen();
-      } else if (code === 'Space') {
+      }
+      // Space: 再生 / 停止
+      else if (code === 'Space') {
         e.preventDefault();
         togglePlay();
-      } else if (((e.ctrlKey || e.metaKey) && (code === 'KeyZ' || key === 'z')) || (!e.ctrlKey && !e.metaKey && (code === 'KeyZ' || key === 'z'))) {
+      }
+      // Ctrl+Z / Cmd+Z / 単独Z: 元に戻す
+      else if (((e.ctrlKey || e.metaKey) && (code === 'KeyZ' || key === 'z')) || (!e.ctrlKey && !e.metaKey && (code === 'KeyZ' || key === 'z'))) {
         e.preventDefault();
         undo();
-      } else if (code === 'KeyC' || key === 'c') {
+      }
+      // C: 全消去
+      else if (code === 'KeyC' || key === 'c') {
         e.preventDefault();
         clearAll();
-      } else if (e.key === '.' || code === 'Period') {
+      }
+      // コマ送り / コマ戻し
+      else if (e.key === '.' || code === 'Period') {
         e.preventDefault();
         stepFrame(true);
       } else if (e.key === ',' || code === 'Comma') {
