@@ -3609,6 +3609,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIが買い物を代行する",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -18611,6 +18618,20 @@
     },
     {
       "keyword": "AIによって開発されたオープンソースのAIアクセラレータ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Google公式オススメの検索とテクニカルSEOの基礎が学べる厳選YouTubeプレイリスト",
+      "category": "副業",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "同一タスクでGPT",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
