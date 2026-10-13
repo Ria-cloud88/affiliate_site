@@ -3665,6 +3665,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "6つのAIモデルが呼び出せるAPIも",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -18947,6 +18954,41 @@
     },
     {
       "keyword": "第3世代AIチップ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "法務タスク特化型AI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Flashベースの中国製モデルでGPT",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicが蒸留攻撃に対する効果的な対策を発見",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが数学の未解決問題を解決しまくる現代に数学者テレンス",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Gamesがディズニーとの新作ゲームをAI中心で開発する方針に転換",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
