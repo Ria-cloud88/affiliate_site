@@ -3700,6 +3700,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "46歳平社員が在宅副業で年商200万円アップ",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "ブログ収益50円からの逆転劇と",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -19123,6 +19137,41 @@
     {
       "keyword": "AIデータセンターの電力問題",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "睡眠と認知症を研究する手がかりになる可能性",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "音声対話AI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIやGoogleのモデルを上回る性能でベンチマーク首位に",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleが論文や技術文書の誤りをAIで検証する",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleが使われていないMacを集めて仮想GPUクラウドを構築する",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
