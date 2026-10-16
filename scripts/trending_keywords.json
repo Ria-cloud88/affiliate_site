@@ -3763,6 +3763,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI技術の輸出規制強化",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業で始めたホテル経営",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -19297,6 +19311,34 @@
     },
     {
       "keyword": "43GBでスマホ動作可能なAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIエージェントの危険な操作を別のAIが検出してブロックする",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "亡くなった母親が残した古い写真を読み取るためAIでフィルムスキャナー用のドライバーを自作",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "と尋ねたところ自分のサーバーを優先するAIが続出",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "NVIDIAがAIエージェントによるタスクをローカルで実行するための",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
