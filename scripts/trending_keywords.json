@@ -3756,6 +3756,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "Beeの新AIデバイス2機種発表",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -19269,6 +19276,27 @@
     },
     {
       "keyword": "CodeなどのAIをバリバリ活用してLinuxカーネルの改善に取り組み中",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Metaが8160億パラメーターのオープンウェイトAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Claudeは毎月29ドル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "43GBでスマホ動作可能なAI",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
