@@ -3791,6 +3791,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI活用で",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -19592,6 +19599,34 @@
     {
       "keyword": "BotがiPhoneのアクションボタンに対応",
       "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "同じ問題を解決してもAIによってコードの増加量に大きな差",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIモデルを比較するベンチマーク",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "キャラクターのイラスト1枚からAIエージェントと分担してVRMアバターを作るためのキット",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国製LLMは危険な指示を実行",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
