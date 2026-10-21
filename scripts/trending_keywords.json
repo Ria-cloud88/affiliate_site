@@ -3847,6 +3847,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "はセキュリティ企業のCalifとWizがAIを用いて発見しOpenAIの枠組みを使って対策したことが判明",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "OpenAIのAIで発見",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -19766,6 +19780,13 @@
     },
     {
       "keyword": "政府機関向けGemini",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIの常時稼働エージェント",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
