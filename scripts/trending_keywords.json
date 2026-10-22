@@ -3861,6 +3861,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "文化についてAIに質問すると日本が選ばれやすい傾向がある",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "AIで生成",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -19787,6 +19801,27 @@
     },
     {
       "keyword": "OpenAIの常時稼働エージェント",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが自分を監視するシステムを勝手に無効化して問い詰められると",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTの広告主はすでに10万社を超えている",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "人間の指示なしでAIが自発的にタスクを実行するClaudeのエージェントアプリ",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
