@@ -3882,6 +3882,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業形態を理解する",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -19977,6 +19984,20 @@
     {
       "keyword": "AI駆動開発の極意",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Androidスマホ上でiPhoneのiOSを起動できる",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "と評されるPHPの保守とパッチの自動化を行うボランティア",
+      "category": "自動化ツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
