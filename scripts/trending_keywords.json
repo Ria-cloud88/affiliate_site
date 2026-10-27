@@ -3945,6 +3945,27 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIは人類の存亡リスク",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "コードの9割はClaude製",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "Anthropicが示した規格外の見立て",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -20193,6 +20214,20 @@
     },
     {
       "keyword": "AI投資による財政圧迫が理由か",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ナイフと同じように刃物が往復運動する鉛筆削り",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIが答えを教える代わりにあえて質問攻めにすることで開発者を鍛えるデバッグツール",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
