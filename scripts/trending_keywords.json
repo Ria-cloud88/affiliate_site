@@ -3987,6 +3987,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "パナソニック新CAIOが描く人とAIの共進化",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -20502,6 +20509,34 @@
     {
       "keyword": "AnthropicがAIの訓練のために海賊版書籍を使用していた中にスタンフォード大学教授の書籍も含まれていたと主張して教授らは和解から離脱し訴訟を提起",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "GoogleがAIに",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "睡眠フェーズ",
+      "category": "生活改善",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIモデルの完成後も新しい知識を継続的に習得させられる仕組み",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Appleのgitは依然として侵害されたeMudhra証明書を信頼している",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
