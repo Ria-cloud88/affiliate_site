@@ -4022,6 +4022,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI学習への利用拒否をrobots",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "OpenAIやGoogleなどが対応表明",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -20662,6 +20676,20 @@
     },
     {
       "keyword": "Expressiveの画面をブラウザで組み立てて画面同士をつなぎタップして確かめてそのままAIコーディング用のプロンプトにするツール",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Apple純正マップがNASAやアメリカ軍基地の航空写真をぼかしはじめる",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI需要で",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
