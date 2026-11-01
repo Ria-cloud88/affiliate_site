@@ -4036,6 +4036,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "副業をしたい人は全国に何人いるのか調べてみた",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -20690,6 +20697,13 @@
     },
     {
       "keyword": "AI需要で",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Wikipediaの編集者はどのようにしてAI生成テキストを見つけて除外しているのか",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
