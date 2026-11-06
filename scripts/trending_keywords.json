@@ -4120,6 +4120,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI指針を策定",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -21026,6 +21033,41 @@
     },
     {
       "keyword": "AI効率化で実現",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国のBaiduが高性能AIモデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAI元CTOのAI企業が高性能AIモデル",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIデータセンターの電力やインフラは全額自己負担",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "ChatGPTが夫の毒殺計画を手助け",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "2D図面をAIで3Dモデル化",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
