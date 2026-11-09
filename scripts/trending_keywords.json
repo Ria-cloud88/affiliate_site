@@ -200,6 +200,13 @@
       "reason": "ニュースフィードで3回出現"
     },
     {
+      "keyword": "セキュリティ人材の副業",
+      "category": "副業",
+      "frequency": 3,
+      "score": 30,
+      "reason": "ニュースフィードで3回出現"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "frequency": 2,
@@ -4156,6 +4163,34 @@
     },
     {
       "keyword": "AI時代に求められるセキュリティ対策とは",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "画像生成AIは既存のキャラクターをどれくらい出力する",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "ソニーAIなどが14モデルを調査",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "サカナAIが27年秋にも上場へ",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "生成AI初",
       "category": "AIツール",
       "frequency": 2,
       "score": 20,
