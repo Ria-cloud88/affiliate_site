@@ -4197,6 +4197,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "生成AIで広がる",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -21258,6 +21265,20 @@
     {
       "keyword": "サックスは銀行員やトレーダーによるAIコーディングエージェントの使用を制限している",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleが新型AIチップ",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "NVIDIAのCEO不倫事件関連でスパイ疑惑のMegaspeed社に対する調査にNVIDIAが介入しようとしていたことが判明",
+      "category": "自動化ツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
