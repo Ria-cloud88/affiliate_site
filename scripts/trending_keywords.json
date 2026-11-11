@@ -4218,6 +4218,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "会社員の副業",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "睡眠時間や体調の変化は",
+      "category": "生活改善",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -21293,6 +21307,34 @@
     {
       "keyword": "NVIDIAのCEO不倫事件関連でスパイ疑惑のMegaspeed社に対する調査にNVIDIAが介入しようとしていたことが判明",
       "category": "自動化ツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Googleがロボット用AI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "限定300台アルミ削り出しボディが光る33万円のキーボード",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Claude内で表計算アプリをそのまま実行できる",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI搭載人工衛星に音声で命令して宇宙で",
+      "category": "AIツール",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
