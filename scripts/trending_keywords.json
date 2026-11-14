@@ -4267,6 +4267,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "が生成AIを使用しているもののそれ以上に多くの人が生成AIは有害だと考えている",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "インスタ副業投稿",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -21593,6 +21607,27 @@
     },
     {
       "keyword": "中国AI企業は禁輸措置中でもNVIDIAのBlackwell世代AIチップを使って高性能AIを作っていた",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIを使って科学論文を偽造してみたらこうなった",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "幻覚がひどいAIでも言葉遣いが洗練されていれば人を簡単に騙せることが判明",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AI時代の主役",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
