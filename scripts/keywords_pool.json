@@ -463,6 +463,70 @@
       "status": "excluded"
     },
     {
+      "keyword": "AIにお礼は電力無駄",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-03T20:56:03.196090",
+      "status": "excluded"
+    },
+    {
+      "keyword": "60社のAI製品大集合",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-16T11:10:23.130663",
+      "status": "excluded"
+    },
+    {
+      "keyword": "AI博覧会",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-16T11:10:23.130664",
+      "status": "excluded"
+    },
+    {
+      "keyword": "生成AIでデジタル社員まで",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-16T11:10:23.130665",
+      "status": "excluded"
+    },
+    {
+      "keyword": "フィジカルAIや半導体",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-20T03:37:41.987261",
+      "status": "excluded"
+    },
+    {
+      "keyword": "ドローンやAIを活用",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-21T04:09:58.901788",
+      "status": "excluded"
+    },
+    {
+      "keyword": "先端AI利用可能に",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-26T03:38:36.463358",
+      "status": "excluded"
+    },
+    {
+      "keyword": "AI相場の潮目変化",
+      "category": "AIツール",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-01T19:55:14.928648",
+      "status": "excluded"
+    },
+    {
       "keyword": "小野田紀美AI戦略担当相",
       "category": "AIツール",
       "source": "fallback",
@@ -1248,6 +1312,78 @@
       "source": "fallback",
       "score": 30,
       "discovered_at": "2026-04-13T07:28:55.020637",
+      "status": "excluded"
+    },
+    {
+      "keyword": "YouTuber",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-04-28T21:41:35.266070",
+      "status": "excluded"
+    },
+    {
+      "keyword": "日立の社員はどんな副業をしているのか",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-04-28T21:41:35.266072",
+      "status": "excluded"
+    },
+    {
+      "keyword": "副業名目で700万円詐欺被害",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-05-22T03:37:42.110701",
+      "status": "excluded"
+    },
+    {
+      "keyword": "副業人材活用モデル事例を公開",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-25T17:12:55.480937",
+      "status": "excluded"
+    },
+    {
+      "keyword": "若者の副業トラブル多発",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-06-29T22:08:55.268309",
+      "status": "excluded"
+    },
+    {
+      "keyword": "公務員の副業解禁",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-01T03:46:48.186963",
+      "status": "excluded"
+    },
+    {
+      "keyword": "職員の副業を",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-01T03:46:48.186965",
+      "status": "excluded"
+    },
+    {
+      "keyword": "副業応援イベント",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-04T06:20:50.870220",
+      "status": "excluded"
+    },
+    {
+      "keyword": "地元企業と副業人材",
+      "category": "副業",
+      "source": "fallback",
+      "score": 30,
+      "discovered_at": "2026-07-12T10:28:07.581662",
       "status": "excluded"
     },
     {

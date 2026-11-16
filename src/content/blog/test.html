@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video & YouTube Annotator</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <style>
+    .cursor-pen { cursor: crosshair; }
+    .cursor-eraser { cursor: grab; }
+    input[type=range] { accent-color: #6366f1; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 h-screen flex flex-col select-none overflow-hidden font-sans">
+
+  <!-- ヘッダー -->
+  <header class="h-14 border-b border-zinc-800 px-6 flex items-center justify-between bg-zinc-900/80 backdrop-blur-md z-30 shrink-0">
+    <div class="flex items-center gap-3">
+      <div class="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></div>
+      <span class="text-xs font-bold tracking-wider text-zinc-300">VIDEO ANNOTATOR</span>
+    </div>
+
+    <!-- YouTube URL 入力エリア -->
+    <div class="flex items-center gap-2 max-w-md w-full mx-4">
+      <input type="text" id="ytUrlInput" placeholder="YouTube URLを貼り付け (例: https://www.youtube.com/watch?v=...)"
+             class="w-full bg-zinc-950/80 border border-zinc-700 text-xs px-3 py-1.5 rounded-lg focus:outline-none focus:border-indigo-500 text-zinc-200 transition placeholder-zinc-500">
+      <button id="loadYtBtn" class="bg-red-600 hover:bg-red-500 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition shrink-0 shadow-sm">
+        YouTube読込
+      </button>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <!-- ローカル動画選択ボタン -->
+      <label class="cursor-pointer bg-zinc-800 hover:bg-zinc-700 text-xs px-3 py-1.5 rounded-lg font-medium transition border border-zinc-700 shadow-sm">
+        <span>動画ファイル選択</span>
+        <input type="file" id="fileInput" accept="video/*" class="hidden">
+      </label>
+
+      <!-- ヘルプボタン -->
+      <button id="helpBtn" class="text-zinc-400 hover:text-zinc-200 p-1.5 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- トースト通知 -->
+  <div id="toast" class="absolute top-16 left-1/2 -translate-x-1/2 bg-zinc-800/90 text-zinc-100 text-xs px-4 py-2 rounded-full border border-zinc-700 shadow-lg pointer-events-none transition-all duration-200 opacity-0 -translate-y-2 z-50"></div>
+
+  <!-- メイン表示領域 -->
+  <main class="flex-1 relative flex items-center justify-center p-4 bg-zinc-950 overflow-hidden" id="dropZone">
+    
+    <!-- ビデオ＋描画コンテナ -->
+    <div id="videoContainer" class="relative max-w-full max-h-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-zinc-800 bg-black flex items-center justify-center">
+      
+      <!-- ドラッグ＆ドロップ 催促プレースホルダー -->
+      <div id="dropPrompt" class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-zinc-500 pointer-events-none z-10">
+        <svg class="w-12 h-12 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+        </svg>
+        <p class="text-sm">動画をドラッグ＆ドロップ、または上部のYouTube URLを入力</p>
+      </div>
+
+      <!-- ローカル動画要素 -->
+      <video id="videoPlayer" class="w-full h-full object-contain pointer-events-none relative z-0" playsinline></video>
+
+      <!-- YouTubeプレーヤー用コンテナ -->
+      <div id="ytContainer" class="absolute inset-0 w-full h-full hidden z-0 pointer-events-none">
+        <div id="ytPlayer" class="w-full h-full"></div>
+      </div>
+
+      <!-- ペイント用キャンバス -->
+      <canvas id="paintCanvas" class="absolute inset-0 w-full h-full z-20 cursor-pen"></canvas>
+    </div>
+
+    <!-- フローティング・ツールバー（遅延アニメーション完全除去・吸い付き仕様） -->
+    <div id="floatingToolbar" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-40 bg-zinc-900/95 backdrop-blur-xl border border-zinc-750 rounded-2xl shadow-2xl select-none" style="touch-action: none;">
+      
+      <!-- ドラッグつまみ（グリップ） ＆ 最小化トグル -->
+      <div id="dragHandle" class="h-6 flex items-center justify-between px-3 cursor-grab active:cursor-grabbing border-b border-zinc-800/80">
+        <div class="flex items-center gap-1 opacity-50 pointer-events-none">
+          <span class="w-1 h-1 rounded-full bg-zinc-400"></span>
+          <span class="w-1 h-1 rounded-full bg-zinc-400"></span>
+          <span class="w-1 h-1 rounded-full bg-zinc-400"></span>
+        </div>
+        <span class="text-[10px] text-zinc-500 font-medium pointer-events-none">ドラッグして移動</span>
+        <button id="minimizeBtn" class="text-zinc-400 hover:text-zinc-200 transition">
+          <svg id="minimizeIcon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+
+      <!-- ツールバー本体コンテンツ -->
+      <div id="toolbarBody" class="p-3.5 flex flex-col gap-3">
+        
+        <!-- 上段：シークバー & タイムコード -->
+        <div class="flex items-center gap-3">
+          <button id="playPauseBtn" class="p-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition text-white shrink-0">
+            <svg id="playIcon" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <svg id="pauseIcon" class="w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+
+          <input id="seekBar" type="range" min="0" max="100" value="0" step="0.01" class="flex-1 h-1.5 bg-zinc-700 rounded-lg cursor-pointer">
+
+          <div class="text-[11px] font-mono text-zinc-400 shrink-0">
+            <span id="currentTime">00:00.00</span> / <span id="duration">00:00.00</span>
+          </div>
+        </div>
+
+        <!-- 下段：描画ツール / 色 / 太さ / 全画面 -->
+        <div class="flex items-center gap-3 pt-1 border-t border-zinc-800/80">
+          
+          <!-- ペン / 消しゴム -->
+          <div class="flex items-center bg-zinc-950 rounded-lg p-1 border border-zinc-800">
+            <button id="toolPen" class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-indigo-400 transition" title="ペン (W)">ペン</button>
+            <button id="toolEraser" class="px-2.5 py-1 rounded text-xs font-medium text-zinc-400 hover:text-zinc-200 transition" title="消しゴム (E)">消しゴム</button>
+          </div>
+
+          <!-- 太さスライダー -->
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] text-zinc-500">太さ</span>
+            <input id="lineWidth" type="range" min="2" max="24" value="5" class="w-16 h-1 bg-zinc-700 rounded cursor-pointer">
+          </div>
+
+          <div class="h-4 w-px bg-zinc-800"></div>
+
+          <!-- カラーパレット（8色 ＋ 虹色カラーピッカー） -->
+          <div class="flex items-center gap-1.5" id="colorPalette">
+            <button data-color="#ef4444" class="color-btn w-5 h-5 rounded-full bg-red-500 border border-white/20 transition hover:scale-110 active:scale-95"></button>
+            <button data-color="#f97316" class="color-btn w-5 h-5 rounded-full bg-orange-500 border border-white/20 transition hover:scale-110 active:scale-95"></button>
+            <button data-color="#eab308" class="color-btn w-5 h-5 rounded-full bg-yellow-500 border border-white/20 transition hover:scale-110 active:scale-95"></button>
+            <button data-color="#22c55e" class="color-btn w-5 h-5 rounded-full bg-green-500 border border-white/20 transition hover:scale-110 active:scale-95"></button>
+            <button data-color="#06b6d4" class="color-btn w-5 h-5 rounded-full bg-cyan-500 border border-white/20 transition hover:scale-110 active:scale-95"></button>
+            <button data-color="#3b82f6" class="color-btn w-5 h-5 rounded-full bg-blue-500 ring-2 ring-white scale-110 border border-white/20"></button>
+            <button data-color="#a855f7" class="color-btn w-5 h-5 rounded-full bg-purple-500 border border-white/20 transition hover:scale-110 active:scale-95"></button>
+            <button data-color="#ffffff" class="color-btn w-5 h-5 rounded-full bg-white border border-zinc-400 transition hover:scale-110 active:scale-95"></button>
+            
+            <label class="relative w-5 h-5 rounded-full cursor-pointer overflow-hidden border border-white/30 bg-gradient-to-tr from-pink-500 via-amber-300 to-indigo-500 transition hover:scale-110 active:scale-95" title="自由な色を選択">
+              <input type="color" id="customColorPicker" value="#3b82f6" class="absolute -top-4 -left-4 w-12 h-12 opacity-0 cursor-pointer">
+            </label>
+          </div>
+
+          <div class="h-4 w-px bg-zinc-800"></div>
+
+          <!-- 自動フェード トグル -->
+          <button id="fadeToggleBtn" class="px-2.5 py-1 rounded text-xs font-medium text-zinc-400 hover:text-zinc-200 border border-zinc-800 transition" title="自動フェード消去 (F)">
+            フェード: <span id="fadeStatus" class="text-zinc-500">OFF</span>
+          </button>
+
+          <!-- 元に戻す & クリア -->
+          <button id="undoBtn" class="text-zinc-400 hover:text-zinc-200 text-xs px-2 py-1 rounded border border-zinc-800 transition" title="元に戻す (Ctrl+Z / Z)">戻す</button>
+          <button id="clearBtn" class="text-zinc-400 hover:text-zinc-200 text-xs px-2 py-1 rounded border border-zinc-800 transition" title="全消去 (C)">消去</button>
+
+          <div class="h-4 w-px bg-zinc-800"></div>
+
+          <!-- 全画面ボタン -->
+          <button id="fullscreenBtn" class="p-1.5 text-zinc-400 hover:text-zinc-200 transition" title="全画面 (F11)">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ショートカット一覧モーダル -->
+  <div id="helpModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+    <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+      <h2 class="text-base font-semibold text-zinc-100 mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        キーボードショートカット
+      </h2>
+      <div class="space-y-2 text-xs text-zinc-300">
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>再生 / 一時停止</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">Space</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>ペンツール</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">W</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>消しゴム (トグル)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">E</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>自動フェード (ON/OFF)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">F</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>全画面 (トグル)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">F11</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>元に戻す (Undo)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">Ctrl+Z / Z</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>全消去</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">C</kbd></div>
+        <div class="flex justify-between py-1 border-b border-zinc-800/60"><span>1コマ送り / 戻し (60fps)</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">. / ,</kbd></div>
+        <div class="flex justify-between py-1"><span>3秒 スキップ / 戻し</span><kbd class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">→ / ←</kbd></div>
+      </div>
+      <button id="closeHelpBtn" class="mt-6 w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 rounded-lg text-xs font-medium transition">
+        閉じる
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // --- 変数定義 ---
+    const video = document.getElementById('videoPlayer');
+    const ytContainer = document.getElementById('ytContainer');
+    const canvas = document.getElementById('paintCanvas');
+    const ctx = canvas.getContext('2d', { desynchronized: true });
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const dropPrompt = document.getElementById('dropPrompt');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const seekBar = document.getElementById('seekBar');
+    const currentTimeText = document.getElementById('currentTime');
+    const durationText = document.getElementById('duration');
+    const toolPen = document.getElementById('toolPen');
+    const toolEraser = document.getElementById('toolEraser');
+    const lineWidthInput = document.getElementById('lineWidth');
+    const colorPalette = document.getElementById('colorPalette');
+    const customColorPicker = document.getElementById('customColorPicker');
+    const fadeToggleBtn = document.getElementById('fadeToggleBtn');
+    const fadeStatus = document.getElementById('fadeStatus');
+    const undoBtn = document.getElementById('undoBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const toast = document.getElementById('toast');
+    const floatingToolbar = document.getElementById('floatingToolbar');
+    const dragHandle = document.getElementById('dragHandle');
+    const minimizeBtn = document.getElementById('minimizeBtn');
+    const minimizeIcon = document.getElementById('minimizeIcon');
+    const toolbarBody = document.getElementById('toolbarBody');
+    const helpBtn = document.getElementById('helpBtn');
+    const helpModal = document.getElementById('helpModal');
+    const closeHelpBtn = document.getElementById('closeHelpBtn');
+    const ytUrlInput = document.getElementById('ytUrlInput');
+    const loadYtBtn = document.getElementById('loadYtBtn');
+
+    let currentMode = 'local';
+    let ytPlayer = null;
+    let ytReady = false;
+    let isSeeking = false;
+
+    let isDrawing = false;
+    let currentTool = 'pen';
+    let currentColor = '#3b82f6';
+    let currentWidth = 5;
+    let isFadeActive = false;
+    let strokes = [];
+    let currentStroke = null;
+    let toastTimeout = null;
+
+    // --- トースト通知 ---
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-2');
+      }, 1500);
+    }
+
+    // --- 時間フォーマット ---
+    function formatTime(sec) {
+      if (isNaN(sec) || sec < 0) return '00:00.00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      const ms = Math.floor((sec % 1) * 100);
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(ms).padStart(2, '0')}`;
+    }
+
+    // --- YouTube API初期化 ---
+    window.onYouTubeIframeAPIReady = function() {
+      ytReady = true;
+    };
+
+    function extractYtId(url) {
+      const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
+      return match ? match[1] : null;
+    }
+
+    function loadYouTube(videoId) {
+      currentMode = 'youtube';
+      video.pause();
+      video.classList.add('hidden');
+      ytContainer.classList.remove('hidden');
+      dropPrompt.classList.add('hidden');
+
+      if (!ytPlayer) {
+        ytPlayer = new YT.Player('ytPlayer', {
+          videoId: videoId,
+          playerVars: {
+            autoplay: 1,
+            controls: 0,
+            disablekb: 1,
+            modestbranding: 1,
+            rel: 0
+          },
+          events: {
+            onReady: () => {
+              showToast('YouTube読み込み完了');
+              updatePlayState();
+            },
+            onStateChange: () => {
+              updatePlayState();
+            }
+          }
+        });
+      } else {
+        ytPlayer.loadVideoById(videoId);
+      }
+    }
+
+    loadYtBtn.addEventListener('click', () => {
+      const id = extractYtId(ytUrlInput.value.trim());
+      if (id) {
+        loadYouTube(id);
+      } else {
+        showToast('有効なYouTube URLを入力してください');
+      }
+    });
+    ytUrlInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') loadYtBtn.click();
+    });
+
+    // --- ローカル動画ロード ---
+    function loadLocalVideo(file) {
+      if (!file || !file.type.startsWith('video/')) return;
+      currentMode = 'local';
+      if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
+      ytContainer.classList.add('hidden');
+      video.classList.remove('hidden');
+
+      const url = URL.createObjectURL(file);
+      video.src = url;
+      dropPrompt.classList.add('hidden');
+      video.onloadedmetadata = () => {
+        resizeCanvas();
+        video.play();
+        updatePlayState();
+        showToast('動画を読み込みました');
+      };
+    }
+
+    // ドラッグ＆ドロップ
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('bg-zinc-900/50'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('bg-zinc-900/50'));
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('bg-zinc-900/50');
+      if (e.dataTransfer.files.length) loadLocalVideo(e.dataTransfer.files[0]);
+    });
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length) loadLocalVideo(e.target.files[0]);
+    });
+
+    // --- キャンバス リサイズ ---
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      if (canvas.width !== rect.width || canvas.height !== rect.height) {
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        redrawCanvas();
+      }
+    }
+    window.addEventListener('resize', resizeCanvas);
+    new ResizeObserver(resizeCanvas).observe(canvas);
+
+    // --- 再生 / 一時停止 ---
+    function togglePlay() {
+      if (currentMode === 'local') {
+        if (!video.src) return;
+        if (video.paused) video.play(); else video.pause();
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getPlayerState) {
+        const state = ytPlayer.getPlayerState();
+        if (state === YT.PlayerState.PLAYING) ytPlayer.pauseVideo();
+        else ytPlayer.playVideo();
+      }
+      updatePlayState();
+    }
+
+    function updatePlayState() {
+      let isPaused = true;
+      if (currentMode === 'local') {
+        isPaused = video.paused;
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getPlayerState) {
+        isPaused = ytPlayer.getPlayerState() !== YT.PlayerState.PLAYING;
+      }
+      playIcon.classList.toggle('hidden', !isPaused);
+      pauseIcon.classList.toggle('hidden', isPaused);
+    }
+    playPauseBtn.addEventListener('click', togglePlay);
+
+    // コマ送り / コマ戻し (60fps: 約0.01667秒)
+    function stepFrame(forward = true) {
+      const dt = 1 / 60;
+      if (currentMode === 'local') {
+        video.pause();
+        video.currentTime = Math.max(0, Math.min(video.duration || 0, video.currentTime + (forward ? dt : -dt)));
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getCurrentTime) {
+        ytPlayer.pauseVideo();
+        const curr = ytPlayer.getCurrentTime();
+        ytPlayer.seekTo(Math.max(0, curr + (forward ? 0.04 : -0.04)), true);
+      }
+      updatePlayState();
+    }
+
+    // シークバー同期ループ
+    function updateTimeline() {
+      if (!isSeeking) {
+        let curr = 0;
+        let dur = 0;
+        if (currentMode === 'local') {
+          curr = video.currentTime || 0;
+          dur = video.duration || 0;
+        } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getCurrentTime) {
+          curr = ytPlayer.getCurrentTime() || 0;
+          dur = ytPlayer.getDuration() || 0;
+        }
+        currentTimeText.textContent = formatTime(curr);
+        durationText.textContent = formatTime(dur);
+        if (dur > 0) {
+          seekBar.value = (curr / dur) * 100;
+        }
+      }
+      requestAnimationFrame(updateTimeline);
+    }
+    requestAnimationFrame(updateTimeline);
+
+    seekBar.addEventListener('input', () => { isSeeking = true; });
+    seekBar.addEventListener('change', () => {
+      const targetPercent = parseFloat(seekBar.value);
+      if (currentMode === 'local' && video.duration) {
+        video.currentTime = (targetPercent / 100) * video.duration;
+      } else if (currentMode === 'youtube' && ytPlayer && ytPlayer.getDuration) {
+        ytPlayer.seekTo((targetPercent / 100) * ytPlayer.getDuration(), true);
+      }
+      isSeeking = false;
+    });
+
+    // --- ペイント機能 (相対座標 0.0〜1.0) ---
+    function getRelPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)),
+        y: Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height))
+      };
+    }
+
+    canvas.addEventListener('mousedown', (e) => {
+      isDrawing = true;
+      const pos = getRelPos(e);
+      currentStroke = {
+        tool: currentTool,
+        color: currentColor,
+        width: currentWidth,
+        createdAt: performance.now(),
+        points: [pos]
+      };
+      strokes.push(currentStroke);
+      redrawCanvas();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDrawing || !currentStroke) return;
+      const pos = getRelPos(e);
+      currentStroke.points.push(pos);
+      redrawCanvas();
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDrawing = false;
+      currentStroke = null;
+    });
+
+    // 再描画ループ
+    function redrawCanvas() {
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      const now = performance.now();
+      const FADE_DURATION = 2500;
+
+      if (isFadeActive) {
+        strokes = strokes.filter(s => (now - s.createdAt) < FADE_DURATION);
+      }
+
+      strokes.forEach(stroke => {
+        if (stroke.points.length === 0) return;
+
+        let alpha = 1.0;
+        if (isFadeActive) {
+          const age = now - stroke.createdAt;
+          alpha = Math.max(0, 1 - (age / FADE_DURATION));
+        }
+
+        ctx.save();
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.lineWidth = stroke.width;
+
+        if (stroke.tool === 'eraser') {
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.strokeStyle = 'rgba(0,0,0,1)';
+        } else {
+          ctx.globalCompositeOperation = 'source-over';
+          ctx.strokeStyle = stroke.color;
+          ctx.globalAlpha = alpha;
+        }
+
+        ctx.beginPath();
+        const p0 = stroke.points[0];
+        ctx.moveTo(p0.x * w, p0.y * h);
+
+        for (let i = 1; i < stroke.points.length; i++) {
+          const pt = stroke.points[i];
+          ctx.lineTo(pt.x * w, pt.y * h);
+        }
+        ctx.stroke();
+        ctx.restore();
+      });
+    }
+
+    function animateFade() {
+      if (isFadeActive && strokes.length > 0) {
+        redrawCanvas();
+      }
+      requestAnimationFrame(animateFade);
+    }
+    requestAnimationFrame(animateFade);
+
+    // --- ツール切替 ---
+    function setTool(tool) {
+      currentTool = tool;
+      if (tool === 'pen') {
+        toolPen.classList.add('bg-zinc-800', 'text-indigo-400');
+        toolPen.classList.remove('text-zinc-400');
+        toolEraser.classList.remove('bg-zinc-800', 'text-indigo-400');
+        toolEraser.classList.add('text-zinc-400');
+        canvas.className = 'absolute inset-0 w-full h-full z-20 cursor-pen';
+        showToast('ペンツール (W)');
+      } else {
+        toolEraser.classList.add('bg-zinc-800', 'text-indigo-400');
+        toolEraser.classList.remove('text-zinc-400');
+        toolPen.classList.remove('bg-zinc-800', 'text-indigo-400');
+        toolPen.classList.add('text-zinc-400');
+        canvas.className = 'absolute inset-0 w-full h-full z-20 cursor-eraser';
+        showToast('消しゴム (E)');
+      }
+    }
+    toolPen.addEventListener('click', () => setTool('pen'));
+    toolEraser.addEventListener('click', () => setTool('eraser'));
+
+    // 太さ
+    lineWidthInput.addEventListener('input', (e) => { currentWidth = parseInt(e.target.value); });
+
+    // カラーパレット
+    const colorBtns = document.querySelectorAll('.color-btn');
+    colorBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        colorBtns.forEach(b => b.classList.remove('ring-2', 'ring-white', 'scale-110'));
+        btn.classList.add('ring-2', 'ring-white', 'scale-110');
+        currentColor = btn.getAttribute('data-color');
+        setTool('pen');
+      });
+    });
+    customColorPicker.addEventListener('input', (e) => {
+      currentColor = e.target.value;
+      colorBtns.forEach(b => b.classList.remove('ring-2', 'ring-white', 'scale-110'));
+      setTool('pen');
+    });
+
+    // フェード トグル
+    function toggleFade() {
+      isFadeActive = !isFadeActive;
+      fadeStatus.textContent = isFadeActive ? 'ON' : 'OFF';
+      fadeStatus.className = isFadeActive ? 'text-indigo-400 font-bold' : 'text-zinc-500';
+      if (isFadeActive) {
+        const now = performance.now();
+        strokes.forEach(s => s.createdAt = now);
+      }
+      showToast(`自動フェード: ${isFadeActive ? 'ON' : 'OFF'} (F)`);
+    }
+    fadeToggleBtn.addEventListener('click', toggleFade);
+
+    // Undo & Clear
+    function undo() {
+      if (strokes.length > 0) {
+        strokes.pop();
+        redrawCanvas();
+        showToast(`元に戻しました (残り: ${strokes.length})`);
+      }
+    }
+    function clearAll() {
+      strokes = [];
+      redrawCanvas();
+      showToast('全消去 (C)');
+    }
+    undoBtn.addEventListener('click', undo);
+    clearBtn.addEventListener('click', clearAll);
+
+    // 全画面
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+        showToast('全画面モード (F11)');
+      } else {
+        document.exitFullscreen().catch(() => {});
+        showToast('全画面解除');
+      }
+    }
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    // --- 高速・ダイレクトなPointerドラッグ（CSS遅延ゼロ） ---
+    let isDraggingBar = false;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+
+    dragHandle.addEventListener('pointerdown', (e) => {
+      if (e.target.closest('#minimizeBtn')) return;
+      isDraggingBar = true;
+      dragHandle.setPointerCapture(e.pointerId);
+
+      const rect = floatingToolbar.getBoundingClientRect();
+      dragOffsetX = e.clientX - rect.left;
+      dragOffsetY = e.clientY - rect.top;
+
+      // 中央揃えCSSを完全解除しピクセル固定へ
+      floatingToolbar.style.transform = 'none';
+      floatingToolbar.style.bottom = 'auto';
+      floatingToolbar.style.left = `${rect.left}px`;
+      floatingToolbar.style.top = `${rect.top}px`;
+    });
+
+    dragHandle.addEventListener('pointermove', (e) => {
+      if (!isDraggingBar) return;
+      const w = floatingToolbar.offsetWidth;
+      const h = floatingToolbar.offsetHeight;
+
+      // 40pxだけ残して画面外へ退避OK
+      const targetX = e.clientX - dragOffsetX;
+      const targetY = e.clientY - dragOffsetY;
+
+      const clampedX = Math.max(-w + 40, Math.min(window.innerWidth - 40, targetX));
+      const clampedY = Math.max(0, Math.min(window.innerHeight - 30, targetY));
+
+      floatingToolbar.style.left = `${clampedX}px`;
+      floatingToolbar.style.top = `${clampedY}px`;
+    });
+
+    function endDrag(e) {
+      if (!isDraggingBar) return;
+      isDraggingBar = false;
+      try { dragHandle.releasePointerCapture(e.pointerId); } catch (_) {}
+    }
+    dragHandle.addEventListener('pointerup', endDrag);
+    dragHandle.addEventListener('pointercancel', endDrag);
+
+    // ツールバー最小化
+    let isMinimized = false;
+    minimizeBtn.addEventListener('click', () => {
+      isMinimized = !isMinimized;
+      toolbarBody.classList.toggle('hidden', isMinimized);
+      minimizeIcon.innerHTML = isMinimized
+        ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>'
+        : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>';
+    });
+
+    // ヘルプモーダル
+    helpBtn.addEventListener('click', () => helpModal.classList.remove('hidden'));
+    closeHelpBtn.addEventListener('click', () => helpModal.classList.add('hidden'));
+
+    // --- キーボードショートカット ---
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+      const code = e.code;
+      const key = e.key.toLowerCase();
+
+      if (code === 'KeyW' || key === 'w') {
+        e.preventDefault();
+        setTool('pen');
+      } else if (code === 'KeyE' || key === 'e') {
+        e.preventDefault();
+        setTool(currentTool === 'eraser' ? 'pen' : 'eraser');
+      } else if (code === 'KeyF' || key === 'f') {
+        e.preventDefault();
+        toggleFade();
+      } else if (e.key === 'F11') {
+        e.preventDefault();
+        toggleFullscreen();
+      } else if (code === 'Space') {
+        e.preventDefault();
+        togglePlay();
+      } else if (((e.ctrlKey || e.metaKey) && (code === 'KeyZ' || key === 'z')) || (!e.ctrlKey && !e.metaKey && (code === 'KeyZ' || key === 'z'))) {
+        e.preventDefault();
+        undo();
+      } else if (code === 'KeyC' || key === 'c') {
+        e.preventDefault();
+        clearAll();
+      } else if (e.key === '.' || code === 'Period') {
+        e.preventDefault();
+        stepFrame(true);
+      } else if (e.key === ',' || code === 'Comma') {
+        e.preventDefault();
+        stepFrame(false);
+      } else if (code === 'ArrowRight') {
+        e.preventDefault();
+        if (currentMode === 'local') video.currentTime = Math.min(video.duration || 0, video.currentTime + 3);
+        else if (ytPlayer && ytPlayer.getCurrentTime) ytPlayer.seekTo(ytPlayer.getCurrentTime() + 3, true);
+      } else if (code === 'ArrowLeft') {
+        e.preventDefault();
+        if (currentMode === 'local') video.currentTime = Math.max(0, video.currentTime - 3);
+        else if (ytPlayer && ytPlayer.getCurrentTime) ytPlayer.seekTo(Math.max(0, ytPlayer.getCurrentTime() - 3), true);
+      }
+    });
+  </script>
+</body>
+</html>
