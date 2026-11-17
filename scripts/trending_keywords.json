@@ -4330,6 +4330,27 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "松尾豊教授ら設立のAIスタートアップと提携",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業時代のスタンダードへ",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "副業による経営リスクを見える化",
+      "category": "副業",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -21873,6 +21894,27 @@
     },
     {
       "keyword": "AIが図面の重要な変更点を判別",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの答えが正しくても人間が圧力をかけるとAIは簡単に意見を変えてしまう",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "5年前に自分で歌った曲がAI音楽企業の著作権侵害申し立てで削除される",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "人型ロボットに人間の動きを学習させるためのAI",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
