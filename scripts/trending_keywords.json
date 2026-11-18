@@ -4351,6 +4351,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AI時代に必要なエンジニアのスキルとは",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -21915,6 +21922,34 @@
     },
     {
       "keyword": "人型ロボットに人間の動きを学習させるためのAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "韓国が大学入試のAIカンニング対策を大幅強化",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Storeなど複数のAppleサービスで障害が発生",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "わが社はChatGPTでどう紹介されている",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIが企業向けの確認機能を提供開始",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
