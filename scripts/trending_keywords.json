@@ -4386,6 +4386,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "日本の音声AIスタートアップに159億円",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -22006,6 +22013,48 @@
     },
     {
       "keyword": "AIコーディングエージェントの登場でコード作成量が30",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "各AIモデルに最適なハーネスはどれか",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "OpenAIがAIを用いてAMD製GPUや独自開発AIチップの改善に成功",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "半導体設計の専用AIモデルも開発",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "のキャラクター3体が自律的に反応するAI搭載ロボットに",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "さくらのAI推論基盤で提供",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIロボット",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
