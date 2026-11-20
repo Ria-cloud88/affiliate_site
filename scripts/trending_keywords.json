@@ -4400,6 +4400,20 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "Antigravityを他社AIから操作すると",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
+      "keyword": "注意点をGoogle",
+      "category": "ガジェット",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -22069,6 +22083,20 @@
     },
     {
       "keyword": "Huawei最大級のAIデータセンターでも計算能力はxAIの",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "iPhoneやAndroidスマホの強制ロック解除を防ぐ方法",
+      "category": "ガジェット",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "生成AI面談",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
