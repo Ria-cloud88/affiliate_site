@@ -4435,6 +4435,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "米アンソロピックの目論見書に基づくAI安全性スタートアップ市場",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -22293,6 +22300,13 @@
     },
     {
       "keyword": "OSレベルのAIエージェントによる情報収集に警鐘",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "中国ではAIリテラシー向上を目指して学校でAIに焦点を当てたカリキュラムや主要教科におけるAI生成型の授業を採用している",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
