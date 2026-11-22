@@ -4428,6 +4428,13 @@
       "reason": "ニュースフィードで2回出現"
     },
     {
+      "keyword": "AIは銃のようなものに",
+      "category": "AIツール",
+      "frequency": 2,
+      "score": 20,
+      "reason": "ニュースフィードで2回出現"
+    },
+    {
       "keyword": "無料でローカルAI環境を簡単に導入できる",
       "category": "AIツール",
       "frequency": 1,
@@ -22237,6 +22244,27 @@
     },
     {
       "keyword": "仲間のAI",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "Anthropicの数学者",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIに必要なのは知識か",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "管理職調査で見えたAI活用の盲点",
       "category": "AIツール",
       "frequency": 1,
       "score": 10,
