@@ -4,6 +4,13 @@
   "update_method": "auto_news_extraction",
   "keywords": [
     {
+      "keyword": "を副業として続けるワケ",
+      "category": "副業",
+      "frequency": 4,
+      "score": 40,
+      "reason": "ニュースフィードで4回出現"
+    },
+    {
       "keyword": "副業紹介",
       "category": "副業",
       "frequency": 3,
@@ -22336,6 +22343,20 @@
     {
       "keyword": "AI委託先で何が起きた",
       "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "AIの顔認識技術に依存して容疑者を誤認逮捕した刑事の免責主張を連邦裁判官が却下",
+      "category": "AIツール",
+      "frequency": 1,
+      "score": 10,
+      "reason": "ニュースフィードで1回出現"
+    },
+    {
+      "keyword": "無料でMacのアプリのウィンドウをiPhoneやiPadからリアルタイムに操作できる",
+      "category": "ガジェット",
       "frequency": 1,
       "score": 10,
       "reason": "ニュースフィードで1回出現"
